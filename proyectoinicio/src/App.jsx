@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
 
 function App() {
@@ -7,45 +6,39 @@ function App() {
   return (
     <div className='Container'>
       
-      <header class="header">
-          <nav>
-              
-              <div class="logo">
-                  <img src="img/Logo.png" alt="" />
-              </div>
 
-              <ul class="navLinks">
-                  <li>Home</li>
-                  <li>Sobre nosotros</li>
-                  <li>Doctores</li>
-                  <li>Iniciar Sesión</li>
-                  <li>Registrarse</li>
-              </ul>
-
-          </nav>
-
-      </header>
-
-      <section class="block1">
-
-        <div class="imageBlock1">
-            <img src="Img\Foto inicio.png" alt=""/>
+        <div className='bloque1'>
+            <h1 className='titulo'>¡Bienvenidos a Psicopana!</h1>
+            <img class="imagen" src="img/Logo.png" alt="" />
         </div>
 
-        <div class="textBlock1">
-            
-            <div class="titleBlock1">
-                <h1>
-                    Psicopana
-                </h1>
-            </div>
+        <img class="imagen2" src="img/img2.png" alt="" />
 
-            <div class="parragraphBlock1">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spublishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
+        <h3 className='titulo2'>Iniciar sesión</h3>
 
-        </div>
-    </section>
+        <div className='rectangulo'></div>
+
+        <h5 className='subtitulo1' id='sub1'>Usuario</h5>
+
+        <input type="text" class="search-field1"></input>
+
+        <h5 className='subtitulo2'>Contraseña</h5>
+
+        <input type="text" class="search-field2"></input>
+
+        <button type="button" class="button1" id="searchButtom">Iniciar sesión</button>
+
+        <button type="button" class="button2" id="searchButtom">Continuar con Google</button>
+
+        <img class="logoGoogle" src="img/google.png" alt="" />
+
+        <h3 className='titulo3'>¿No tienes cuenta? Regístrate aquí.</h3>
+
+        <h5 className='titulo4'>Todos los derechos reservados</h5>
+
+
+
+
 
 
     </div>
