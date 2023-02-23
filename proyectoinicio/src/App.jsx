@@ -32,13 +32,22 @@ function App() {
 
           <h5 className='sub7'>Edad</h5>
 
-          <h5 className='sub8'>¿Primera vez que asiste a consulta psicológica?</h5>
+          <h5 className='sub8'>Universidad donde estudio</h5>
 
-          <h5 className='sub9'>Sí.</h5>
+          <h5 className='sub9'>Carrerra</h5>
 
-          <h5 className='sub10'>No.</h5>
+          <h5 className='sub10'>Licencia</h5>
 
-          <h5 className='sub11'>Prefiero no contestar.</h5>
+          <h5 className='sub11'>Universidad donde estudio</h5>
+
+          <h5 className='sub12'>Especialidad</h5>
+
+          <h5 className='sub13'>Licencia</h5>
+
+          <h5 className='sub14'>Agregar especialidad +</h5>
+
+          <h5 className='sub15'>Experiencia laboral</h5>
+
 
         </div>
 
@@ -57,25 +66,20 @@ function App() {
 
         <input type="text" class="field7"></input>
 
+        <input type="text" class="field8"></input>
 
-        <div className='radioButtons'>
+        <input type="text" class="field9"></input>
 
-          <label>
-              <input className='b1' type="radio" value="Si" name='option' />
-            <span></span>
-          </label>
+        <input type="text" class="field10"></input>
 
-          <label>
-            <input className='b2' type="radio" value="No" name='option' />
-            <span></span>
-          </label>
+        <input type="text" class="field11"></input>
 
-          <label>
-            <input className='b3' type="radio" value="Prefiero no contestar." name='option' />
-            <span></span>
-          </label>
+        <input type="text" class="field12"></input>
 
-        </div>
+        <input type="text" class="field13"></input>
+
+        <input type="text" class="field14"></input>
+
 
 
         <button type="button" class="button1" id="searchButtom">Crear cuenta</button>

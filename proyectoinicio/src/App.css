@@ -43,7 +43,7 @@ body{
 .rectangulo{
     position: absolute;
     width: 1375px;
-    height: 720px;
+    height: 1030px;
     left: 61px;
     right: 61px;
     top: 259px;
@@ -72,8 +72,8 @@ body{
     position: absolute;
     width: 465px;
     height: 46px;
-    left: 880px;
-    top: 1002px;
+    left: 862px;
+    top: 1325px;
 
     font-family: 'League Spartan';
     font-style: normal;
@@ -88,8 +88,8 @@ body{
     position: absolute;
     width: 252px;
     height: 30px;
-    left: 574px;
-    top: 1081px;
+    left: 582px;
+    top: 1396px;
 
     font-family: 'League Spartan';
     font-style: normal;
@@ -171,34 +171,66 @@ body{
 
 .sub8{
     position: absolute;
-    width: 490px;
+    width: 335px;
     height: 22px;
     left: 84px;
-    top: 560px;
+    top: 663px;
 }
 
 .sub9{
     position: absolute;
-    width: 34px;
+    width: 335px;
     height: 22px;
-    left: 142px;
-    top: 605px;    
+    left: 509px;
+    top: 663px; 
 }
 
 .sub10{
     position: absolute;
-    width: 45px;
+    width: 205px;
     height: 22px;
-    left: 142px;
-    top: 648px;
+    left: 934px;
+    top: 663px;
 }
 
 .sub11{
     position: absolute;
-    width: 225px;
+    width: 335px;
     height: 22px;
-    left: 142px;
-    top: 688px;
+    left: 84px;
+    top: 787px;
+}
+
+.sub12{
+    position: absolute;
+    width: 335px;
+    height: 22px;
+    left: 509px;
+    top: 787px;
+}
+
+.sub13{
+    position: absolute;
+    width: 205px;
+    height: 22px;
+    left: 934px;
+    top: 787px;
+}
+
+.sub14{
+    position: absolute;
+    width: 294px;
+    height: 46px;
+    left: 84px;
+    top: 909px;
+}
+
+.sub15{
+    position: absolute;
+    width: 335px;
+    height: 22px;
+    left: 84px;
+    top: 964px;
 }
 
 .button1{
@@ -214,8 +246,8 @@ body{
     position: absolute;
     width: 147px;
     height: 53px;
-    left: 626px;
-    top: 739px;
+    left: 634px;
+    top: 1053px;
 
     background: #E5F7F8;
 }
@@ -225,9 +257,8 @@ body{
     position: absolute;
     width: 288px;
     height: 53px;
-    left: 556px;
-    top: 878px;
-
+    left: 564px;
+    top: 1197px;
 
 
     font-family: 'League Spartan';
@@ -246,8 +277,8 @@ body{
     position: absolute;
     width: 34px;
     height: 34px;
-    left: 576px;
-    top: 890px;
+    left: 584px;
+    top: 1209px;
 }
 
 .field1{
@@ -320,12 +351,83 @@ body{
     background: #E5F7F8;
 }
 
+.field8{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 696px;
+
+    background: #E5F7F8;
+}
+
+.field9{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 509px;
+    top: 696px;
+
+    background: #E5F7F8;
+}
+
+.field10{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 934px;
+    top: 696px;
+
+    background: #E5F7F8;
+}
+
+.field11{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 820px;
+
+    background: #E5F7F8;
+}
+
+.field12{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 509px;
+    top: 820px;
+
+    background: #E5F7F8;
+}
+
+.field13{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 934px;
+    top: 820px;
+
+    background: #E5F7F8;
+}
+
+.field14{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 997px;
+
+    background: #E5F7F8;
+}
+
 .O{
     position: absolute;
     width: 21px;
     height: 22px;
-    left: 689px;
-    top: 821px;
+    left: 697px;
+    top: 1137px;
+
 
     font-family: 'League Spartan';
     font-style: normal;
@@ -340,8 +442,8 @@ body{
     position: absolute;
     width: 583px;
     height: 0px;
-    left: 90px;
-    top: 832px;
+    left: 98px;
+    top: 1148px;
 
     border: 1px solid #FFFFFF;
     transform: rotate(-0.1deg);
@@ -351,8 +453,8 @@ body{
     position: absolute;
     width: 567px;
     height: 0px;
-    left: 727px;
-    top: 831px;
+    left: 735px;
+    top: 1147px;
 
     border: 1px solid #FFFFFF;
     transform: rotate(-0.1deg);
