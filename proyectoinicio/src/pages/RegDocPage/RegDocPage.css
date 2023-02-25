@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+
+
+body{
+    background: #FFFFFF;
+}
+
+.bloque1{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.bloque1 .titulo{
+    text-align: center;
+    font-family: "League Spartan";
+    font-weight: 400px;
+    font-size: 60px;
+    line-height: 55.2px;
+    Width: 644px;
+    Height: 46px;
+    margin-top: 79px;
+    margin-left: 378px;
+}
+
+.imagen{
+    position: absolute;
+    width: 151px;
+    height: 124px;
+    left: 1225px;
+    top: 40px;
+}
+
+.rectanguloD{
+    position: absolute;
+    width: 1375px;
+    height: 1030px;
+    left: 61px;
+    right: 61px;
+    top: 259px;
+
+    background: #2180A5;
+    border-radius: 15px;
+}
+
+.titulo2D{
+    position: absolute;
+    width: 430px;
+    height: 46px;
+    left: 55px;
+    top: 195px;
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 40px;
+    line-height: 37px;
+
+    color: #000000;
+}
+
+.titulo3D{
+    position: absolute;
+    width: 465px;
+    height: 46px;
+    left: 862px;
+    top: 1325px;
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 30px;
+    line-height: 28px;
+
+    color: #000000;
+}
+
+.titulo4D{
+    position: absolute;
+    width: 252px;
+    height: 30px;
+    left: 582px;
+    top: 1396px;
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 18px;
+
+    color: #000000;
+}
+
+.subtitulosD{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 25px;
+    line-height: 23px;
+
+    color: #FFFFFF;
+}
+
+.sub1D{
+    position: absolute;
+    width: 108px;
+    height: 22px;
+    left: 88px;
+    top: 304px;
+}
+
+.sub2D{
+    position: absolute;
+    width: 156px;
+    height: 22px;
+    left: 509px;
+    top: 304px;
+
+}
+
+.sub3D{
+    position: absolute;
+    width: 217px;
+    height: 22px;
+    left: 934px;
+    top: 304px;
+
+}
+
+.sub4D{
+    position: absolute;
+    width: 205px;
+    height: 22px;
+    left: 84px;
+    top: 432px; 
+}
+
+.sub5D{
+    position: absolute;
+    width: 156px;
+    height: 22px;
+    left: 509px;
+    top: 432px; 
+}
+
+.sub6D{
+    position: absolute;
+    width: 242px;
+    height: 22px;
+    left: 934px;
+    top: 432px;
+}
+
+.sub7D{
+    position: absolute;
+    width: 87px;
+    height: 22px;
+    left: 1118px;
+    top: 575px;
+}
+
+
+.sub8D{
+    position: absolute;
+    width: 335px;
+    height: 22px;
+    left: 84px;
+    top: 663px;
+}
+
+.sub9D{
+    position: absolute;
+    width: 335px;
+    height: 22px;
+    left: 509px;
+    top: 663px; 
+}
+
+.sub10D{
+    position: absolute;
+    width: 205px;
+    height: 22px;
+    left: 934px;
+    top: 663px;
+}
+
+.sub11D{
+    position: absolute;
+    width: 335px;
+    height: 22px;
+    left: 84px;
+    top: 787px;
+}
+
+.sub12D{
+    position: absolute;
+    width: 335px;
+    height: 22px;
+    left: 509px;
+    top: 787px;
+}
+
+.sub13D{
+    position: absolute;
+    width: 205px;
+    height: 22px;
+    left: 934px;
+    top: 787px;
+}
+
+.sub14D{
+    position: absolute;
+    width: 294px;
+    height: 46px;
+    left: 84px;
+    top: 909px;
+}
+
+.sub15D{
+    position: absolute;
+    width: 335px;
+    height: 22px;
+    left: 84px;
+    top: 964px;
+}
+
+.button1D{
+    cursor: pointer;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+
+    color: #000000;
+
+    position: absolute;
+    width: 147px;
+    height: 53px;
+    left: 634px;
+    top: 1053px;
+
+    background: #E5F7F8;
+}
+
+.button2D{
+    cursor: pointer;
+    position: absolute;
+    width: 288px;
+    height: 53px;
+    left: 564px;
+    top: 1197px;
+
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+
+    color: #000000;
+
+    background: #E5F7F8;
+
+}
+
+.logoGoogleD{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    left: 584px;
+    top: 1209px;
+}
+
+.field1D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 337px;
+
+    background: #E5F7F8;
+}
+
+.field2D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 509px;
+    top: 337px;
+
+    background: #E5F7F8;
+}
+
+.field3D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 934px;
+    top: 337px;
+
+    background: #E5F7F8;
+}
+
+.field4D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 465px;
+
+    background: #E5F7F8;
+}
+
+.field5D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 509px;
+    top: 465px;
+
+    background: #E5F7F8;
+}
+
+.field6D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 934px;
+    top: 465px;
+
+    background: #E5F7F8;
+}
+
+.field7D{
+    position: absolute;
+    width: 124px;
+    height: 53px;
+    left: 1191px;
+    top: 560px;
+
+    background: #E5F7F8;
+}
+
+.field8D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 696px;
+
+    background: #E5F7F8;
+}
+
+.field9D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 509px;
+    top: 696px;
+
+    background: #E5F7F8;
+}
+
+.field10D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 934px;
+    top: 696px;
+
+    background: #E5F7F8;
+}
+
+.field11D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 820px;
+
+    background: #E5F7F8;
+}
+
+.field12D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 509px;
+    top: 820px;
+
+    background: #E5F7F8;
+}
+
+.field13D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 934px;
+    top: 820px;
+
+    background: #E5F7F8;
+}
+
+.field14D{
+    position: absolute;
+    width: 381px;
+    height: 53px;
+    left: 84px;
+    top: 997px;
+
+    background: #E5F7F8;
+}
+
+.OD{
+    position: absolute;
+    width: 21px;
+    height: 22px;
+    left: 697px;
+    top: 1137px;
+
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 25px;
+    line-height: 23px;
+
+    color: #FFFFFF;
+}
+
+.linea1D{
+    position: absolute;
+    width: 583px;
+    height: 0px;
+    left: 98px;
+    top: 1148px;
+
+    border: 1px solid #FFFFFF;
+    transform: rotate(-0.1deg);
+}
+
+.linea2D{
+    position: absolute;
+    width: 567px;
+    height: 0px;
+    left: 735px;
+    top: 1147px;
+
+    border: 1px solid #FFFFFF;
+    transform: rotate(-0.1deg);
+}
+
+.radioButtonsD{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 23px;
+
+    color: #FFFFFF;
+}
+
+.b1D{
+    position: absolute;
+    width: 16px;
+    height: 15px;
+    left: 109px;
+    top: 606px;
+}
+
+.b2D{
+    position: absolute;
+    width: 16px;
+    height: 15px;
+    left: 109px;
+    top: 651px;
+}
+
+.b3D{   
+    position: absolute;
+    width: 16px;
+    height: 15px;
+    left: 109px;
+    top: 692px;
+
+}

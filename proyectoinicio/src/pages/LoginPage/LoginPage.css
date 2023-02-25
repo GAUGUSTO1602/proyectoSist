@@ -32,6 +32,7 @@ body{
     margin-left: 378px;
 }
 
+
 .imagen{
     position: absolute;
     width: 151px;
@@ -48,7 +49,7 @@ body{
     top: 259px;
 }
 
-.logoGoogle{
+.logoGoogleL{
     position: absolute;
     width: 34px;
     height: 34px;
@@ -71,6 +72,7 @@ body{
 }
 
 .titulo3{
+    text-decoration: none;
     position: absolute;
     width: 447px;
     height: 46px;
@@ -88,18 +90,30 @@ body{
 
 .titulo4{
     position: absolute;
-width: 252px;
-height: 30px;
-left: 574px;
-top: 926px;
+    width: 252px;
+    height: 30px;
+    left: 574px;
+    top: 926px;
 
-font-family: 'League Spartan';
-font-style: normal;
-font-weight: 400px;
-font-size: 20px;
-line-height: 18px;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 18px;
 
-color: #000000;
+    color: #000000;
+}
+
+.enlace {
+    text-decoration: none;
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 30px;
+    line-height: 28px;
+
+    color:#2180A5;
 }
 
 .subtitulo1{
@@ -154,7 +168,7 @@ color: #000000;
     background: #E5F7F8;
 }
 
-.button1{
+.button1L{
     cursor: pointer;
     position: absolute;
     width: 147px;
@@ -174,7 +188,7 @@ color: #000000;
 
 }
 
-.button2{
+.button2L{
     cursor: pointer;
     position: absolute;
     width: 288px;
@@ -194,7 +208,7 @@ color: #000000;
 
 }
 
-.rectangulo{
+.rectangulol{
     position: absolute;
     width: 505px;
     height: 545px;
