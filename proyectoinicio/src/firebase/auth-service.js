@@ -21,7 +21,7 @@ export const registerWithEmailAndPassword = async (email, password) => {
         const result = await createUserWithEmailAndPassword(auth, email, password);
         console.log("REGISTER EMAIL AND PASSWORD", result);
     }catch(error){
-
+        console.log(error);
     }
 };
 

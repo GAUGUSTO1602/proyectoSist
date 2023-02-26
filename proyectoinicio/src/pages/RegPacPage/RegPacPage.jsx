@@ -1,5 +1,5 @@
 // import { signInWithGoogle } from '../../firebase/auth-service';
-import { signInWithGoogle } from '../../firebase/auth-service';
+import { registerWithEmailAndPassword, signInWithGoogle } from '../../firebase/auth-service';
 import './RegPacPage.css'
 import { useState } from 'react';
 
@@ -25,7 +25,8 @@ function RegPacPage() {
 
     const onSubmit = async (event) => {
       event.preventDefault();
-      console.log({formData});
+      const {email, password, ...extraData} =formData;
+      await registerWithEmailAndPassword(formData.email, formData.password, extraData);
     };
 
     const handleSignWithGoogle = async () => {
