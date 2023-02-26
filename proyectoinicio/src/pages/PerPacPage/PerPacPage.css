@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
+
+*{
+    margin: 0;
+    /* padding: 0px;
+    box-sizing: border-box; */
+}
+
+
+
+body{
+    background: #FFFFFF;
+}
+
+.header{
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  top: 0;
+  background: #FFFFFF;
+  
+}
+
+.header nav{
+    height: 100%;
+    width: 100%;
+    /* width: 90%; */
+    /* centrando la cajita */
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header .logo{
+    margin-right: auto;
+}
+
+
+.header .logo img{
+  height: 124px;
+  width: auto;
+  transition: all 0.3s;
+}
+
+.header .foto img{
+    height: 76px;
+    width: auto;
+    transition: all 0.3s;
+    margin-right: 35px;
+  }
+
+.header .flecha img{
+    height: 18px;
+    width: auto;
+    transition: all 0.3s;
+    margin-right: 50px;
+    }
+
+.header .navLinks{
+    cursor: pointer;
+    width: 48.96%;
+
+    /* Quitamos puntitos de la lista que no nos interesa */
+    list-style: none;
+    
+    /* Alineamos el texto horizonalmente */
+    display: flex;
+    justify-content:space-around;
+
+    /* La fuente y tamaño de las letras */
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 23px;
+    
+}
+
+.header .navLinks .item {
+    text-decoration: none;
+}
+
+.rectanguloPP{   
+    position: absolute;
+    width: 289px;
+    height: 232px;
+    left: 30px;
+    top: 250px;
+
+    background: #E5F7F8;
+    border-radius: 20px;
+}
+
+.opcionesP{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 30px;
+    line-height: 28px;
+
+
+    color: #000000;
+}
+
+.op1{
+    position: absolute;
+    width: 210px;
+    height: 28px;
+    left: 65px;
+    top: 279px;
+    
+}
+
+.op2{
+    position: absolute;
+    width: 134px;
+    height: 28px;
+    left: 65px;
+    top: 328px;
+
+}
+
+.op3{
+    position: absolute;
+    width: 62px;
+    height: 28px;
+    left: 65px;
+    top: 377px;
+    
+}
+
+.op4{
+    position: absolute;
+    width: 215px;
+    height: 28px;
+    left: 65px;
+    top: 429px;
+}
+
+.Bchat{
+    position: absolute;
+    width: 186px;
+    height: 36px;
+    left: 99px;
+    top: 554px;
+
+    background: #E5F7F8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.subtitulos1P h4{
+    position: absolute;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 30px;
+    line-height: 28px;
+
+
+    color: #FFFFFF;
+
+}
+
+.subtitulos2P h4{
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
+
+}
+
+.rectangulosP div{
+    position: absolute;
+    background: #2180A5;
+    border-radius: 15px;
+}
+
+
+.recP1{
+    width: 361px;
+    height: 54px;
+    left: 471px;
+    top: 243px;
+
+}
+
+
+.sub1-1p{
+    width: 111px;
+    height: 28px;
+    left: 502px;
+    top: 258px;
+}
+
+.sub2-1p{
+    width: 180px;
+    height: 30px;
+    left: 502px;
+    top: 305px;
+}
+
+
+.recP2{
+    width: 361px;
+    height: 54px;
+    left: 836px;
+    top: 244px;
+
+}
+
+
+.sub1-2p{
+    width: 112px;
+    height: 28px;
+    left: 867px;
+    top: 258px;
+}
+
+.sub2-2p{
+    width: 169px;
+    height: 30px;
+    left: 867px;
+    top: 305px;
+}
+
+
+.recP3{
+    width: 361px;
+    height: 54px;
+    left: 471px;
+    top: 343px;
+
+}
+
+
+.sub1-3p{
+    width: 64px;
+    height: 28px;
+    left: 502px;
+    top: 356px;
+}
+
+.sub2-3p{
+    width: 29px;
+    height: 30px;
+    left: 502px;
+    top: 405px;
+}
+
+
+.recP4{
+    width: 361px;
+    height: 54px;
+    left: 836px;
+    top: 342px;
+
+}
+
+
+.sub1-4p{
+    width: 103px;
+    height: 28px;
+    left: 867px;
+    top: 356px;
+    
+}
+
+.sub2-4p{
+    width: 151px;
+    height: 30px;
+    left: 867px;
+    top: 409px;
+}
+
+
+.recP5-S{
+    width: 729px;
+    height: 54px;
+    left: 471px;
+    top: 441px;
+
+}
+
+
+.sub1-5p{
+    width: 224px;
+    height: 28px;
+    left: 502px;
+    top: 454px;
+    
+}
+
+.sub2-5p{
+    width: 306px;
+    height: 30px;
+    left: 502px;
+    top: 502px;
+}
