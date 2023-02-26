@@ -20,8 +20,9 @@ export function UserContextProvider({children}){
                     name: firebaseUser.displayName,
 
                 })
-            }
-            
+            }else{
+                setUser(null)
+            }            
         });
     }, []);
 

@@ -2,8 +2,20 @@ import Styles from "./HomePage.module.css"
 import { Link } from 'react-router-dom';
 import { LOGIN_URL } from '../../constants/urls';
 import { SelReg_URL } from "../../constants/urls";
+import { useUser } from "../../context/UserContext";
+import { PerPac_URL } from "../../constants/urls";
+import { logout } from "../../firebase/auth-service";
+
 
 function HomePage() {
+    const { user } = useUser();
+
+    console.log(user);
+
+    const handleLogout = async() => {
+        console.log('SALIENDO...');
+        await logout();
+    }
 
   return (
     <div className={Styles.Container}>
@@ -19,18 +31,37 @@ function HomePage() {
                     <li>Home</li>
                     <li>Sobre nosotros</li>
                     <li>Doctores</li>
-                    <li >
-                        <Link to={LOGIN_URL} className={`${Styles.item}`}>
-                            <span>Iniciar Sesión</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to={SelReg_URL}>
-                            <span>Registrarse</span>
-                            
-                        
-                        </Link>
-                    </li>
+                    
+                    
+                    {!!user && 
+                    (<>
+                        <li >
+                            <Link to={PerPac_URL} className={`${Styles.item}`}>
+                                <span> Perfil, {user.name}</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <button type = 'button' onClick={handleLogout}>
+                                Salir
+                            </button>
+                        </li>
+
+                    </>)}
+
+                    {!user && 
+                    (<>
+                        <li >
+                            <Link to={LOGIN_URL} className={`${Styles.item}`}>
+                                <span>Iniciar Sesión</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={SelReg_URL}>
+                                <span>Registrarse</span>
+                            </Link>
+                        </li>
+
+                    </>)}
               </ul>
 
           </nav>

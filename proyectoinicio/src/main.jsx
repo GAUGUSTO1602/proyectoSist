@@ -21,9 +21,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path={HOME_URL} element={<HomePage />} />
             <Route path={LOGIN_URL} element={<LoginPage />} />
             <Route path={SelReg_URL} element={<SelecPage />} />
+            
             <Route path={RegDoc_URL} element={<RegDocPage />} />
-            <Route path={RegPac_URL} element={<RegPacPage/>} />
             <Route path={PerDoc_URL} element={<PerDocPage/>} />
+            
+            
+            <Route path={RegPac_URL} element={<RegPacPage/>} />
             <Route path={PerPac_URL} element={<PerPacPage/>} />
 
           </Route>
