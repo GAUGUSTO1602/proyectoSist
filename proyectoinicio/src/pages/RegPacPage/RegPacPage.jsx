@@ -1,7 +1,14 @@
+// import { signInWithGoogle } from '../../firebase/auth-service';
+import { signInWithGoogle } from '../../firebase/auth-service';
 import './RegPacPage.css'
 
 function RegPacPage() {
 
+    const handleSignWithGoogle = async () => {
+      console.log('registro con google')   
+      await signInWithGoogle();  
+    };
+    
   return (
     <div className='ContainerP'>
       
@@ -87,7 +94,7 @@ function RegPacPage() {
         <div className='linea2P'></div>
 
 
-        <button type="button" className="button2P" id="searchButtom">Continuar con Google</button>
+        <button type="button" className="button2P" id="searchButtom" onClick={handleSignWithGoogle}>Continuar con Google</button>
 
         <img className="logoGoogleP" src="img/google.png" alt="" />
 
