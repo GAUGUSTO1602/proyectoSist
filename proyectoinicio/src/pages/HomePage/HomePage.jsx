@@ -33,7 +33,7 @@ function HomePage() {
       <section className={Styles.block1}>
 
         <div className={Styles.imageBlock1}>
-            <img src="img/Foto inicio.png" alt=""/>
+            <img src="Img\Foto inicio.png" alt=""/>
         </div>
 
         <div className={Styles.textBlock1}>
@@ -50,19 +50,11 @@ function HomePage() {
 
         </div>
     </section>
-    
-    <section>
-        <div className={Styles.rectangulo}>
-            
-        </div>
 
-        <div className={Styles.vector}> 
-            <img src='img/vector.jpg' alt=""/>              
-        </div>
-    </section>
 
     </div>
- 
+
+    
   )
 }
 
