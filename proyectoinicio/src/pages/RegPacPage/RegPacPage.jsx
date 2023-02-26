@@ -1,8 +1,32 @@
 // import { signInWithGoogle } from '../../firebase/auth-service';
 import { signInWithGoogle } from '../../firebase/auth-service';
 import './RegPacPage.css'
+import { useState } from 'react';
 
 function RegPacPage() {
+    
+    const [formData, setFormData] = useState({
+      name: '',
+      surname: '',
+      phone: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      age: 0,
+    });
+    
+    const handleOnChange = (event) => {
+      const {name, value} = event.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      })
+    }
+
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      console.log({formData});
+    };
 
     const handleSignWithGoogle = async () => {
       console.log('registro con google')   
@@ -48,43 +72,46 @@ function RegPacPage() {
 
         </div>
 
+        <form onSubmit = {onSubmit}>
 
-        <input type="text" className="field1P"></input>
+          <input type="text" className="field1P" placeholder='name' name = 'name' onChange={handleOnChange}></input>
 
-        <input type="text" className="field2P"></input>
+          <input type="text" className="field2P" placeholder='surname' name = 'surname' onChange={handleOnChange}></input>
 
-        <input type="text" className="field3P"></input>
+          <input type="text" className="field3P" placeholder='phone' name = 'phone' onChange={handleOnChange}></input>
 
-        <input type="text" className="field4P"></input>
+          <input type="text" className="field4P" placeholder='email' name = 'email' onChange={handleOnChange}></input>
 
-        <input type="text" className="field5P"></input>
+          <input type="text" className="field5P" placeholder='password' name = 'password' onChange={handleOnChange}></input>
 
-        <input type="text" className="field6P"></input>
+          <input type="text" className="field6P" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
 
-        <input type="text" className="field7P"></input>
-
-
-        <div className='radioButtonsP'>
-
-          <label>
-              <input className='b1P' type="radio" value="Si" name='option' />
-            <span></span>
-          </label>
-
-          <label>
-            <input className='b2P' type="radio" value="No" name='option' />
-            <span></span>
-          </label>
-
-          <label>
-            <input className='b3P' type="radio" value="Prefiero no contestar." name='option' />
-            <span></span>
-          </label>
-
-        </div>
+          <input type="text" className="field7P" placeholder='age' name = 'age' onChange={handleOnChange}></input>
 
 
-        <button type="button" className="button1P" id="searchButtom">Crear cuenta</button>
+          <div className='radioButtonsP'>
+
+            <label>
+                <input className='b1P' type="radio" value="Si" name='option' />
+              <span></span>
+            </label>
+
+            <label>
+              <input className='b2P' type="radio" value="No" name='option' />
+              <span></span>
+            </label>
+
+            <label>
+              <input className='b3P' type="radio" value="Prefiero no contestar." name='option' />
+              <span></span>
+            </label>
+
+          </div>
+
+
+          <button type="button" className="button1P" id="searchButtom" onClick={onSubmit}>Crear cuenta</button>
+        </form>
+
 
 
         <h3 className='OP'>O</h3>

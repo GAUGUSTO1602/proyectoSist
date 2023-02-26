@@ -1,7 +1,6 @@
 import "./PerPacPage.css"
 
 function PerPacPage() {
-
     return (
       <div className='Container'>
         

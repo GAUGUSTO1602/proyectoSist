@@ -16,12 +16,12 @@ export function UserContextProvider({children}){
                 //TODO: Update this
                 setUser({
                     id: firebaseUser.uid,
-                    email: firebaseUser.ail,
+                    email: firebaseUser.email,
                     name: firebaseUser.displayName,
 
                 })
             }else{
-                setUser(null)
+                setUser(null);
             }            
         });
     }, []);
