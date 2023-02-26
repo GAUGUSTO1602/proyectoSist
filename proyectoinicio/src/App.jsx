@@ -6,101 +6,133 @@ function App() {
   return (
     <div className='Container'>
       
+      <header className="header">
+          <nav>
+              
+              <div className="logo">
+                  <img src="img/Logo.png" alt="" />
+              </div>
 
-        <div className='bloque1'>
-            <h1 className='titulo'>¡Bienvenidos a Psicopana!</h1>
-            <img class="imagen" src="img/Logo.png" alt="" />
-        </div>
+              <ul className="navLinks">
+                    <li>Home</li>
+                    <li>Pacientes</li>
+                    <li>Mi perfil</li>
+              </ul>
 
-        <div className='rectangulo'></div>
+              <div className="foto">
+                  <img src="img/fotoPerfil.png" alt="" />
+              </div>
 
-        <h3 className='titulo2'>Regístrate como paciente.</h3>
+              <div className="flecha">
+                  <img src="img/flecha.png" alt="" />
+              </div>
 
-        <div className='subtitulos'>
+          </nav>
 
-          <h5 className='sub1'>Nombres</h5>
+      </header>
 
-          <h5 className='sub2'>Apellidos</h5>
+      <div className='rectanguloPD'></div>
 
-          <h5 className='sub3'>Número de teléfono</h5>
+      <div className='opcionesD'>
 
-          <h5 className='sub4'>Correo electrónico</h5>
+        <h4 className='od1'>Datos personales</h4>
 
-          <h5 className='sub5'>Contraseña</h5>
+        <h4 className='od2'>Citas programadas</h4>
 
-          <h5 className='sub6'>Confirmar contraseña</h5>
+        <h4 className='od3'>Chats archivados</h4>
 
-          <h5 className='sub7'>Edad</h5>
+      </div>
 
-          <h5 className='sub8'>Universidad donde estudio</h5>
+      <button className='Bchat'>Comenzar chat</button>
 
-          <h5 className='sub9'>Carrerra</h5>
+      <div className='rectangulosD'>
 
-          <h5 className='sub10'>Licencia</h5>
+        <div className='recD1'></div>
 
-          <h5 className='sub11'>Universidad donde estudio</h5>
+        <div className='recD2'></div>
 
-          <h5 className='sub12'>Especialidad</h5>
+        <div className='recD3'></div>
 
-          <h5 className='sub13'>Licencia</h5>
+        <div className='recD4'></div>
 
-          <h5 className='sub14'>Agregar especialidad +</h5>
+        <div className='recD5-S'></div>
 
-          <h5 className='sub15'>Experiencia laboral</h5>
+        <div className='recD6'></div>
 
+        <div className='recD7'></div>
 
-        </div>
+        <div className='recD8'></div>
 
+        <div className='recD9'></div>
 
-        <input type="text" class="field1"></input>
+        <div className='recD10'></div>
 
-        <input type="text" class="field2"></input>
+        <div className='recD11'></div>
 
-        <input type="text" class="field3"></input>
+        <div className='recD12'></div>
 
-        <input type="text" class="field4"></input>
-
-        <input type="text" class="field5"></input>
-
-        <input type="text" class="field6"></input>
-
-        <input type="text" class="field7"></input>
-
-        <input type="text" class="field8"></input>
-
-        <input type="text" class="field9"></input>
-
-        <input type="text" class="field10"></input>
-
-        <input type="text" class="field11"></input>
-
-        <input type="text" class="field12"></input>
-
-        <input type="text" class="field13"></input>
-
-        <input type="text" class="field14"></input>
+      </div>
 
 
+      <div className='subtitulos1D'>
 
-        <button type="button" class="button1" id="searchButtom">Crear cuenta</button>
+        <h4 className='sub1-1d'>Nombres</h4>
+
+        <h4 className='sub1-2d'>Apellidos</h4>
+
+        <h4 className='sub1-3d'>Edad</h4>
+
+        <h4 className='sub1-4d'>Teléfono</h4>
+
+        <h4 className='sub1-5d'>Correo electrónico</h4>
+
+        <h4 className='sub1-6d'>Universidad de estudio</h4>
+
+        <h4 className='sub1-7d'>Universidad de estudio</h4>
+
+        <h4 className='sub1-8d'>Carrera</h4>
+
+        <h4 className='sub1-9d'>Especialidad</h4>
+
+        <h4 className='sub1-10d'>Licencia</h4>
+
+        <h4 className='sub1-11d'>Licencia</h4>
+
+        <h4 className='sub1-12d'>Experiencia laboral</h4>
+
+      </div>
+
+      <div className='subtitulos2D'>
+
+        <h4 className='sub2-1d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-2d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-3d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-4d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-5d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-6d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-7d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-8d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-9d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-10d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-11d'>xxxxxxxxxxx</h4>
+
+        <h4 className='sub2-12d'>xxxxxxxxxxx</h4>
+
+      </div>
 
 
-        <h3 className='O'>O</h3>
 
-        <div className='linea1'></div>
-
-        <div className='linea2'></div>
-
-
-        <button type="button" class="button2" id="searchButtom">Continuar con Google</button>
-
-        <img class="logoGoogle" src="img/google.png" alt="" />
-
-        <h3 className='titulo3'>¿Ya tienes cuenta? Inicia sesión aquí.</h3>
-
-        <h5 className='titulo4'>Todos los derechos reservados</h5>
-
-
+      
 
 
 
