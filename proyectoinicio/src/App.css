@@ -84,10 +84,10 @@ body{
     text-decoration: none;
 }
 
-.rectanguloPD{   
+.rectanguloPP{   
     position: absolute;
-    width: 323px;
-    height: 225px;
+    width: 289px;
+    height: 232px;
     left: 30px;
     top: 250px;
 
@@ -95,7 +95,7 @@ body{
     border-radius: 20px;
 }
 
-.opcionesD{
+.opcionesP{
     font-family: 'League Spartan';
     font-style: normal;
     font-weight: 400px;
@@ -106,29 +106,39 @@ body{
     color: #000000;
 }
 
-.od1{
+.op1{
     position: absolute;
     width: 210px;
     height: 28px;
     left: 65px;
     top: 279px;
+    
 }
 
-.od2{
+.op2{
     position: absolute;
-    width: 238px;
+    width: 134px;
     height: 28px;
     left: 65px;
-    top: 341px;
+    top: 328px;
 
 }
 
-.od3{
+.op3{
+    position: absolute;
+    width: 62px;
+    height: 28px;
+    left: 65px;
+    top: 377px;
+    
+}
+
+.op4{
     position: absolute;
     width: 215px;
     height: 28px;
     left: 65px;
-    top: 398px;
+    top: 429px;
 }
 
 .Bchat{
@@ -143,7 +153,7 @@ body{
     border-radius: 15px;
 }
 
-.subtitulos1D h4{
+.subtitulos1P h4{
     position: absolute;
     font-family: 'League Spartan';
     font-style: normal;
@@ -156,7 +166,7 @@ body{
 
 }
 
-.subtitulos2D h4{
+.subtitulos2P h4{
     position: absolute;
     font-family: 'Montserrat';
     font-style: normal;
@@ -168,14 +178,14 @@ body{
 
 }
 
-.rectangulosD div{
+.rectangulosP div{
     position: absolute;
     background: #2180A5;
     border-radius: 15px;
 }
 
 
-.recD1{
+.recP1{
     width: 361px;
     height: 54px;
     left: 471px;
@@ -184,14 +194,14 @@ body{
 }
 
 
-.sub1-1d{
+.sub1-1p{
     width: 111px;
     height: 28px;
     left: 502px;
     top: 258px;
 }
 
-.sub2-1d{
+.sub2-1p{
     width: 180px;
     height: 30px;
     left: 502px;
@@ -199,7 +209,7 @@ body{
 }
 
 
-.recD2{
+.recP2{
     width: 361px;
     height: 54px;
     left: 836px;
@@ -208,14 +218,14 @@ body{
 }
 
 
-.sub1-2d{
+.sub1-2p{
     width: 112px;
     height: 28px;
     left: 867px;
     top: 258px;
 }
 
-.sub2-2d{
+.sub2-2p{
     width: 169px;
     height: 30px;
     left: 867px;
@@ -223,7 +233,7 @@ body{
 }
 
 
-.recD3{
+.recP3{
     width: 361px;
     height: 54px;
     left: 471px;
@@ -232,14 +242,14 @@ body{
 }
 
 
-.sub1-3d{
+.sub1-3p{
     width: 64px;
     height: 28px;
     left: 502px;
     top: 356px;
 }
 
-.sub2-3d{
+.sub2-3p{
     width: 29px;
     height: 30px;
     left: 502px;
@@ -247,7 +257,7 @@ body{
 }
 
 
-.recD4{
+.recP4{
     width: 361px;
     height: 54px;
     left: 836px;
@@ -256,7 +266,7 @@ body{
 }
 
 
-.sub1-4d{
+.sub1-4p{
     width: 103px;
     height: 28px;
     left: 867px;
@@ -264,7 +274,7 @@ body{
     
 }
 
-.sub2-4d{
+.sub2-4p{
     width: 151px;
     height: 30px;
     left: 867px;
@@ -272,7 +282,7 @@ body{
 }
 
 
-.recD5-S{
+.recP5-S{
     width: 729px;
     height: 54px;
     left: 471px;
@@ -281,7 +291,7 @@ body{
 }
 
 
-.sub1-5d{
+.sub1-5p{
     width: 224px;
     height: 28px;
     left: 502px;
@@ -289,186 +299,9 @@ body{
     
 }
 
-.sub2-5d{
+.sub2-5p{
     width: 306px;
     height: 30px;
     left: 502px;
     top: 502px;
-}
-
-.recD6{
-    width: 361px;
-    height: 54px;
-    left: 471px;
-    top: 541px;
-
-}
-
-
-.sub1-6d{
-    width: 281px;
-    height: 28px;
-    left: 502px;
-    top: 554px;
-    
-}
-
-.sub2-6d{
-    width: 56px;
-    height: 30px;
-    left: 502px;
-    top: 607px;
-}
-
-
-.recD7{
-    width: 361px;
-    height: 54px;
-    left: 839px;
-    top: 541px;
-
-}
-
-
-.sub1-7d{
-    width: 281px;
-    height: 28px;
-    left: 867px;
-    top: 554px;
-    
-}
-
-.sub2-7d{
-    width: 56px;
-    height: 30px;
-    left: 866px;
-    top: 607px;
-}
-
-
-.recD8{
-    width: 361px;
-    height: 54px;
-    left: 471px;
-    top: 649px;
-
-}
-
-
-.sub1-8d{
-    width: 97px;
-    height: 28px;
-    left: 502px;
-    top: 662px;
-    
-}
-
-.sub2-8d{
-    width: 128px;
-    height: 30px;
-    left: 506px;
-    top: 715px;
-}
-
-
-.recD9{
-    width: 361px;
-    height: 54px;
-    left: 839px;
-    top: 649px;
-
-}
-
-
-.sub1-9d{
-    width: 155px;
-    height: 28px;
-    left: 866px;
-    top: 662px;
-    
-    
-}
-
-.sub2-9d{
-    width: 156px;
-    height: 30px;
-    left: 866px;
-    top: 715px;
-}
-
-
-.recD10{
-    width: 361px;
-    height: 54px;
-    left: 471px;
-    top: 757px;
-
-}
-
-
-.sub1-10d{
-    width: 98px;
-    height: 28px;
-    left: 502px;
-    top: 770px;
-    
-    
-}
-
-.sub2-10d{
-    width: 147px;
-    height: 30px;
-    left: 502px;
-    top: 823px;
-}
-
-
-.recD11{
-    width: 361px;
-    height: 54px;
-    left: 836px;
-    top: 757px;
-
-}
-
-
-.sub1-11d{
-    width: 98px;
-    height: 28px;
-    left: 866px;
-    top: 770px;
-    
-    
-}
-
-.sub2-11d{
-    width: 147px;
-    height: 30px;
-    left: 866px;
-    top: 823px;
-}
-
-
-.recD12{
-    width: 361px;
-    height: 54px;
-    left: 471px;
-    top: 865px;
-
-}
-
-
-.sub1-12d{
-    width: 237px;
-    height: 28px;
-    left: 506px;
-    top: 878px;
-    
-}
-
-.sub2-12d{
-    width: 87px;
-    height: 30px;
-    left: 502px;
-    top: 931px;
 }
