@@ -9,18 +9,24 @@ import RegPacPage from './pages/RegPacPage/RegPacPage';
 import PerDocPage from './pages/PerDocPage/PerDocPage';
 import PerPacPage from './pages/PerPacPage/PerPacPage';
 import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL } from './constants/urls'
+import { Layout } from './components/Layout/Layout';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-          <Route path={HOME_URL} element={<HomePage />} />
-          <Route path={LOGIN_URL} element={<LoginPage />} />
-          <Route path={SelReg_URL} element={<SelecPage />} />
-          <Route path={RegDoc_URL} element={<RegDocPage />} />
-          <Route path={RegPac_URL} element={<RegPacPage/>} />
-          <Route path={PerDoc_URL} element={<PerDocPage/>} />
-          <Route path={PerPac_URL} element={<PerPacPage/>} />
+
+          <Route element = {<Layout/>}>
+
+            <Route path={HOME_URL} element={<HomePage />} />
+            <Route path={LOGIN_URL} element={<LoginPage />} />
+            <Route path={SelReg_URL} element={<SelecPage />} />
+            <Route path={RegDoc_URL} element={<RegDocPage />} />
+            <Route path={RegPac_URL} element={<RegPacPage/>} />
+            <Route path={PerDoc_URL} element={<PerDocPage/>} />
+            <Route path={PerPac_URL} element={<PerPacPage/>} />
+
+          </Route>
     
 
 
