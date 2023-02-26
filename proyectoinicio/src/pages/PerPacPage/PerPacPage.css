@@ -58,7 +58,51 @@ body{
     width: auto;
     transition: all 0.3s;
     margin-right: 50px;
+    margin-top: 58px;
     }
+
+.cuadrado{
+    position: absolute;
+    width: 175px;
+    height: 40px;
+    left: 1300px;
+    top: 88px;
+
+    background: #E5F7F8;
+    border-radius: 20px;
+
+    display: none;
+}
+
+
+.logOut{
+    list-style: none;
+    position: absolute;
+    width: 175px;
+    height: 76px;
+    left: 1323px;
+    top: 95px;
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 25px;
+    line-height: 23px;
+
+
+    color: red;
+
+    display: none;
+    }
+
+.flecha:hover > li{
+    display: block;
+    }
+
+.flecha:hover > div{
+    display: block;
+    }
+    
 
 .header .navLinks{
     cursor: pointer;

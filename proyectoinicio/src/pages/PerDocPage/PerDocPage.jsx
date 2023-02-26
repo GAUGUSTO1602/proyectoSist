@@ -23,7 +23,9 @@ function PerDocPage() {
               </div>
 
               <div className="flecha">
-                  <img src="img/flecha.png" alt="" />
+                    <img src="img/flecha.png" alt="" />
+                    <div className="cuadrado"></div>
+                    <li className="logOut">Cerrar sesion</li>
               </div>
 
           </nav>
