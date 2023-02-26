@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from 'firebase/auth'
+import { GoogleAuthProvider, getAuth } from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
 import {getStorage} from 'firebase/storage'
 
@@ -22,3 +22,6 @@ const analytics = getAnalytics(app);
 export const auth = getAuth(app) // Conexion con el modulo de Autenticacion de Firebase
 export const db = getFirestore(app) // Conexion con el modulo de Base de datos de Firebase
 export const store = getStorage(app) // Conexion con el modulo de Storage de Firebase
+
+export const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({prompt: "select_account"});
