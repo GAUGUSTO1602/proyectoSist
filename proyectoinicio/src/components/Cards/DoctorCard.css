@@ -1,7 +1,9 @@
 .container{
-  display: flex;
+  display: inline-block;
+  margin-top: 5%;
+  margin-inline: 3%;
+  margin-left: 5%;
 }
-
 .doctor-card {
   display: grid;
   grid-gap: 10px;
@@ -11,7 +13,12 @@
   border-radius: 5px;
   width: 360px;
   font-family: 'League Spartan';
-
+  cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.2s;
+}
+.doctor-card:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .doctor-card img {
@@ -21,7 +28,7 @@
 }
 
 .doctor-card h2 {
-  margin: 0;
+  margin: 2%;
   font-size: 200%;
   text-align: center;
   color: #fff;
@@ -36,6 +43,11 @@
 .doctor-card p {
   margin: 0;
   font-size: 1rem;
+}
+
+.doctor-card .info {
+  padding: 4%;
+  line-height: 180%;
 }
 
 .doctor-card button {

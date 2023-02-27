@@ -6,12 +6,9 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import SelecPage from './pages/SelecPage/SelecPage';
 import RegDocPage from './pages/RegDocPage/RegDocPage';
 import RegPacPage from './pages/RegPacPage/RegPacPage';
-import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL } from './constants/urls'
-import * as bootstrap from 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Doctors from './pages/Doctors/Doctors';
+import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, DOCTORS_URL } from './constants/urls'
 
-import * as bootstrap from 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -23,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path={SelReg_URL} element={<SelecPage />} />
           <Route path={RegDoc_URL} element={<RegDocPage />} />
           <Route path={RegPac_URL} element={<RegPacPage/>} />
+          <Route path={DOCTORS_URL} element={<Doctors/>} />
     
 
 

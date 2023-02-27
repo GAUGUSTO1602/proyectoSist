@@ -16,7 +16,7 @@ function LoginPage() {
   };
 
   const onFail = (_error) => {
-    console.log("FALLO AL INICIAR SESION, Intenbte de nuevo");
+    console.log("FALLO AL INICIAR SESION, Intente de nuevo");
   };
 
   const onSubmit = async (event) => {
