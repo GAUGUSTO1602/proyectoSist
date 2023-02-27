@@ -7,10 +7,10 @@ function NavBar() {
   return (
     <div>
         <header className={Styles.header}>
-            <nav>                            
                 <div className={Styles.logo}>
                     <img src="img/Logo.png" alt="" />
                 </div>
+            <nav>                            
 
                 <ul className={Styles.navLinks}>
                     <li>

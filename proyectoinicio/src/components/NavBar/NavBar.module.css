@@ -15,16 +15,15 @@
       height: 100%;
       width: 100%;
       /* centrando la cajita */
-      display:flex;
       justify-content: space-between;
       align-items: center;
-      margin-top:1%;
+      margin-top:2.3%;
   }
   
-  .header .logo img{
+  .logo img{
     height: 100px;
     width: auto;
-    margin-top: -20%;
+    margin-top: -5%;
     transition: all 0.3s;
   }
   
@@ -46,6 +45,7 @@
       font-size: 25px;
       line-height: 23px;
       color: #FFFFFF;
+      margin-left: 50%;
       
   }
   
