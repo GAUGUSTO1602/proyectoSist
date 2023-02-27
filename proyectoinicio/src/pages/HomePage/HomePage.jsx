@@ -36,6 +36,7 @@ function HomePage() {
 
         <div className={Styles.imageBlock1}>
             <img src="img/Foto inicio.png" alt=""/>
+            <img src="img/Foto inicio.png" alt=""/>
         </div>
 
         <div className={Styles.textBlock1}>
@@ -95,6 +96,7 @@ function HomePage() {
 
 
     </div>
+ 
  
   )
 }

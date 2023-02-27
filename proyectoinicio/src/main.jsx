@@ -10,6 +10,9 @@ import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL } from './consta
 import * as bootstrap from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import * as bootstrap from 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
