@@ -1,7 +1,7 @@
 import Styles from "./HomePage.module.css"
-import DoctorCard from './../../components/Cards/DoctorCard';
 import { Link } from 'react-router-dom';
 import { LOGIN_URL } from '../../constants/urls';
+import { DOCTORS_URL } from "../../constants/urls";
 
 
 function HomePage() {
@@ -17,15 +17,28 @@ function HomePage() {
               </div>
 
               <ul className={Styles.navLinks}>
-                    <li>Home</li>
-                    <li>Sobre nosotros</li>
-                    <li>Doctores</li>
-                    <li >
-                        <Link to={LOGIN_URL} className={`${Styles.item}`}>
-                            <span>Iniciar Sesión</span>
+                    <li>HomePage</li>
+                    <li>
+                        <Link to={DOCTORS_URL} className={`${Styles.item}`}>
+                            <span>Doctores</span>
                         </Link>
+
                     </li>
-                    <li>Registrarse</li>
+                    <li>
+                        <button className={Styles.inicio}>
+                            <Link to={LOGIN_URL} className={`${Styles.item}`}>
+                                <span>Iniciar Sesión</span>
+                            </Link>
+                        </button>
+                        
+                    </li>
+                    <li>
+                        <button className={Styles.registro}>
+                                <Link to={LOGIN_URL} className={`${Styles.item}`}>
+                                    <span>Registrarse</span>
+                                </Link>
+                        </button>
+                    </li>
               </ul>
 
           </nav>
@@ -36,7 +49,7 @@ function HomePage() {
 
         <div className={Styles.imageBlock1}>
             <img src="img/Foto inicio.png" alt=""/>
-            <img src="img/Foto inicio.png" alt=""/>
+
         </div>
 
         <div className={Styles.textBlock1}>
@@ -62,36 +75,6 @@ function HomePage() {
         <div className={Styles.vector}> 
             <img src='img/vector.jpg' alt=""/>              
         </div>
-    </section>
-
-    <section >
-
-        <DoctorCard 
-            Nombre="Dr. Maria Carreño Pérez"
-            Género="Género: Femenino"
-            Edad='Edad: 40 años'
-            Especialización="Especialidad: Cardiologo"
-            Experiencia='Experiencia laboral: 10 años'
-            Imagen="img/p1.jpeg"
-        />
-
-        <DoctorCard 
-            Nombre="Dr. Maria Carreño Pérez"
-            Género="Género: Femenino"
-            Edad='Edad: 40 años'
-            Especialización="Especialidad: Cardiologo"
-            Experiencia='Experiencia laboral: 10 años'
-            Imagen="img/p1.jpeg"
-        /> 
-        
-        <DoctorCard 
-            Nombre="Dr. Maria Carreño Pérez"
-            Género="Género: Femenino"
-            Edad='Edad: 40 años'
-            Especialización="Especialidad: Cardiologo"
-            Experiencia='Experiencia laboral: 10 años'
-            Imagen="img/p1.jpeg"
-        />
     </section>
 
 
