@@ -2,8 +2,12 @@
 import { registerWithEmailAndPassword, signInWithGoogle } from '../../firebase/auth-service';
 import './RegPacPage.css'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HOME_URL } from '../../constants/urls';
 
 function RegPacPage() {
+    
+    const navigate = useNavigate();
     
     const [formData, setFormData] = useState({
       name: '',
@@ -13,6 +17,7 @@ function RegPacPage() {
       password: '',
       confirmPassword: '',
       age: 0,
+      rol:'paciente'
     });
     
     const handleOnChange = (event) => {
@@ -27,6 +32,7 @@ function RegPacPage() {
       event.preventDefault();
       const {email, password, ...extraData} =formData;
       await registerWithEmailAndPassword(formData.email, formData.password, extraData);
+      navigate(HOME_URL);
     };
 
     const handleSignWithGoogle = async () => {
