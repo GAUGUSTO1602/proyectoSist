@@ -45,19 +45,36 @@ function HomePage() {
             </div>
 
             <div className={Styles.parragraphBlock1}>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type spublishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Uno puede elegir por ir hacia la seguridad o por avanzar hacia el crecimiento. El crecimiento debe ser elegido una y otra vez; el miedo debe superarse una y otra vez.</p>
+                <br />
+                <p>Abraham Maslow</p>
+            </div>
+
+            <h2 className={Styles.subtituloH}>¿Cómo funcionan nuestros servicios?</h2>
+
+
+            <div className={Styles.pasos}>
+
+                <h2>Paso 1: Registarse o iniciar sesión</h2>
+                <br />
+                <h2>Paso 2: Escoger un doctor</h2>
+                <br />
+                <h2>Paso 3: Agendar una cita con el doctor seleccionado</h2>
+                <br />
+                <h2>Paso 4: Acceder al chat el día agendado</h2>
+
             </div>
 
         </div>
     </section>
     
     <section>
-        <div className={Styles.rectangulo}>
+        <div className={Styles.rectanguloH}>
             
         </div>
 
         <div className={Styles.vector}> 
-            <img src='img/vector.jpg' alt=""/>              
+            <img src='img/vector.png' alt=""/>              
         </div>
     </section>
 
