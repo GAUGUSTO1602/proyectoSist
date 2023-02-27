@@ -1,6 +1,8 @@
 import Styles from "./HomePage.module.css"
+import DoctorCard from './../../components/Cards/DoctorCard';
 import { Link } from 'react-router-dom';
 import { LOGIN_URL } from '../../constants/urls';
+
 
 function HomePage() {
 
@@ -33,7 +35,7 @@ function HomePage() {
       <section className={Styles.block1}>
 
         <div className={Styles.imageBlock1}>
-            <img src="Img\Foto inicio.png" alt=""/>
+            <img src="img/Foto inicio.png" alt=""/>
         </div>
 
         <div className={Styles.textBlock1}>
@@ -50,11 +52,50 @@ function HomePage() {
 
         </div>
     </section>
+    
+    <section>
+        <div className={Styles.rectangulo}>
+            
+        </div>
+
+        <div className={Styles.vector}> 
+            <img src='img/vector.jpg' alt=""/>              
+        </div>
+    </section>
+
+    <section >
+
+        <DoctorCard 
+            Nombre="Dr. Maria Carreño Pérez"
+            Género="Género: Femenino"
+            Edad='Edad: 40 años'
+            Especialización="Especialidad: Cardiologo"
+            Experiencia='Experiencia laboral: 10 años'
+            Imagen="img/p1.jpeg"
+        />
+
+        <DoctorCard 
+            Nombre="Dr. Maria Carreño Pérez"
+            Género="Género: Femenino"
+            Edad='Edad: 40 años'
+            Especialización="Especialidad: Cardiologo"
+            Experiencia='Experiencia laboral: 10 años'
+            Imagen="img/p1.jpeg"
+        /> 
+        
+        <DoctorCard 
+            Nombre="Dr. Maria Carreño Pérez"
+            Género="Género: Femenino"
+            Edad='Edad: 40 años'
+            Especialización="Especialidad: Cardiologo"
+            Experiencia='Experiencia laboral: 10 años'
+            Imagen="img/p1.jpeg"
+        />
+    </section>
 
 
     </div>
-
-    
+ 
   )
 }
 

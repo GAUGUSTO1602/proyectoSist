@@ -7,6 +7,9 @@ import SelecPage from './pages/SelecPage/SelecPage';
 import RegDocPage from './pages/RegDocPage/RegDocPage';
 import RegPacPage from './pages/RegPacPage/RegPacPage';
 import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL } from './constants/urls'
+import * as bootstrap from 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
