@@ -1,106 +1,104 @@
 import React from 'react'
 import DoctorCard from './../../components/Cards/DoctorCard';
-import Styles from './Doctors.css';
+import NavBar from '../../components/NavBar/NavBar';
+
 
 function Doctors() {
   return (
-    <div>
-
-      <section >
+    <>
+        <NavBar/>
+        <div>    
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
+            
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
+            
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
         
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
-        
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
-        
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
-       
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
-
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
 
             <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
-        
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
-        
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
-       
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
 
-          <DoctorCard 
-              Nombre="Dr. Maria Carreño Pérez"
-              Género="Femenino"
-              Edad='40 años'
-              Especialización="Psicología infantil"
-              Experiencia='10 años'
-              Imagen="img/p1.jpeg"
-          />
+                <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
+            
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
+            
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
         
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
 
-      </section>
-    </div>
+            <DoctorCard 
+                Nombre="Dr. Maria Carreño Pérez"
+                Género="Femenino"
+                Edad='40 años'
+                Especialización="Psicología infantil"
+                Experiencia='10 años'
+                Imagen="img/p1.jpeg"
+            />
+        </div>
+    </>
   )
 }
 

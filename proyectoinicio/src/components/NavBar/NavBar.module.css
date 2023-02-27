@@ -5,23 +5,21 @@
     z-index: 100;
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 90px;
     top: 0;
-    background-color: #FFFFFF;
-    
+    background-color: #2180A5;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 4px 15px 0 rgba(0,0,0,0.19);
   }
   
   .header nav{
       height: 100%;
       width: 100%;
-      /* width: 90%; */
       /* centrando la cajita */
       display:flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 1%;
+      margin-top:1%;
   }
-  
   
   .header .logo img{
     height: 100px;
@@ -47,10 +45,48 @@
       font-weight: 400;
       font-size: 25px;
       line-height: 23px;
+      color: #FFFFFF;
       
+  }
+  
+  .inicio {
+      background-color: #E5F7F8;
+      border: 2px solid #FFFFFF; 
+      width: 110%;
+      height: 150%;
+      font-family: 'League Spartan';
+      font-style: normal;
+      font-size: 25px;
+      text-align: center;
+      margin-top: -4%;
+      border-radius: 6px;
+  }
+
+  .inicio:hover{
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 4px 15px 0 rgba(0,0,0,0.19);
+  }
+
+  
+  .registro {
+      background-color: #2180A5;
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF; 
+      width: 130%;
+      height: 150%;
+      font-family: 'League Spartan';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 23px;
+      text-align: center;
+      margin-top: -4%;
+      margin-left: -20%;
+      border-radius: 6px;
+  }
+  .registro:hover{
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 4px 15px 0 rgba(0,0,0,0.19);
   }
   
   .header .navLinks .item {
       text-decoration: none;
   }
-  
