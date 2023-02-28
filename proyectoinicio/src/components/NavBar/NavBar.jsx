@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from "./NavBar.module.css"
 import { Link } from 'react-router-dom';
-import {HOME_URL,LOGIN_URL,DOCTORS_URL } from '../../constants/urls'
+import {HOME_URL,LOGIN_URL,DOCTORS_URL, SelReg_URL } from '../../constants/urls'
 
 function NavBar() {
   return (
@@ -34,7 +34,7 @@ function NavBar() {
                     </li>
                     <li>
                         <button className={Styles.registro}>
-                                <Link to={LOGIN_URL} className={`${Styles.item}`}>
+                                <Link to={SelReg_URL} className={`${Styles.item}`}>
                                     <span>Registrarse</span>
                                 </Link>
                         </button>
