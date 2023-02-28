@@ -1,8 +1,19 @@
 import "./PerDocPage.css"
 import { Link } from "react-router-dom";
-import { CHAT_URL } from "../../constants/urls";
+import { CHAT_URL, HOME_URL } from "../../constants/urls";
+import { useUser } from "../../context/UserContext";
+import { logout } from "../../firebase/auth-service";
 
 function PerDocPage() {
+
+  const { user } = useUser();
+
+    console.log(user);
+
+    const handleLogout = async() => {
+        console.log('SALIENDO...');
+        await logout();
+    }
 
   return (
     <div className='Container'>
@@ -15,9 +26,10 @@ function PerDocPage() {
               </div>
 
               <ul className="navLinks">
-                    <li>Home</li>
-                    <li>Pacientes</li>
-                    <li>Mi perfil</li>
+                  <Link to={HOME_URL}>
+                      <li>Home</li>
+                  </Link>
+                      <li>Pacientes</li>
               </ul>
 
               <div className="foto">
@@ -27,7 +39,12 @@ function PerDocPage() {
               <div className="flecha">
                     <img src="img/flecha.png" alt="" />
                     <div className="cuadrado"></div>
-                    <li className="logOut">Cerrar sesion</li>
+                    <li className="logOut">
+                      <button type = 'button' onClick={handleLogout}>
+                        Salir
+                      </button>
+                    </li>
+                    
               </div>
 
           </nav>

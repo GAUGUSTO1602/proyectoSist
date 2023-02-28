@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HOME_URL } from '../../constants/urls';
+import { Link } from 'react-router-dom';
+import { HOME_URL, LOGIN_URL } from '../../constants/urls';
 import { registerWithEmailAndPassword, signInWithGoogleDoctor } from '../../firebase/auth-service';
 import './RegDocPage.css'
 
@@ -143,7 +144,12 @@ function RegDocPage() {
 
         <img className="logoGoogleD" src="img/google.png" alt="" />
 
-        <h3 className='titulo3D'>¿Ya tienes cuenta? Inicia sesión aquí.</h3>
+       
+
+        <Link to={LOGIN_URL} className='titulo3D'>
+            ¿Ya tienes cuenta?{" "}
+            <span className="enlace">Inicia sesión aquí</span>
+        </Link>
 
         <h5 className='titulo4D'>Todos los derechos reservados</h5>
 

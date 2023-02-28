@@ -1,8 +1,20 @@
 import "./PerPacPage.css"
-import { CHAT_URL } from "../../constants/urls";
+import { CHAT_URL, HOME_URL, DOCTORS_URL } from "../../constants/urls";
 import { Link } from "react-router-dom";
+import { useUser } from "../../context/UserContext";
+import { logout } from "../../firebase/auth-service";
 
 function PerPacPage() {
+
+  const { user } = useUser();
+
+  console.log(user);
+
+  const handleLogout = async() => {
+      console.log('SALIENDO...');
+      await logout();
+  }
+
     return (
       <div className='Container'>
         
@@ -14,9 +26,12 @@ function PerPacPage() {
                 </div>
   
                 <ul className="navLinks">
+                  <Link to={HOME_URL}>
                       <li>Home</li>
+                  </Link>
+                  <Link to={DOCTORS_URL}>
                       <li>Doctores</li>
-                      <li>Mi perfil</li>
+                  </Link>
                 </ul>
   
                 <div className="foto">
@@ -26,7 +41,11 @@ function PerPacPage() {
                 <div className="flecha">
                     <img src="img/flecha.png" alt="" />
                     <div className="cuadrado"></div>
-                    <li className="logOut">Cerrar sesion</li>
+                    <li className="logOut">
+                      <button type = 'button' onClick={handleLogout}>
+                        Salir
+                      </button>
+                    </li>
                 </div>
   
             </nav>

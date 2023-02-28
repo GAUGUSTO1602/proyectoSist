@@ -3,7 +3,8 @@ import { registerWithEmailAndPassword, signInWithGooglePatient } from '../../fir
 import './RegPacPage.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HOME_URL } from '../../constants/urls';
+import { HOME_URL, LOGIN_URL } from '../../constants/urls';
+import { Link } from 'react-router-dom';
 
 function RegPacPage() {
     
@@ -133,7 +134,11 @@ function RegPacPage() {
 
         <img className="logoGoogleP" src="img/google.png" alt="" />
 
-        <h3 className='titulo3P'>¿Ya tienes cuenta? Inicia sesión aquí.</h3>
+
+        <Link to={LOGIN_URL} className='titulo3P'>
+            ¿Ya tienes cuenta?{" "}
+            <span className="enlace">Inicia sesión aquí</span>
+        </Link>
 
         <h5 className='titulo4P'>Todos los derechos reservados</h5>
 
