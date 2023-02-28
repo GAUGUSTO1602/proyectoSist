@@ -1,6 +1,6 @@
 import Styles from "./HomePage.module.css"
 import { Link } from 'react-router-dom';
-import { LOGIN_URL } from '../../constants/urls';
+import { LOGIN_URL, PerDoc_URL } from '../../constants/urls';
 import { SelReg_URL } from "../../constants/urls";
 import { useUser } from "../../context/UserContext";
 import { PerPac_URL } from "../../constants/urls";
@@ -42,11 +42,34 @@ function HomePage() {
                                        
                     {!!user && 
                     (<>
-                        <li >
+                        {/* <li >
                             <Link to={PerPac_URL} className={`${Styles.item}`}>
                                 <span> Perfil, {user.name}</span>
                             </Link>
-                        </li>
+                        </li> */}
+
+                        {user.rol == 'paciente' && (
+                            <>
+                            
+                                <li >
+                                    <Link to={PerPac_URL} className={`${Styles.item}`}>
+                                        <span> Perfil, {user.name}</span>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+
+                        {user.rol == 'doctor' && (
+                            <>
+                                <li >
+                                    <Link to={PerDoc_URL} className={`${Styles.item}`}>
+                                        <span> Perfil, {user.name}</span>
+                                    </Link>
+                                </li>
+                            
+                            </>
+                        )}
+
                         <li>
                             <button type = 'button' onClick={handleLogout}>
                                 Salir

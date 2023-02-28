@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from "./NavBar.module.css"
 import { Link } from 'react-router-dom';
-import {HOME_URL,LOGIN_URL,DOCTORS_URL, SelReg_URL, PerPac_URL } from '../../constants/urls'
+import {HOME_URL,LOGIN_URL,DOCTORS_URL, SelReg_URL, PerPac_URL, PerDoc_URL } from '../../constants/urls'
 import { useUser } from '../../context/UserContext';
 import { logout } from '../../firebase/auth-service';
 
@@ -57,11 +57,30 @@ function NavBar() {
 
                     {!!user && 
                     (<>
-                        <li >
-                            <Link to={PerPac_URL} className={`${Styles.item}`}>
-                                <span> Perfil, {user.name}</span>
-                            </Link>
-                        </li>
+
+                        {user.rol == 'paciente' && (
+                            <>
+                            
+                                <li >
+                                    <Link to={PerPac_URL} className={`${Styles.item}`}>
+                                        <span> Perfil, {user.name}</span>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+
+                        {user.rol == 'doctor' && (
+                            <>
+                                <li >
+                                    <Link to={PerDoc_URL} className={`${Styles.item}`}>
+                                        <span> Perfil, {user.name}</span>
+                                    </Link>
+                                </li>
+                            
+                            </>
+                        )}
+
+
                         <li>
                             <button type = 'button' onClick={handleLogout}>
                                 Salir
