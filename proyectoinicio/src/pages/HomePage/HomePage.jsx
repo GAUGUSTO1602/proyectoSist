@@ -1,6 +1,6 @@
 import Styles from "./HomePage.module.css"
 import { Link } from 'react-router-dom';
-import { LOGIN_URL } from '../../constants/urls';
+import { LOGIN_URL, SelReg_URL } from '../../constants/urls';
 
 function HomePage() {
 
@@ -23,7 +23,11 @@ function HomePage() {
                             <span>Iniciar Sesión</span>
                         </Link>
                     </li>
-                    <li>Registrarse</li>
+                    <li>
+                        <Link to={SelReg_URL}>
+                            <span>Registrarse</span>
+                        </Link>
+                    </li>
               </ul>
 
           </nav>
