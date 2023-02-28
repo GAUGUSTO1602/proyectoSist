@@ -6,11 +6,6 @@
     box-sizing: border-box; */
 }
 
-
-.buscador:focus{
-    width: 100%;
-}
-
 body{
     background: #FFFFFF;
 }
@@ -108,3 +103,4 @@ body{
 .header .navLinks .item {
       text-decoration: none;
 }
+

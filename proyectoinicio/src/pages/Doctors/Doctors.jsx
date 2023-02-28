@@ -1,15 +1,14 @@
 import React from 'react'
 import DoctorCard from './../../components/Cards/DoctorCard';
 import NavBar from '../../components/NavBar/NavBar';
+import Styles from '../Doctors/Doctors.css'
 
 
 function Doctors() {
   return (
     <>
         <NavBar/>
-        <form>
-            < input type="text" placeholder="Busca tu doctor" className="buscador"/>
-        </form>
+
         <div>    
             <DoctorCard 
                 Nombre="Dr. Maria Carreño Pérez"
