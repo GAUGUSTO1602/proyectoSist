@@ -1,9 +1,18 @@
 import React from 'react'
 import Styles from "./NavBar.module.css"
 import { Link } from 'react-router-dom';
-import {HOME_URL,LOGIN_URL,DOCTORS_URL, SelReg_URL } from '../../constants/urls'
+import {HOME_URL,LOGIN_URL,DOCTORS_URL, SelReg_URL, PerPac_URL } from '../../constants/urls'
+import { useUser } from '../../context/UserContext';
+import { logout } from '../../firebase/auth-service';
 
 function NavBar() {
+
+    const { user } = useUser();
+
+    const handleLogout = async() => {
+        console.log('SALIENDO...');
+        await logout();
+    }
   return (
     <div>
         <header className={Styles.header}>
@@ -24,21 +33,42 @@ function NavBar() {
                         </Link>
 
                     </li>
-                    <li>
-                        <button className={Styles.inicio}>
-                            <Link to={LOGIN_URL} className={`${Styles.item}`}>
-                                <span>Iniciar Sesión</span>
-                            </Link>
-                        </button>
+
+                    {!user && (
+                        <>
+                            <li>
+                                <button className={Styles.inicio}>
+                                    <Link to={LOGIN_URL} className={`${Styles.item}`}>
+                                        <span>Iniciar Sesión</span>
+                                    </Link>
+                                </button>
+                                
+                            </li>
+                            <li>
+                                <button className={Styles.registro}>
+                                        <Link to={SelReg_URL} className={`${Styles.item}`}>
+                                            <span>Registrarse</span>
+                                        </Link>
+                                </button>
+                            </li>
                         
-                    </li>
-                    <li>
-                        <button className={Styles.registro}>
-                                <Link to={SelReg_URL} className={`${Styles.item}`}>
-                                    <span>Registrarse</span>
-                                </Link>
-                        </button>
-                    </li>
+                        </>
+                    )}
+
+                    {!!user && 
+                    (<>
+                        <li >
+                            <Link to={PerPac_URL} className={`${Styles.item}`}>
+                                <span> Perfil, {user.name}</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <button type = 'button' onClick={handleLogout}>
+                                Salir
+                            </button>
+                        </li>
+
+                    </>)}
                 </ul>
             </nav>
         </header>
