@@ -1,4 +1,6 @@
-import "./PerPacPage.css"
+import "./PerPacPage.css";
+import {Link} from "react-router-dom";
+import  {CHAT_URL}  from "../../constants/urls";
 
 function PerPacPage() {
     return (
@@ -44,8 +46,10 @@ function PerPacPage() {
           <h4 className='op4'>Chats archivados</h4>
   
         </div>
-  
-        <button className='Bchat'>Comenzar chat</button>
+
+        <Link to={CHAT_URL} className="chat">
+        <button className='Bchat' >Comenzar chat</button>
+        </Link>
   
         <div className='rectangulosP'>
   

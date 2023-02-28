@@ -8,8 +8,10 @@ import RegDocPage from './pages/RegDocPage/RegDocPage';
 import RegPacPage from './pages/RegPacPage/RegPacPage';
 import PerDocPage from './pages/PerDocPage/PerDocPage';
 import PerPacPage from './pages/PerPacPage/PerPacPage';
-import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL } from './constants/urls'
+import ChatPage from './pages/ChatPage/Chat';
+import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL, CHAT_URL } from './constants/urls'
 import { Layout } from './components/Layout/Layout';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -28,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             
             <Route path={RegPac_URL} element={<RegPacPage/>} />
             <Route path={PerPac_URL} element={<PerPacPage/>} />
+            <Route path={CHAT_URL} element={<ChatPage/>}/>
 
           </Route>
     

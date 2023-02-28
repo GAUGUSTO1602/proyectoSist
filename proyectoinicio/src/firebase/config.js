@@ -25,3 +25,4 @@ export const store = getStorage(app) // Conexion con el modulo de Storage de Fir
 
 export const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({prompt: "select_account"});
+

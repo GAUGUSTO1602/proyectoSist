@@ -5,3 +5,4 @@ export const RegPac_URL = "/RegPac";
 export const RegDoc_URL = "/RegDoc";
 export const PerDoc_URL = "/PerDoc";
 export const PerPac_URL = "/PerPac";
+export const CHAT_URL = "/Chat";
