@@ -1,7 +1,14 @@
 import React from 'react';
 import './DoctorCard.css';
+import { PerDoc_URL } from '../../constants/urls';
 
 const DoctorCard = ({ Nombre, Género, Edad, Imagen, Especialización, Experiencia }) => {
+
+  const handleButtonClick = () => {
+    window.location.href = PerDoc_URL;
+  }
+
+
   return (
     <div className='container'>    
       <div className="doctor-card">
@@ -15,7 +22,7 @@ const DoctorCard = ({ Nombre, Género, Edad, Imagen, Especialización, Experienc
           <h3>Experiencia laboral: {Experiencia}</h3>
         </div>
       
-        <button>Ver perfil</button>
+        <button onClick={handleButtonClick}>Ver perfil</button>
         <button>Agendar cita</button>
       </div>
     </div>

@@ -1,4 +1,7 @@
 import "./PerDocPage.css"
+import { Link } from 'react-router-dom';
+import { HOME_URL } from "../../constants/urls";
+import { DOCTORS_URL } from "../../constants/urls";
 
 function PerDocPage() {
 
@@ -13,7 +16,9 @@ function PerDocPage() {
               </div>
 
               <ul className="navLinks">
-                    <li>Home</li>
+                    <li>
+                     HomePage                       
+                    </li>
                     <li>Pacientes</li>
                     <li>Mi perfil</li>
               </ul>

@@ -7,6 +7,10 @@
 }
 
 
+.buscador:focus{
+    width: 100%;
+}
+
 body{
     background: #FFFFFF;
 }

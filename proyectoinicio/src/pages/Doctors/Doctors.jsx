@@ -7,6 +7,9 @@ function Doctors() {
   return (
     <>
         <NavBar/>
+        <form>
+            < input type="text" placeholder="Busca tu doctor" className="buscador"/>
+        </form>
         <div>    
             <DoctorCard 
                 Nombre="Dr. Maria Carreño Pérez"
