@@ -1,11 +1,56 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HOME_URL } from '../../constants/urls';
+import { registerWithEmailAndPassword, signInWithGoogleDoctor } from '../../firebase/auth-service';
 import './RegDocPage.css'
 
 function RegDocPage() {
 
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    surname: '',
+    phone: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    age: 0,
+    universityName: '',
+    career: '',
+    License: '',
+    specialty: '',
+    specialtyUniversityName: '',
+    specialtyLicense: '',
+    laborExperience: 0, 
+    rol:'doctor'
+  });
+  
+  const handleOnChange = (event) => {
+    const {name, value} = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const {email, password, ...extraData} =formData;
+    console.log(formData);
+    await registerWithEmailAndPassword(formData.email, formData.password, extraData);
+    navigate(HOME_URL);
+  };
+
+  const handleSignWithGoogle = async () => {
+    console.log('registro con google')   
+    await signInWithGoogleDoctor();  
+    navigate(HOME_URL);
+  }
+
+
   return (
     <div className='Container'>
       
-
         <div className='bloque1'>
             <h1 className='titulo'>¡Bienvenidos a Psicopana!</h1>
             <img className="imagen" src="img/Logo.png" alt="" />
@@ -24,7 +69,7 @@ function RegDocPage() {
           <h5 className='sub3D'>Número de teléfono</h5>
 
           <h5 className='sub4D'>Correo electrónico</h5>
-D
+
           <h5 className='sub5D'>Contraseña</h5>
 
           <h5 className='sub6D'>Confirmar contraseña</h5>
@@ -50,38 +95,41 @@ D
 
         </div>
 
+        <form onSubmit={onSubmit}>
 
-        <input type="text" class="field1D"></input>
+          <input type="text" class="field1D" placeholder='name' name = 'name' onChange={handleOnChange}></input>
 
-        <input type="text" class="field2D"></input>
+          <input type="text" class="field2D" placeholder='surname' name = 'surname' onChange={handleOnChange}></input>
 
-        <input type="text" class="field3D"></input>
+          <input type="text" class="field3D" placeholder='phone' name = 'phone' onChange={handleOnChange}></input>
 
-        <input type="text" class="field4D"></input>
+          <input type="text" class="field4D" placeholder='email' name = 'email' onChange={handleOnChange}></input>
 
-        <input type="text" class="field5D"></input>
+          <input type="text" class="field5D" placeholder='password' name = 'password' onChange={handleOnChange}></input>
 
-        <input type="text" class="field6D"></input>
+          <input type="text" class="field6D" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
 
-        <input type="text" class="field7D"></input>
+          <input type="text" class="field7D" placeholder='age' name = 'age' onChange={handleOnChange}></input>
 
-        <input type="text" class="field8D"></input>
+          <input type="text" class="field8D" placeholder='universityName' name = 'universityName' onChange={handleOnChange}></input>
 
-        <input type="text" class="field9D"></input>
+          <input type="text" class="field9D" placeholder='career' name = 'career' onChange={handleOnChange}></input>
 
-        <input type="text" class="field10D"></input>
+          <input type="text" class="field10D" placeholder='License' name = 'License' onChange={handleOnChange}></input>
 
-        <input type="text" class="field11D"></input>
+          <input type="text" class="field11D" placeholder='specialtyUniversityName' name = 'specialtyUniversityName' onChange={handleOnChange}></input>
 
-        <input type="text" class="field12D"></input>
+          <input type="text" class="field12D" placeholder='specialty' name = 'specialty' onChange={handleOnChange}></input>
 
-        <input type="text" class="field13D"></input>
+          <input type="text" class="field13D" placeholder='specialtyLicense' name = 'specialtyLicense' onChange={handleOnChange}></input>
 
-        <input type="text" class="field14D"></input>
+          <input type="text" class="field14D" placeholder='laborExperience' name = 'laborExperience' onChange={handleOnChange}></input>
 
 
 
-        <button type="button" class="button1D" id="searchButtom">Crear cuenta</button>
+          <button type="button" class="button1D" id="searchButtom" onClick={onSubmit}>Crear cuenta</button>
+
+        </form>
 
 
         <h3 className='OD'>O</h3>
@@ -91,7 +139,7 @@ D
         <div className='linea2D'></div>
 
 
-        <button type="button" className="button2D" id="searchButtom">Continuar con Google</button>
+        <button type="button" className="button2D" id="searchButtom" onClick={handleSignWithGoogle}>Continuar con Google</button>
 
         <img className="logoGoogleD" src="img/google.png" alt="" />
 

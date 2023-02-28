@@ -1,7 +1,8 @@
 import "./LoginPage.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { SelReg_URL } from "../../constants/urls";
+import { HOME_URL, SelReg_URL } from "../../constants/urls";
+import { loginWithEmailAndPassword, signInWithGooglePatient } from "../../firebase/auth-service";
 
 function LoginPage() {
 
@@ -11,31 +12,53 @@ function LoginPage() {
     password: "",
   });
 
-  const onSuccess = () => {
-    navigate(HOME_URL);
-  };
-
-  const onFail = (_error) => {
-    console.log("FALLO AL INICIAR SESION, Intenbte de nuevo");
-  };
+  const handleOnChange = (event) => {
+    const {name, value} = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
 
   const onSubmit = async (event) => {
     event.preventDefault();
-
-    await loginWithEmailAndPassword({ userData: formData, onSuccess, onFail });
+    const {email, password, ...extraData} =formData;
+    await loginWithEmailAndPassword(formData.email, formData.password, extraData);
+    navigate(HOME_URL);
   };
 
-  const onChange = (event) => {
-    const { name, value } = event.target;
+  const handleSignWithGoogle = async () => {
+    console.log('registro con google')   
+    await signInWithGooglePatient();  
+    navigate(HOME_URL);
+  }
 
-    setFormData((oldData) => ({ ...oldData, [name]: value }));
-  };
 
-  const handleGoogleClick = async () => {
-    await signInWithGoogle({
-      onSuccess: () => navigate(HOME_URL),
-    });
-  };
+  // const onSuccess = () => {
+  //   navigate(HOME_URL);
+  // };
+
+  // const onFail = (_error) => {
+  //   console.log("FALLO AL INICIAR SESION, Intenbte de nuevo");
+  // };
+
+  // const onSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   await loginWithEmailAndPassword({ userData: formData, onSuccess, onFail });
+  // };
+
+  // const onChange = (event) => {
+  //   const { name, value } = event.target;
+
+  //   setFormData((oldData) => ({ ...oldData, [name]: value }));
+  // };
+
+  // const handleGoogleClick = async () => {
+  //   await signInWithGoogle({
+  //     onSuccess: () => navigate(HOME_URL),
+  //   });
+  // };
 
     return (
       <div className='Container'>
@@ -54,17 +77,25 @@ function LoginPage() {
           <div className='rectangulol'></div>
   
           <h5 className='subtitulo1' id='sub1'>Email</h5>
-  
-          <input type="email" name="email" id="email" className="search-field1" onChange={onChange}></input>
-  
-          <h5 className='subtitulo2'>Contraseña</h5>
-  
-          <input type="password" name="password" id="password" placeholder="*******" className="search-field2" onChange={onChange}></input>
-  
-          <button type="submit" className="button1L" >Iniciar sesión</button>
-  
-          <button type="button" className="button2L" onClick={handleGoogleClick}>Continuar con Google</button>
-  
+
+
+          
+
+            <input type="email" name="email" id="email" className="search-field1" onChange={handleOnChange}></input>
+    
+            <h5 className='subtitulo2'>Contraseña</h5>
+    
+            <input type="password" name="password" id="password" placeholder="*******" className="search-field2" onChange={handleOnChange}></input>
+    
+            <button type="submit" className="button1L" onClick={onSubmit}>Iniciar sesión</button>
+    
+          
+          
+
+
+            <button type="button" className="button2L" onClick={handleSignWithGoogle}>Continuar con Google</button>
+    
+
           <img class="logoGoogleL" src="img/google.png" alt="" />
   
           <Link to={SelReg_URL} className='titulo3'>

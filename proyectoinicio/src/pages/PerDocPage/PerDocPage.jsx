@@ -1,4 +1,6 @@
 import "./PerDocPage.css"
+import { Link } from "react-router-dom";
+import { CHAT_URL } from "../../constants/urls";
 
 function PerDocPage() {
 
@@ -44,7 +46,11 @@ function PerDocPage() {
 
       </div>
 
-      <button className='Bchat'>Comenzar chat</button>
+      <Link to={CHAT_URL}>
+        <button className='Bchat'>Comenzar chat</button>
+      </Link>
+
+      
 
       <div className='rectangulosD'>
 

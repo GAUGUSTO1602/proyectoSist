@@ -1,5 +1,5 @@
 // import { signInWithGoogle } from '../../firebase/auth-service';
-import { registerWithEmailAndPassword, signInWithGoogle } from '../../firebase/auth-service';
+import { registerWithEmailAndPassword, signInWithGooglePatient } from '../../firebase/auth-service';
 import './RegPacPage.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -37,7 +37,8 @@ function RegPacPage() {
 
     const handleSignWithGoogle = async () => {
       console.log('registro con google')   
-      await signInWithGoogle();  
+      await signInWithGooglePatient();  
+      navigate(HOME_URL);
     };
     
   return (
