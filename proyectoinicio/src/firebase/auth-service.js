@@ -7,6 +7,7 @@ import {signInWithPopup,
 import { auth, googleProvider } from './config';
 import { createUserProfile } from './users-service';
 
+
 export const signInWithGoogle = async () => {
     try{
         const result = await signInWithPopup(auth, googleProvider);
