@@ -5,7 +5,8 @@ import { SelReg_URL } from "../../constants/urls";
 import { useUser } from "../../context/UserContext";
 import { PerPac_URL } from "../../constants/urls";
 import { logout } from "../../firebase/auth-service";
-
+import { DOCTORS_URL } from "../../constants/urls";
+import { HOME_URL } from "../../constants/urls";
 
 function HomePage() {
     const { user } = useUser();
@@ -27,12 +28,18 @@ function HomePage() {
                   <img src="img/Logo.png" alt="" />
               </div>
 
-              <ul className={Styles.navLinks}>
-                    <li>Home</li>
-                    <li>Sobre nosotros</li>
-                    <li>Doctores</li>
-                    
-                    
+                <ul className={Styles.navLinks}>
+                    <li>
+                        <Link to={HOME_URL} className={`${Styles.item}`}>
+                            <span>HomePage</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={DOCTORS_URL} className={`${Styles.item}`}>
+                            <span>Doctores</span>
+                        </Link>
+                    </li>
+                                       
                     {!!user && 
                     (<>
                         <li >
@@ -51,20 +58,25 @@ function HomePage() {
                     {!user && 
                     (<>
                         <li >
-                            <Link to={LOGIN_URL} className={`${Styles.item}`}>
-                                <span>Iniciar Sesión</span>
-                            </Link>
+                            <button className={Styles.inicio}>
+                                <Link to={LOGIN_URL} className={`${Styles.item}`}>
+                                    <span>Iniciar Sesión</span>
+                                </Link>
+                            </button>
+
                         </li>
                         <li>
-                            <Link to={SelReg_URL}>
-                                <span>Registrarse</span>
-                            </Link>
+                            <button className={Styles.registro}>
+                                    <Link to={SelReg_URL} className={`${Styles.item}`}>
+                                        <span>Registrarse</span>
+                                    </Link>
+                            </button>
                         </li>
 
                     </>)}
-              </ul>
+                </ul>
 
-          </nav>
+            </nav>
 
       </header>
 
