@@ -3,7 +3,7 @@ import { registerWithEmailAndPassword, signInWithGooglePatient } from '../../fir
 import './RegPacPage.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HOME_URL, LOGIN_URL } from '../../constants/urls';
+import { CompRegPacPage_URL, HOME_URL, LOGIN_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
 
 function RegPacPage() {
@@ -38,8 +38,18 @@ function RegPacPage() {
 
     const handleSignWithGoogle = async () => {
       console.log('registro con google')   
-      await signInWithGooglePatient();  
-      navigate(HOME_URL);
+      const isNewUser = await signInWithGooglePatient();
+      
+      if(isNewUser){
+        // IF THE USER IS NEW, WE SHOULD NAVIGATE HIM TO COMPLETE THE FORM
+        navigate(CompRegPacPage_URL);
+
+      }else{
+
+        navigate(HOME_URL);
+
+      }
+      
     };
     
   return (

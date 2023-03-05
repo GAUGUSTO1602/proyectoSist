@@ -48,8 +48,8 @@ export const signInWithGooglePatient = async () => {
        const { isNewUser } = getAdditionalUserInfo(result);
        
        console.log('NEWUSER', isNewUser);
-       if(isNewUser){
-           
+       
+       if(isNewUser){           
 
            await createUserProfile(result.user.uid, {
                name: result.user.displayName,
@@ -63,6 +63,7 @@ export const signInWithGooglePatient = async () => {
 
        }
 
+       return isNewUser;
    }catch(error){
        console.error(error);
 
