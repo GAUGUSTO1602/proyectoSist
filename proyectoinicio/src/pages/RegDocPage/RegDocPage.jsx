@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { HOME_URL, LOGIN_URL } from '../../constants/urls';
+import { CompRegDocPage_URL, HOME_URL, LOGIN_URL } from '../../constants/urls';
 import { registerWithEmailAndPassword, signInWithGoogleDoctor } from '../../firebase/auth-service';
 import './RegDocPage.css'
 
@@ -44,8 +44,17 @@ function RegDocPage() {
 
   const handleSignWithGoogle = async () => {
     console.log('registro con google')   
-    await signInWithGoogleDoctor();  
-    navigate(HOME_URL);
+    const isNewUser = await signInWithGoogleDoctor();
+    
+    if(isNewUser){
+      
+      navigate(CompRegDocPage_URL);
+
+    }else{
+      navigate(HOME_URL);
+
+    }
+    
   }
 
 

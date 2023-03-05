@@ -10,10 +10,11 @@ import PerDocPage from './pages/PerDocPage/PerDocPage';
 import PerPacPage from './pages/PerPacPage/PerPacPage';
 import Doctors from './pages/Doctors/Doctors'
 import ChatPage from './pages/ChatPage/ChatPage';
-import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL } from './constants/urls'
+import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL } from './constants/urls'
 import { Layout } from './components/Layout/Layout';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
+import { CompRegDocPage } from './pages/CompRegDocPage/CompRegDocPage';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -34,6 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path={CHAT_URL} element={<ChatPage/>} />
 
             <Route path={CompRegPacPage_URL} element = {<CompRegPacPage />} />
+            <Route path={CompRegDocPage_URL} element = {<CompRegDocPage />} />
             
             
 

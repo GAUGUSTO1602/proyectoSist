@@ -5,7 +5,6 @@ import {signInWithPopup,
       signInWithEmailAndPassword,
       getAdditionalUserInfo
    } from 'firebase/auth'
-import { Navigate, useNavigate } from 'react-router-dom';
 import { auth, googleProvider } from './config';
 import { createUserProfile } from './users-service';
 
@@ -69,32 +68,35 @@ export const signInWithGooglePatient = async () => {
 
    }
 };
+
 // Se usa para registrar al doctor con google
 export const signInWithGoogleDoctor = async () => {
-   try{
-       const result = await signInWithPopup(auth, googleProvider);
-       console.log(result);        
-       const { isNewUser } = getAdditionalUserInfo(result); 
-      
-       if(isNewUser){    
-           await createUserProfile(result.user.uid, {
-               email: result.user.email,
-               name: result.user.displayName,
-               phone: '',
-               email: result.user.email,
-               password: '',
-               confirmPassword: '',
-               age: 0,
-               universityName: '',
-               career: '',
-               License: '',
-               specialty: '',
-               specialtyUniversityName: '',
-               specialtyLicense: '',
-               laborExperience: 0, 
-               rol: 'doctor',
-           })
-       }
+    try{
+        const result = await signInWithPopup(auth, googleProvider);
+        console.log(result);        
+        const { isNewUser } = getAdditionalUserInfo(result); 
+        
+        if(isNewUser){    
+            await createUserProfile(result.user.uid, {
+                email: result.user.email,
+                name: result.user.displayName,
+                phone: '',
+                email: result.user.email,
+                password: '',
+                confirmPassword: '',
+                age: 0,
+                universityName: '',
+                career: '',
+                License: '',
+                specialty: '',
+                specialtyUniversityName: '',
+                specialtyLicense: '',
+                laborExperience: 0, 
+                rol: 'doctor',
+            })
+        }
+        return isNewUser;
+
    }catch(error){
        console.error(error);
 
