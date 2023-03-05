@@ -15,6 +15,7 @@ import { Layout } from './components/Layout/Layout';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
 import { CompRegDocPage } from './pages/CompRegDocPage/CompRegDocPage';
+import NavBar from './components/NavBar/NavBar';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -23,13 +24,20 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           <Route element = {<Layout/>}>
 
-            <Route path={HOME_URL} element={<HomePage />} />
+            <Route element = {<NavBar/>}>
+
+              <Route path={HOME_URL} element={<HomePage />} />              
+              <Route path={DOCTORS_URL} element={<Doctors/>} />
+
+            </Route>
+            
+
             <Route path={LOGIN_URL} element={<LoginPage />} />
             <Route path={SelReg_URL} element={<SelecPage />} />
             
             <Route path={RegDoc_URL} element={<RegDocPage />} />
             <Route path={PerDoc_URL} element={<PerDocPage/>} />
-            <Route path={DOCTORS_URL} element={<Doctors/>} />
+            
             
             <Route path={RegPac_URL} element={<RegPacPage/>} />
             <Route path={CHAT_URL} element={<ChatPage/>} />

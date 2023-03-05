@@ -6,7 +6,6 @@ import NavBar from '../../components/NavBar/NavBar';
 function Doctors() {
   return (
     <>
-        <NavBar/>
         <div>    
             <DoctorCard 
                 Nombre="Dr. Maria Carreño Pérez"
