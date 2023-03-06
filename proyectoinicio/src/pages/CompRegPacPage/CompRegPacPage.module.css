@@ -86,20 +86,61 @@ h1{
     width: 85%;
 }
 
+.rightBox{
+    width: 50%;
+    position: relative;
+    align-items: end; 
+    
+}
+
 .inputBoxBottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: flex;
     justify-content: right;
     align-items:end;
-    width: 50%;
+    width: 100%;
     /* background-color: black; */
+
+}
+
+.createAccountButton{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3% 18% 0;
+
+    display: flex;
+    justify-content: end;
+
+}
+
+.createAccountButton button{
+    width: 30%;
+    height: 53px;
+    background: #E5F7F8;
+
+    cursor: pointer;
+}
+
+.createAccountButton h1{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+
+    color: #000000;
 
 }
 
 
 .inputBoxBottom div{
-    width: 66.67%;
+    width: 63.67%;
     /* background-color: red; */
-    padding: 0 3% 25% 3%;
+    padding: 0 3% 71% 0%;
 }
 
 .inputBoxBottom .textField{

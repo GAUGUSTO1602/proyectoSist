@@ -38,14 +38,23 @@ export function CompRegPacPage() {
             <img src="img\psychologicalConsultation.png" alt="" />
           </div>
 
-          <div className={Styles.inputBoxBottom}>
+          <div className={Styles.rightBox}>
+
+            <div className={Styles.inputBoxBottom}>
+              
+              <div className="">
+                <h1 className={Styles.text}>Teléfono (Opcional)</h1>
+                <input type="text" className={Styles.textField} placeholder='phoneNumber'/>
+              </div>
+
+            </div>
             
-            <div className="">
-              <h1 className={Styles.text}>Teléfono (Opcional)</h1>
-              <input type="text" className={Styles.textField} placeholder='phoneNumber'/>
+            <div className = {Styles.createAccountButton}>
+              <button><h1>Crear Cuenta</h1></button>
             </div>
 
           </div>
+
 
         </div>
 
