@@ -6,15 +6,10 @@ export function Layout() {
   return (
     <main>
         <UserContextProvider>
-
             <section className='body'>
                 <Outlet/>
             </section>
         </UserContextProvider>
-
-
-        
-
         
     </main>
   )

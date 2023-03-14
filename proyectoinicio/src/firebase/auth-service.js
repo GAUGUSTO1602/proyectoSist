@@ -62,10 +62,11 @@ export const signInWithGooglePatient = async () => {
 
        }
 
-       return isNewUser;
+       return true;
    }catch(error){
        console.error(error);
-
+        alert(error);
+        return false;
    }
 };
 
@@ -95,10 +96,12 @@ export const signInWithGoogleDoctor = async () => {
                 rol: 'doctor',
             })
         }
-        return isNewUser;
+        return true;
 
    }catch(error){
        console.error(error);
+       alert(error);
+       return false
 
    }
 };
@@ -114,8 +117,13 @@ export const registerWithEmailAndPassword = async (email,
            email,
            ...extraData
        });
+
+       return true;
    }catch(error){
        console.error(error);
+       alert(error);
+
+       return false;
    }
 };
 
@@ -123,8 +131,13 @@ export const loginWithEmailAndPassword = async (email, password) => {
    try{
        const result = await signInWithEmailAndPassword(auth, email, password);
        console.log('LOGIN', result);
+
+       return true;
    }catch(error){
        console.error(error);
+       alert(error);
+    
+       return false;
    }
 };
 
@@ -133,5 +146,11 @@ export const loginWithEmailAndPassword = async (email, password) => {
 export const logout = async () => {
    try{
        await signOut(auth);
-   }catch(error){}
+       
+       return true;
+   }catch(error){
+    alert(error);
+    
+    return false;
+   }
 };

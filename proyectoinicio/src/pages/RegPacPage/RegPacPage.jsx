@@ -31,23 +31,43 @@ function RegPacPage() {
 
     const onSubmit = async (event) => {
       event.preventDefault();
-      const {email, password, ...extraData} =formData;
-      await registerWithEmailAndPassword(formData.email, formData.password, extraData);
-      navigate(HOME_URL);
+      const {email, password, ...extraData} = formData;
+
+      if(formData.name == ''){
+        alert('Nombre no puede ser vacío');
+      }else if(formData.surname == ''){
+        alert('Apellido no puede ser vacío')
+      }else if(formData.phone == ''){
+        alert('Telefono no puede ser vacío')
+      }else if(formData.email == ''){
+        alert('Email no puede ser vacío')
+      }else if(password == ''){
+        alert('La contraseña no puede estar vacía')
+      }else if(formData.password != formData.confirmPassword){
+        alert('Contraseñas distintas')
+      }else if(formData.password.length < 6){
+        alert('Contraseña debe ser al menos 6 caracteres')
+      }else if(formData.age < 18){
+        alert('Debe tener mínimo 18 años')
+      }else{
+        
+        const isFinished = await registerWithEmailAndPassword(formData.email, formData.password, extraData);
+  
+        if(isFinished){
+          navigate(HOME_URL);        
+        }
+      }
+
+
     };
 
     const handleSignWithGoogle = async () => {
       console.log('registro con google')   
-      const isNewUser = await signInWithGooglePatient();
+      const isFinished = await signInWithGooglePatient();
       
-      if(isNewUser){
+      if(isFinished){
         // IF THE USER IS NEW, WE SHOULD NAVIGATE HIM TO COMPLETE THE FORM
-        navigate(CompRegPacPage_URL);
-
-      }else{
-
         navigate(HOME_URL);
-
       }
       
     };
@@ -101,9 +121,9 @@ function RegPacPage() {
 
           <input type="text" className="field4P" placeholder='email' name = 'email' onChange={handleOnChange}></input>
 
-          <input type="text" className="field5P" placeholder='password' name = 'password' onChange={handleOnChange}></input>
+          <input type="password" className="field5P" placeholder='password' name = 'password' onChange={handleOnChange}></input>
 
-          <input type="text" className="field6P" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
+          <input type="password" className="field6P" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
 
           <input type="text" className="field7P" placeholder='age' name = 'age' onChange={handleOnChange}></input>
 

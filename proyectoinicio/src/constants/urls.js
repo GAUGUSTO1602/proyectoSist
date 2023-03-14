@@ -9,3 +9,4 @@ export const DOCTORS_URL = "/Doctors";
 export const CHAT_URL = "/Chat";
 export const CompRegPacPage_URL = '/completeRegistrationPatientPage';
 export const CompRegDocPage_URL = '/completeRegistrationDoctorPage';
+export const AnyElsePage_URL = '/*'

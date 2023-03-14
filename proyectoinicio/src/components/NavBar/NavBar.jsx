@@ -27,12 +27,12 @@ function NavBar() {
 
                         <ul className={Styles.navLinks}>
                             <li>
-                                <Link to={HOME_URL} className={`${Styles.item}`}>
+                                <Link to={HOME_URL} className={Styles.item}>
                                     <span>HomePage</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link to={DOCTORS_URL} className={`${Styles.item}`}>
+                                <Link to={DOCTORS_URL} className={Styles.item}>
                                     <span>Doctores</span>
                                 </Link>
 
@@ -86,8 +86,8 @@ function NavBar() {
 
 
                                 <li>
-                                    <button type = 'button' onClick={handleLogout}>
-                                        Salir
+                                    <button type = 'button' onClick={handleLogout} className={Styles.item}>
+                                        <span>Salir</span>
                                     </button>
                                 </li>
 

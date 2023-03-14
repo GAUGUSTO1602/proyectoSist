@@ -10,12 +10,13 @@ import PerDocPage from './pages/PerDocPage/PerDocPage';
 import PerPacPage from './pages/PerPacPage/PerPacPage';
 import Doctors from './pages/Doctors/Doctors'
 import ChatPage from './pages/ChatPage/ChatPage';
-import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL } from './constants/urls'
+import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL, AnyElsePage_URL } from './constants/urls'
 import { Layout } from './components/Layout/Layout';
-import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { PrivateRouteNotUser, PrivateRouteUser } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
 import { CompRegDocPage } from './pages/CompRegDocPage/CompRegDocPage';
 import NavBar from './components/NavBar/NavBar';
+import { AnyElsePage } from './pages/AnyElsePage/AnyElsePage';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -32,26 +33,62 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </Route>
             
 
-            <Route path={LOGIN_URL} element={<LoginPage />} />
-            <Route path={SelReg_URL} element={<SelecPage />} />
+            <Route path={LOGIN_URL} element={
+            <PrivateRouteNotUser>
+              <LoginPage />
+            </PrivateRouteNotUser>
+            } />
+            <Route path={SelReg_URL} element={
+            <PrivateRouteNotUser>
+              <SelecPage />
+            </PrivateRouteNotUser>            
+            } />
             
-            <Route path={RegDoc_URL} element={<RegDocPage />} />
-            <Route path={PerDoc_URL} element={<PerDocPage/>} />
+            <Route path={RegDoc_URL} element={
+            <PrivateRouteNotUser>
+              <RegDocPage />
+            </PrivateRouteNotUser>
+            } />
+            
+            <Route path={PerDoc_URL} element={
+            <PrivateRouteUser>
+              <PerDocPage/>
+            </PrivateRouteUser>
+            } />
             
             
-            <Route path={RegPac_URL} element={<RegPacPage/>} />
-            <Route path={CHAT_URL} element={<ChatPage/>} />
+            <Route path={RegPac_URL} element={
+            <PrivateRouteNotUser>
+              <RegPacPage/>
+            </PrivateRouteNotUser>
+            } />
+            
+            <Route path={CHAT_URL} element={
+            <PrivateRouteUser>
+              <ChatPage/>
+            </PrivateRouteUser>
+            } />
+            
+            <Route path={CompRegPacPage_URL} element = {
+            <PrivateRouteUser>
+              <CompRegPacPage />
+            </PrivateRouteUser>
+            } />           
 
-            <Route path={CompRegPacPage_URL} element = {<CompRegPacPage />} />
-            <Route path={CompRegDocPage_URL} element = {<CompRegDocPage />} />
-            
+            <Route path={CompRegDocPage_URL} element = {
+            <PrivateRouteUser>
+              <CompRegDocPage />
+            </PrivateRouteUser>
+            } />          
             
 
               <Route path={PerPac_URL} element={
-              <PrivateRoute>                
+              <PrivateRouteUser>                
                 <PerPacPage/>
-              </PrivateRoute>
+              </PrivateRouteUser>
               } />
+
+              <Route path={AnyElsePage_URL} element={<AnyElsePage/>}/>
 
 
           </Route>
