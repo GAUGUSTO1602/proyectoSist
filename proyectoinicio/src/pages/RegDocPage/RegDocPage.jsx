@@ -96,25 +96,25 @@ function RegDocPage() {
 
         </div>
 
-        <form onSubmit={onSubmit}>
+        <form className='fieldD' onSubmit={onSubmit}>
 
-          <input type="text" class="field1D" placeholder='name' name = 'name' onChange={handleOnChange}></input>
+          <input type="text" class="field1D" placeholder='Ej: Antonio' name = 'name' onChange={handleOnChange}></input>
 
-          <input type="text" class="field2D" placeholder='surname' name = 'surname' onChange={handleOnChange}></input>
+          <input type="text" class="field2D" placeholder='Ej: Herrera' name = 'surname' onChange={handleOnChange}></input>
 
-          <input type="text" class="field3D" placeholder='phone' name = 'phone' onChange={handleOnChange}></input>
+          <input type="text" class="field3D" placeholder='Ej: 024242798715' name = 'phone' onChange={handleOnChange}></input>
 
-          <input type="text" class="field4D" placeholder='email' name = 'email' onChange={handleOnChange}></input>
+          <input type="text" class="field4D" placeholder='ejemplo@gmail.com' name = 'email' onChange={handleOnChange}></input>
 
-          <input type="text" class="field5D" placeholder='password' name = 'password' onChange={handleOnChange}></input>
+          <input type="text" class="field5D" placeholder='*************' name = 'password' onChange={handleOnChange}></input>
 
-          <input type="text" class="field6D" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
+          <input type="text" class="field6D" placeholder='*************' name = 'confirmPassword' onChange={handleOnChange}></input>
 
           <input type="text" class="field7D" placeholder='age' name = 'age' onChange={handleOnChange}></input>
 
           <input type="text" class="field8D" placeholder='universityName' name = 'universityName' onChange={handleOnChange}></input>
 
-          <input type="text" class="field9D" placeholder='career' name = 'career' onChange={handleOnChange}></input>
+          <input type="text" class="field9D" placeholder='Ej: psicologia' name = 'career' onChange={handleOnChange}></input>
 
           <input type="text" class="field10D" placeholder='License' name = 'License' onChange={handleOnChange}></input>
 

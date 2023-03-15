@@ -2,12 +2,12 @@ import React from 'react'
 import Styles from "./NavBar.module.css"
 import { Link } from 'react-router-dom';
 import {HOME_URL,LOGIN_URL,DOCTORS_URL, SelReg_URL, PerPac_URL, PerDoc_URL } from '../../constants/urls'
-import { useUser } from '../../context/UserContext';
 import { logout } from '../../firebase/auth-service';
+import { UserContext } from '../../context/UserContext';
 
 function NavBar() {
 
-    const { user } = useUser();
+    const { user } = UserContext();
 
     const handleLogout = async() => {
         console.log('SALIENDO...');

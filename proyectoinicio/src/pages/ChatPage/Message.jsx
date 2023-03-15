@@ -1,6 +1,6 @@
 import React from 'react';
 import { auth } from '../../firebase/config';
-import "./ChatPage.css";
+import "../../index.css"
 
 const style = {
   message: `flex items-center shadow-xl m-4 py-2 px-3 rounded-tl-full rounded-tr-full`,
@@ -17,9 +17,9 @@ const Message = ({ message }) => {
 
   return (
     <div>
-      <div className={"message"}>
-        <p className='name'>{message.name}</p>
-        <p className='text'>{message.text}</p>
+      <div className={`${style.message} ${messageClass}`}>
+        <p className={style.name}>{message.name}</p>
+        <p>{message.text}</p>
       </div>
     </div>
   );

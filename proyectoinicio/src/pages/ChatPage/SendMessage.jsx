@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { auth, db } from '../../firebase/config';
-import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
-import "./ChatPage.css";
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import "../../index.css"
 
 const style = {
   form: `h-14 w-full max-w-[728px]  flex text-xl absolute bottom-0`,
@@ -30,15 +30,15 @@ const SendMessage = ({scroll}) => {
   }
 
   return (
-    <form onSubmit={sendMessage} className="containerChat">
+    <form onSubmit={sendMessage} className={style.form}>
       <input
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="cuadroT"
+        className={style.input}
         type='text'
         placeholder='Message'
       />
-      <button className="botonT" type='submit'>
+      <button className={style.button} type='submit'>
         Send
       </button>
     </form>

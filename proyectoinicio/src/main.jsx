@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import './index.css';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage'
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -10,7 +11,7 @@ import PerDocPage from './pages/PerDocPage/PerDocPage';
 import PerPacPage from './pages/PerPacPage/PerPacPage';
 import Doctors from './pages/Doctors/Doctors'
 import ChatPage from './pages/ChatPage/ChatPage';
-import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL } from './constants/urls'
+import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CHAT2_URL } from './constants/urls'
 import { Layout } from './components/Layout/Layout';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 

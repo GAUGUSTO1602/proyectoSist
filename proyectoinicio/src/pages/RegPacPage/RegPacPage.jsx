@@ -81,19 +81,19 @@ function RegPacPage() {
 
         </div>
 
-        <form onSubmit = {onSubmit}>
+        <form className='fieldP' onSubmit = {onSubmit}>
 
-          <input type="text" className="field1P" placeholder='name' name = 'name' onChange={handleOnChange}></input>
+          <input type="text" className="field1P" placeholder='Ej: Antonio' name = 'name' onChange={handleOnChange}></input>
 
-          <input type="text" className="field2P" placeholder='surname' name = 'surname' onChange={handleOnChange}></input>
+          <input type="text" className="field2P" placeholder='Ej: Herrera' name = 'surname' onChange={handleOnChange}></input>
 
-          <input type="text" className="field3P" placeholder='phone' name = 'phone' onChange={handleOnChange}></input>
+          <input type="text" className="field3P" placeholder='Ej: 04242798715' name = 'phone' onChange={handleOnChange}></input>
 
-          <input type="text" className="field4P" placeholder='email' name = 'email' onChange={handleOnChange}></input>
+          <input type="text" className="field4P" placeholder='ejemplo@gmail.com' name = 'email' onChange={handleOnChange}></input>
 
-          <input type="text" className="field5P" placeholder='password' name = 'password' onChange={handleOnChange}></input>
+          <input type="text" className="field5P" placeholder='*********' name = 'password' onChange={handleOnChange}></input>
 
-          <input type="text" className="field6P" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
+          <input type="text" className="field6P" placeholder='*********' name = 'confirmPassword' onChange={handleOnChange}></input>
 
           <input type="text" className="field7P" placeholder='age' name = 'age' onChange={handleOnChange}></input>
 
