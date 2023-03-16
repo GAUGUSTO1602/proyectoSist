@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { HOME_URL, LOGIN_URL } from '../../constants/urls';
+import { CompRegDocPage_URL, HOME_URL, LOGIN_URL } from '../../constants/urls';
 import { registerWithEmailAndPassword, signInWithGoogleDoctor } from '../../firebase/auth-service';
 import './RegDocPage.css'
 
@@ -36,16 +36,52 @@ function RegDocPage() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const {email, password, ...extraData} =formData;
-    console.log(formData);
-    await registerWithEmailAndPassword(formData.email, formData.password, extraData);
-    navigate(HOME_URL);
+
+    if(formData.name == ''){
+      alert('El Nombre no puede estar vacio')
+    }else if(formData.surname == ''){
+      alert('El Apellido no puede estar vacio')      
+    }else if(formData.phone == ''){
+      alert('El numero no puede estar vacío')
+    }else if(formData.email == ''){
+      alert('El email no puede estar vacío')
+    }else if(formData.password.length < 6){
+      alert('Contraseña debe tener mínimo 6 caracteres')
+    }else if(formData.password != formData.confirmPassword){
+      alert('contraseñas no coinciden')
+    }else if(formData.age < 18){
+      alert('El mínimo de edad son 18 años')
+    }else if(formData.universityName == ''){
+      alert('Nombre de la universidad no puede estar vacío');
+    }else if(formData.career == ''){
+      alert('Carrera no puede estar vacía')
+    }else if(formData.License == ''){
+      alert('La Licencia no puede estar vacía')
+    }else if(formData.laborExperience <= 0){
+      alert('Experiencia laboral: valor inválido')
+    }
+    else{
+      
+      const {email, password, ...extraData} =formData;
+      console.log(formData);
+      const isFinished = await registerWithEmailAndPassword(formData.email, formData.password, extraData);
+      
+      if(isFinished){
+        navigate(HOME_URL);
+      }
+    }
+
+
   };
 
   const handleSignWithGoogle = async () => {
     console.log('registro con google')   
-    await signInWithGoogleDoctor();  
-    navigate(HOME_URL);
+    const isFinished = await signInWithGoogleDoctor();
+    
+    if(isFinished){
+      navigate(HOME_URL); 
+    }
+    
   }
 
 
@@ -98,33 +134,33 @@ function RegDocPage() {
 
         <form className='fieldD' onSubmit={onSubmit}>
 
-          <input type="text" class="field1D" placeholder='Ej: Antonio' name = 'name' onChange={handleOnChange}></input>
+          <input type="text" class="field1D" placeholder='Ej. Jose Antonio' name = 'name' onChange={handleOnChange}></input>
 
-          <input type="text" class="field2D" placeholder='Ej: Herrera' name = 'surname' onChange={handleOnChange}></input>
+          <input type="text" class="field2D" placeholder='Ej. Almonte Hernández' name = 'surname' onChange={handleOnChange}></input>
 
-          <input type="text" class="field3D" placeholder='Ej: 024242798715' name = 'phone' onChange={handleOnChange}></input>
+          <input type="text" class="field3D" placeholder='Ej. 0424 162 22 23' name = 'phone' onChange={handleOnChange}></input>
 
-          <input type="text" class="field4D" placeholder='ejemplo@gmail.com' name = 'email' onChange={handleOnChange}></input>
+          <input type="text" class="field4D" placeholder='Ej. PsicopanaCorporation@gmail.com' name = 'email' onChange={handleOnChange}></input>
 
-          <input type="text" class="field5D" placeholder='*************' name = 'password' onChange={handleOnChange}></input>
+          <input type="password" class="field5D" placeholder='Mínimo 6 caracteres' name = 'password' onChange={handleOnChange}></input>
 
-          <input type="text" class="field6D" placeholder='*************' name = 'confirmPassword' onChange={handleOnChange}></input>
+          <input type="password" class="field6D" placeholder='Confirmar Contraseña' name = 'confirmPassword' onChange={handleOnChange}></input>
 
-          <input type="text" class="field7D" placeholder='age' name = 'age' onChange={handleOnChange}></input>
+          <input type="text" class="field7D" placeholder='Tu edad' name = 'age' onChange={handleOnChange}></input>
 
-          <input type="text" class="field8D" placeholder='universityName' name = 'universityName' onChange={handleOnChange}></input>
+          <input type="text" class="field8D" placeholder='Universidad donde estudió' name = 'universityName' onChange={handleOnChange}></input>
 
-          <input type="text" class="field9D" placeholder='Ej: psicologia' name = 'career' onChange={handleOnChange}></input>
+          <input type="text" class="field9D" placeholder='Nombre de su carrera' name = 'career' onChange={handleOnChange}></input>
 
-          <input type="text" class="field10D" placeholder='License' name = 'License' onChange={handleOnChange}></input>
+          <input type="text" class="field10D" placeholder='Licencia de verificación de carrera' name = 'License' onChange={handleOnChange}></input>
 
-          <input type="text" class="field11D" placeholder='specialtyUniversityName' name = 'specialtyUniversityName' onChange={handleOnChange}></input>
+          <input type="text" class="field11D" placeholder='Universidad donde la cursó (Opcional)' name = 'specialtyUniversityName' onChange={handleOnChange}></input>
 
-          <input type="text" class="field12D" placeholder='specialty' name = 'specialty' onChange={handleOnChange}></input>
+          <input type="text" class="field12D" placeholder='Nombre de la especialidad (Opcional)' name = 'specialty' onChange={handleOnChange}></input>
 
-          <input type="text" class="field13D" placeholder='specialtyLicense' name = 'specialtyLicense' onChange={handleOnChange}></input>
+          <input type="text" class="field13D" placeholder='Licencia (Opcional)' name = 'specialtyLicense' onChange={handleOnChange}></input>
 
-          <input type="text" class="field14D" placeholder='laborExperience' name = 'laborExperience' onChange={handleOnChange}></input>
+          <input type="text" class="field14D" placeholder='Cantidad en número entero (en años)' name = 'laborExperience' onChange={handleOnChange}></input>
 
 
 
