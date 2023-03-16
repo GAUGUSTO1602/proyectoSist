@@ -4,11 +4,10 @@ import { Link, Outlet } from 'react-router-dom';
 import {HOME_URL,LOGIN_URL,DOCTORS_URL, SelReg_URL, PerPac_URL, PerDoc_URL } from '../../constants/urls'
 import { UserContextProvider, useUser } from '../../context/UserContext';
 import { logout } from '../../firebase/auth-service';
-import { UserContext } from '../../context/UserContext';
 
 function NavBar() {
 
-    const { user } = UserContext();
+    const { user } = useUser();
 
     const handleLogout = async() => {
         console.log('SALIENDO...');
