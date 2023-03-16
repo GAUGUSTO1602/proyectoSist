@@ -8,9 +8,11 @@ import RegDocPage from './pages/RegDocPage/RegDocPage';
 import RegPacPage from './pages/RegPacPage/RegPacPage';
 import PerDocPage from './pages/PerDocPage/PerDocPage';
 import PerPacPage from './pages/PerPacPage/PerPacPage';
+import Doctors from './pages/Doctors/Doctors';
 import ChatPage from './pages/ChatPage/Chat';
-import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL, CHAT_URL } from './constants/urls'
+import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL, CHAT_URL, DOCTORS_URL } from './constants/urls';
 import { Layout } from './components/Layout/Layout';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -26,10 +28,21 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             
             <Route path={RegDoc_URL} element={<RegDocPage />} />
             <Route path={PerDoc_URL} element={<PerDocPage/>} />
-            
+            <Route path={DOCTORS_URL} element={<Doctors/>} />
             
             <Route path={RegPac_URL} element={<RegPacPage/>} />
-            <Route path={PerPac_URL} element={<PerPacPage/>} />
+            
+            
+
+              <Route path={PerPac_URL} element={
+              <PrivateRoute>
+                
+                <PerPacPage/>
+
+              </PrivateRoute>
+              } />
+
+          
             <Route path={CHAT_URL} element={<ChatPage/>}/>
 
           </Route>
