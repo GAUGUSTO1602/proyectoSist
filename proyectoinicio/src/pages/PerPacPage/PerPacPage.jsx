@@ -1,6 +1,20 @@
 import "./PerPacPage.css"
+import { CHAT_URL, HOME_URL, DOCTORS_URL } from "../../constants/urls";
+import { Link } from "react-router-dom";
+import { useUser } from "../../context/UserContext";
+import { logout } from "../../firebase/auth-service";
 
 function PerPacPage() {
+
+  const { user } = useUser();
+
+
+  console.log(user);
+
+  const handleLogout = async() => {
+      console.log('SALIENDO...');
+      await logout();
+  }
 
     return (
       <div className='Container'>
@@ -13,9 +27,12 @@ function PerPacPage() {
                 </div>
   
                 <ul className="navLinks">
+                  <Link to={HOME_URL}>
                       <li>Home</li>
+                  </Link>
+                  <Link to={DOCTORS_URL}>
                       <li>Doctores</li>
-                      <li>Mi perfil</li>
+                  </Link>
                 </ul>
   
                 <div className="foto">
@@ -25,7 +42,11 @@ function PerPacPage() {
                 <div className="flecha">
                     <img src="img/flecha.png" alt="" />
                     <div className="cuadrado"></div>
-                    <li className="logOut">Cerrar sesion</li>
+                    <li className="logOut">
+                      <button type = 'button' onClick={handleLogout}>
+                        Salir
+                      </button>
+                    </li>
                 </div>
   
             </nav>
@@ -45,8 +66,10 @@ function PerPacPage() {
           <h4 className='op4'>Chats archivados</h4>
   
         </div>
-  
-        <button className='Bchat'>Comenzar chat</button>
+
+        <Link to={CHAT_URL}>
+          <button className='Bchat'>Comenzar chat</button>
+        </Link>
   
         <div className='rectangulosP'>
   
@@ -80,15 +103,15 @@ function PerPacPage() {
   
         <div className='subtitulos2P'>
   
-          <h4 className='sub2-1p'>xxxxxxxxxxx</h4>
+          <h4 className='sub2-1p'>{user.name}</h4>
   
           <h4 className='sub2-2p'>xxxxxxxxxxx</h4>
   
-          <h4 className='sub2-3p'>xxxxxxxxxxx</h4>
+          <h4 className='sub2-3p'>{user.age}</h4>
   
           <h4 className='sub2-4p'>xxxxxxxxxxx</h4>
   
-          <h4 className='sub2-5p'>xxxxxxxxxxx</h4>
+          <h4 className='sub2-5p'>{user.email}</h4>
   
   
         </div>

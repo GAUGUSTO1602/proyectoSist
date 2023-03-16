@@ -1,6 +1,19 @@
 import "./PerDocPage.css"
+import { Link } from "react-router-dom";
+import { CHAT_URL, HOME_URL } from "../../constants/urls";
+import { useUser } from "../../context/UserContext";
+import { logout } from "../../firebase/auth-service";
 
 function PerDocPage() {
+
+    const { user } = useUser();
+
+      console.log(user);
+
+    const handleLogout = async() => {
+        console.log('SALIENDO...');
+        await logout();
+    }
 
   return (
     <div className='Container'>
@@ -13,9 +26,10 @@ function PerDocPage() {
               </div>
 
               <ul className="navLinks">
-                    <li>Home</li>
-                    <li>Pacientes</li>
-                    <li>Mi perfil</li>
+                  <Link to={HOME_URL}>
+                      <li>Home</li>
+                  </Link>
+                      <li>Pacientes</li>
               </ul>
 
               <div className="foto">
@@ -25,7 +39,12 @@ function PerDocPage() {
               <div className="flecha">
                     <img src="img/flecha.png" alt="" />
                     <div className="cuadrado"></div>
-                    <li className="logOut">Cerrar sesion</li>
+                    <li className="logOut">
+                      <button type = 'button' onClick={handleLogout}>
+                        Salir
+                      </button>
+                    </li>
+                    
               </div>
 
           </nav>
@@ -44,7 +63,11 @@ function PerDocPage() {
 
       </div>
 
-      <button className='Bchat'>Comenzar chat</button>
+      <Link to={CHAT_URL}>
+        <button className='Bchat'>Comenzar chat</button>
+      </Link>
+
+      
 
       <div className='rectangulosD'>
 
@@ -105,29 +128,29 @@ function PerDocPage() {
 
       <div className='subtitulos2D'>
 
-        <h4 className='sub2-1d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-1d'>{user.name}</h4>
 
         <h4 className='sub2-2d'>xxxxxxxxxxx</h4>
 
-        <h4 className='sub2-3d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-3d'>{user.age}</h4>
 
-        <h4 className='sub2-4d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-4d'>{user.phone}</h4>
 
-        <h4 className='sub2-5d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-5d'>{user.email}</h4>
 
-        <h4 className='sub2-6d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-6d'>{user.universityName}</h4>
 
-        <h4 className='sub2-7d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-7d'>{user.specialtyUniversityName}</h4>
 
-        <h4 className='sub2-8d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-8d'>*****</h4>
 
-        <h4 className='sub2-9d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-9d'>{user.specialty}</h4>
 
         <h4 className='sub2-10d'>xxxxxxxxxxx</h4>
 
         <h4 className='sub2-11d'>xxxxxxxxxxx</h4>
 
-        <h4 className='sub2-12d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-12d'>{user.laborExperience}</h4>
 
       </div>
 

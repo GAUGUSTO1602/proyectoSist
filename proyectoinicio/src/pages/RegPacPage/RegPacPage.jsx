@@ -1,7 +1,47 @@
+// import { signInWithGoogle } from '../../firebase/auth-service';
+import { registerWithEmailAndPassword, signInWithGooglePatient } from '../../firebase/auth-service';
 import './RegPacPage.css'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HOME_URL, LOGIN_URL } from '../../constants/urls';
+import { Link } from 'react-router-dom';
 
 function RegPacPage() {
+    
+    const navigate = useNavigate();
+    
+    const [formData, setFormData] = useState({
+      name: '',
+      surname: '',
+      phone: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      age: 0,
+      rol:'paciente'
+    });
+    
+    const handleOnChange = (event) => {
+      const {name, value} = event.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      })
+    }
 
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      const {email, password, ...extraData} =formData;
+      await registerWithEmailAndPassword(formData.email, formData.password, extraData);
+      navigate(HOME_URL);
+    };
+
+    const handleSignWithGoogle = async () => {
+      console.log('registro con google')   
+      await signInWithGooglePatient();  
+      navigate(HOME_URL);
+    };
+    
   return (
     <div className='ContainerP'>
       
@@ -41,43 +81,46 @@ function RegPacPage() {
 
         </div>
 
+        <form className='fieldP' onSubmit = {onSubmit}>
 
-        <input type="text" className="field1P"></input>
+          <input type="text" className="field1P" placeholder='Ej: Antonio' name = 'name' onChange={handleOnChange}></input>
 
-        <input type="text" className="field2P"></input>
+          <input type="text" className="field2P" placeholder='Ej: Herrera' name = 'surname' onChange={handleOnChange}></input>
 
-        <input type="text" className="field3P"></input>
+          <input type="text" className="field3P" placeholder='Ej: 04242798715' name = 'phone' onChange={handleOnChange}></input>
 
-        <input type="text" className="field4P"></input>
+          <input type="text" className="field4P" placeholder='ejemplo@gmail.com' name = 'email' onChange={handleOnChange}></input>
 
-        <input type="text" className="field5P"></input>
+          <input type="text" className="field5P" placeholder='*********' name = 'password' onChange={handleOnChange}></input>
 
-        <input type="text" className="field6P"></input>
+          <input type="text" className="field6P" placeholder='*********' name = 'confirmPassword' onChange={handleOnChange}></input>
 
-        <input type="text" className="field7P"></input>
-
-
-        <div className='radioButtonsP'>
-
-          <label>
-              <input className='b1P' type="radio" value="Si" name='option' />
-            <span></span>
-          </label>
-
-          <label>
-            <input className='b2P' type="radio" value="No" name='option' />
-            <span></span>
-          </label>
-
-          <label>
-            <input className='b3P' type="radio" value="Prefiero no contestar." name='option' />
-            <span></span>
-          </label>
-
-        </div>
+          <input type="text" className="field7P" placeholder='age' name = 'age' onChange={handleOnChange}></input>
 
 
-        <button type="button" className="button1P" id="searchButtom">Crear cuenta</button>
+          <div className='radioButtonsP'>
+
+            <label>
+                <input className='b1P' type="radio" value="Si" name='option' />
+              <span></span>
+            </label>
+
+            <label>
+              <input className='b2P' type="radio" value="No" name='option' />
+              <span></span>
+            </label>
+
+            <label>
+              <input className='b3P' type="radio" value="Prefiero no contestar." name='option' />
+              <span></span>
+            </label>
+
+          </div>
+
+
+          <button type="button" className="button1P" id="searchButtom" onClick={onSubmit}>Crear cuenta</button>
+        </form>
+
 
 
         <h3 className='OP'>O</h3>
@@ -87,11 +130,15 @@ function RegPacPage() {
         <div className='linea2P'></div>
 
 
-        <button type="button" className="button2P" id="searchButtom">Continuar con Google</button>
+        <button type="button" className="button2P" id="searchButtom" onClick={handleSignWithGoogle}>Continuar con Google</button>
 
         <img className="logoGoogleP" src="img/google.png" alt="" />
 
-        <h3 className='titulo3P'>¿Ya tienes cuenta? Inicia sesión aquí.</h3>
+
+        <Link to={LOGIN_URL} className='titulo3P'>
+            ¿Ya tienes cuenta?{" "}
+            <span className="enlace">Inicia sesión aquí</span>
+        </Link>
 
         <h5 className='titulo4P'>Todos los derechos reservados</h5>
 

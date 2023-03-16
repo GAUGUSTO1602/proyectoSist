@@ -17,8 +17,12 @@ function App() {
                   <li>Home</li>
                   <li>Sobre nosotros</li>
                   <li>Doctores</li>
+
+                
                   <li>Iniciar Sesión</li>
                   <li>Registrarse</li>
+
+
               </ul>
 
           </nav>

@@ -124,8 +124,9 @@ body{
     
 }
 
-.header .navLinks .item {
+.header .navLinks ul{
     text-decoration: none;
+    color: #000000;
 }
 
 .rectanguloPP{   
