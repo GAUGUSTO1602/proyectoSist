@@ -162,10 +162,10 @@ body{
 
 .sub7P{
     position: absolute;
-    width: 87px;
+    width: 400px;
     height: 22px;
-    left: 1118px;
-    top: 575px;
+    left: 895px;
+    top: 588px;
 }
 
 
@@ -294,6 +294,7 @@ body{
 }
 
 .field7P{
+    position: absolute;
     width: 124px;
     left: 1191px;
     top: 560px;

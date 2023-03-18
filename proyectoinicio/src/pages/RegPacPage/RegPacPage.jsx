@@ -5,11 +5,35 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HOME_URL, LOGIN_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
+import ReactDatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
+import { getMonth, getYear } from 'date-fns';
+import range from "lodash/range";
 
 function RegPacPage() {
     
     const navigate = useNavigate();
+
+    const [startDate, setStartDate] = useState(new Date());
+
+
+    const years = range(1990, getYear(new Date()) + 1, 1);
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
     
+
     const [formData, setFormData] = useState({
       name: '',
       surname: '',
@@ -17,7 +41,7 @@ function RegPacPage() {
       email: '',
       password: '',
       confirmPassword: '',
-      age: 0,
+      age: '',
       rol:'paciente'
     });
     
@@ -27,7 +51,16 @@ function RegPacPage() {
         ...formData,
         [name]: value,
       })
+      console.log(value)
     }
+
+    const handleDate = (e) =>{
+      
+      setStartDate(e)
+
+      console.log(e)
+
+   }
 
     const onSubmit = async (event) => {
       event.preventDefault();
@@ -69,7 +102,7 @@ function RegPacPage() {
 
           <h5 className='sub6P'>Confirmar contraseña</h5>
 
-          <h5 className='sub7P'>Edad</h5>
+          <h5 className='sub7P'>Fecha de nacimiento(MM/DD/AAAA)</h5>
 
           <h5 className='sub8P'>¿Primera vez que asiste a consulta psicológica?</h5>
 
@@ -95,8 +128,47 @@ function RegPacPage() {
 
           <input type="text" className="field6P" placeholder='*********' name = 'confirmPassword' onChange={handleOnChange}></input>
 
-          <input type="text" className="field7P" placeholder='age' name = 'age' onChange={handleOnChange}></input>
+          {/* <input type="text" className="field7P" placeholder='age' name = 'age' onChange={handleOnChange}></input> */}
 
+          <div className="field7P">
+              <ReactDatePicker
+            renderCustomHeader={({
+                date,
+                changeYear,
+                changeMonth,
+            }) => (
+                <div
+                >
+                <select
+                    value={getYear(date)}
+                    onChange={({ target: { value } }) => changeYear(value)}
+                >
+                    {years.map((option) => (
+                    <option key={option} value={option}>
+                        {option}
+                    </option>
+                    ))}
+                </select>
+
+                <select
+                    value={months[getMonth(date)]}
+                    onChange={({ target: { value } }) =>
+                    changeMonth(months.indexOf(value))
+                    }
+                >
+                    {months.map((option) => (
+                    <option key={option} value={option}>
+                        {option}
+                    </option>
+                    ))}
+                </select>
+
+                </div>
+            )}
+            selected={startDate}
+            onChange={handleDate}
+            />
+          </div>
 
           <div className='radioButtonsP'>
 
