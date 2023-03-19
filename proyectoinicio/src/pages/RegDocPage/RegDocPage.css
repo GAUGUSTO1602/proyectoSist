@@ -162,10 +162,10 @@ body{
 
 .sub7D{
     position: absolute;
-    width: 87px;
+    width: 400px;
     height: 22px;
-    left: 1118px;
-    top: 575px;
+    left: 890px;
+    top: 585px;
 }
 
 
@@ -328,6 +328,7 @@ body{
 }
 
 .field7D{
+    position: absolute;
     width: 124px;
     left: 1191px;
     top: 560px;
@@ -451,4 +452,8 @@ body{
     left: 109px;
     top: 692px;
 
+}
+
+input{
+    text-align: center;
 }

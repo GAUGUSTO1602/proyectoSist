@@ -3,12 +3,14 @@ import { registerWithEmailAndPassword, signInWithGooglePatient } from '../../fir
 import './RegPacPage.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HOME_URL, LOGIN_URL } from '../../constants/urls';
+import { CompRegPacPage_URL, HOME_URL, LOGIN_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
-import ReactDatePicker from 'react-datepicker'
+import ReactDatePicker, {registerLocale} from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import { getMonth, getYear } from 'date-fns';
 import range from "lodash/range";
+
+
 
 function RegPacPage() {
     
@@ -55,24 +57,62 @@ function RegPacPage() {
     }
 
     const handleDate = (e) =>{
-      
-      setStartDate(e)
 
-      console.log(e)
+      const name = "age";
+      const options = {month: "numeric", day: "numeric", year: "numeric" }
+      const value = e.toLocaleDateString("es-ES", options)
+      setStartDate(e)
+      
+
+      setFormData({
+        ...formData,
+        [name]: value,
+      })
+
 
    }
 
     const onSubmit = async (event) => {
       event.preventDefault();
-      const {email, password, ...extraData} =formData;
-      await registerWithEmailAndPassword(formData.email, formData.password, extraData);
-      navigate(HOME_URL);
+      const {email, password, ...extraData} = formData;
+
+      if(formData.name == ''){
+        alert('Nombre no puede ser vacío');
+      }else if(formData.surname == ''){
+        alert('Apellido no puede ser vacío')
+      }else if(formData.phone == ''){
+        alert('Telefono no puede ser vacío')
+      }else if(formData.email == ''){
+        alert('Email no puede ser vacío')
+      }else if(password == ''){
+        alert('La contraseña no puede estar vacía')
+      }else if(formData.password != formData.confirmPassword){
+        alert('Contraseñas distintas')
+      }else if(formData.password.length < 6){
+        alert('Contraseña debe ser al menos 6 caracteres')
+      // }else if(formData.age < 18){
+      //   alert('Debe tener mínimo 18 años')
+      }else{
+        
+        const isFinished = await registerWithEmailAndPassword(formData.email, formData.password, extraData);
+  
+        if(isFinished){
+          navigate(HOME_URL);        
+        }
+      }
+
+
     };
 
     const handleSignWithGoogle = async () => {
       console.log('registro con google')   
-      await signInWithGooglePatient();  
-      navigate(HOME_URL);
+      const isFinished = await signInWithGooglePatient();
+      
+      if(isFinished){
+        // IF THE USER IS NEW, WE SHOULD NAVIGATE HIM TO COMPLETE THE FORM
+        navigate(HOME_URL);
+      }
+      
     };
     
   return (
@@ -124,49 +164,48 @@ function RegPacPage() {
 
           <input type="text" className="field4P" placeholder='ejemplo@gmail.com' name = 'email' onChange={handleOnChange}></input>
 
-          <input type="text" className="field5P" placeholder='*********' name = 'password' onChange={handleOnChange}></input>
+          <input type="password" className="field5P" placeholder='password' name = 'password' onChange={handleOnChange}></input>
 
-          <input type="text" className="field6P" placeholder='*********' name = 'confirmPassword' onChange={handleOnChange}></input>
+          <input type="password" className="field6P" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
 
-          {/* <input type="text" className="field7P" placeholder='age' name = 'age' onChange={handleOnChange}></input> */}
 
           <div className="field7P">
               <ReactDatePicker
-            renderCustomHeader={({
-                date,
-                changeYear,
-                changeMonth,
-            }) => (
-                <div
-                >
-                <select
-                    value={getYear(date)}
-                    onChange={({ target: { value } }) => changeYear(value)}
-                >
-                    {years.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
-                    </option>
-                    ))}
-                </select>
+                renderCustomHeader={({
+                    date,
+                    changeYear,
+                    changeMonth,
+                }) => (
+                    <div
+                    >
+                    <select
+                        value={getYear(date)}
+                        onChange={({ target: { value } }) => changeYear(value)}
+                    >
+                        {years.map((option) => (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                        ))}
+                    </select>
 
-                <select
-                    value={months[getMonth(date)]}
-                    onChange={({ target: { value } }) =>
-                    changeMonth(months.indexOf(value))
-                    }
-                >
-                    {months.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
-                    </option>
-                    ))}
-                </select>
+                    <select
+                        value={months[getMonth(date)]}
+                        onChange={({ target: { value } }) =>
+                        changeMonth(months.indexOf(value))
+                        }
+                    >
+                        {months.map((option) => (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                        ))}
+                    </select>
 
-                </div>
-            )}
-            selected={startDate}
-            onChange={handleDate}
+                    </div>
+                )}
+                selected={startDate}
+                onChange={handleDate}
             />
           </div>
 
