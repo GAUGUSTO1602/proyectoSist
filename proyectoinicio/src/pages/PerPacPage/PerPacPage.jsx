@@ -8,6 +8,7 @@ function PerPacPage() {
 
   const { user } = useUser();
 
+
   console.log(user);
 
   const handleLogout = async() => {
@@ -102,15 +103,15 @@ function PerPacPage() {
   
         <div className='subtitulos2P'>
   
-          <h4 className='sub2-1p'>xxxxxxxxxxx</h4>
+          <h4 className='sub2-1p'>{user.name}</h4>
   
           <h4 className='sub2-2p'>xxxxxxxxxxx</h4>
   
-          <h4 className='sub2-3p'>xxxxxxxxxxx</h4>
+          <h4 className='sub2-3p'>{user.age}</h4>
   
           <h4 className='sub2-4p'>xxxxxxxxxxx</h4>
   
-          <h4 className='sub2-5p'>xxxxxxxxxxx</h4>
+          <h4 className='sub2-5p'>{user.email}</h4>
   
   
         </div>

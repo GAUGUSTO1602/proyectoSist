@@ -4,8 +4,31 @@ import { Link } from 'react-router-dom';
 import { CompRegDocPage_URL, HOME_URL, LOGIN_URL } from '../../constants/urls';
 import { registerWithEmailAndPassword, signInWithGoogleDoctor } from '../../firebase/auth-service';
 import './RegDocPage.css'
+import ReactDatePicker, {registerLocale} from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
+import { getMonth, getYear } from 'date-fns';
+import range from "lodash/range";
 
 function RegDocPage() {
+
+    const [startDate, setStartDate] = useState(new Date());
+
+
+    const years = range(1990, getYear(new Date()) + 1, 1);
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -34,6 +57,22 @@ function RegDocPage() {
     })
   }
 
+  const handleDate = (e) =>{
+
+    const name = "age";
+    const options = {month: "numeric", day: "numeric", year: "numeric" }
+    const value = e.toLocaleDateString("es-ES", options)
+    setStartDate(e)
+    
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+
+
+ }
+
   const onSubmit = async (event) => {
     event.preventDefault();
 
@@ -49,8 +88,8 @@ function RegDocPage() {
       alert('Contraseña debe tener mínimo 6 caracteres')
     }else if(formData.password != formData.confirmPassword){
       alert('contraseñas no coinciden')
-    }else if(formData.age < 18){
-      alert('El mínimo de edad son 18 años')
+    // }else if(formData.age < 18){
+    //   alert('El mínimo de edad son 18 años')
     }else if(formData.universityName == ''){
       alert('Nombre de la universidad no puede estar vacío');
     }else if(formData.career == ''){
@@ -111,7 +150,7 @@ function RegDocPage() {
 
           <h5 className='sub6D'>Confirmar contraseña</h5>
 
-          <h5 className='sub7D'>Edad</h5>
+          <h5 className='sub7D'>Fecha de nacimiento(MM/DD/AAAA)</h5>
 
           <h5 className='sub8D'>Universidad donde estudio</h5>
 
@@ -146,7 +185,48 @@ function RegDocPage() {
 
           <input type="password" class="field6D" placeholder='Confirmar Contraseña' name = 'confirmPassword' onChange={handleOnChange}></input>
 
-          <input type="text" class="field7D" placeholder='Tu edad' name = 'age' onChange={handleOnChange}></input>
+
+          <div class="field7D">
+
+            <ReactDatePicker
+                  renderCustomHeader={({
+                      date,
+                      changeYear,
+                      changeMonth,
+                  }) => (
+                      <div
+                      >
+                      <select
+                          value={getYear(date)}
+                          onChange={({ target: { value } }) => changeYear(value)}
+                      >
+                          {years.map((option) => (
+                          <option key={option} value={option}>
+                              {option}
+                          </option>
+                          ))}
+                      </select>
+
+                      <select
+                          value={months[getMonth(date)]}
+                          onChange={({ target: { value } }) =>
+                          changeMonth(months.indexOf(value))
+                          }
+                      >
+                          {months.map((option) => (
+                          <option key={option} value={option}>
+                              {option}
+                          </option>
+                          ))}
+                      </select>
+
+                      </div>
+                  )}
+                  selected={startDate}
+                  onChange={handleDate}
+              />
+
+          </div>
 
           <input type="text" class="field8D" placeholder='Universidad donde estudió' name = 'universityName' onChange={handleOnChange}></input>
 

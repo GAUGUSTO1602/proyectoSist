@@ -6,9 +6,9 @@ import { logout } from "../../firebase/auth-service";
 
 function PerDocPage() {
 
-  const { user } = useUser();
+    const { user } = useUser();
 
-    console.log(user);
+      console.log(user);
 
     const handleLogout = async() => {
         console.log('SALIENDO...');
@@ -128,29 +128,29 @@ function PerDocPage() {
 
       <div className='subtitulos2D'>
 
-        <h4 className='sub2-1d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-1d'>{user.name}</h4>
 
         <h4 className='sub2-2d'>xxxxxxxxxxx</h4>
 
-        <h4 className='sub2-3d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-3d'>{user.age}</h4>
 
-        <h4 className='sub2-4d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-4d'>{user.phone}</h4>
 
-        <h4 className='sub2-5d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-5d'>{user.email}</h4>
 
-        <h4 className='sub2-6d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-6d'>{user.universityName}</h4>
 
-        <h4 className='sub2-7d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-7d'>{user.specialtyUniversityName}</h4>
 
-        <h4 className='sub2-8d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-8d'>*****</h4>
 
-        <h4 className='sub2-9d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-9d'>{user.specialty}</h4>
 
         <h4 className='sub2-10d'>xxxxxxxxxxx</h4>
 
         <h4 className='sub2-11d'>xxxxxxxxxxx</h4>
 
-        <h4 className='sub2-12d'>xxxxxxxxxxx</h4>
+        <h4 className='sub2-12d'>{user.laborExperience}</h4>
 
       </div>
 
