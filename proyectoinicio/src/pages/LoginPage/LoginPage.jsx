@@ -23,42 +23,23 @@ function LoginPage() {
   const onSubmit = async (event) => {
     event.preventDefault();
     const {email, password, ...extraData} =formData;
-    await loginWithEmailAndPassword(formData.email, formData.password, extraData);
-    navigate(HOME_URL);
+    const isFinished = await loginWithEmailAndPassword(formData.email, formData.password, extraData);
+    
+    if (isFinished){
+      navigate(HOME_URL);      
+    }
+
   };
 
   const handleSignWithGoogle = async () => {
     console.log('registro con google')   
-    await signInWithGooglePatient();  
-    navigate(HOME_URL);
+    const isFinished = await signInWithGooglePatient();  
+    
+    if(isFinished){
+      navigate(HOME_URL);
+    }
   }
 
-
-  // const onSuccess = () => {
-  //   navigate(HOME_URL);
-  // };
-
-  // const onFail = (_error) => {
-  //   console.log("FALLO AL INICIAR SESION, Intenbte de nuevo");
-  // };
-
-  // const onSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   await loginWithEmailAndPassword({ userData: formData, onSuccess, onFail });
-  // };
-
-  // const onChange = (event) => {
-  //   const { name, value } = event.target;
-
-  //   setFormData((oldData) => ({ ...oldData, [name]: value }));
-  // };
-
-  // const handleGoogleClick = async () => {
-  //   await signInWithGoogle({
-  //     onSuccess: () => navigate(HOME_URL),
-  //   });
-  // };
 
     return (
       <div className='Container'>
