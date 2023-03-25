@@ -13,7 +13,7 @@ import Doctors from './pages/Doctors/Doctors'
 // import ChatPage from './pages/ChatPage/ChatPage';
 import ChatContainer from './pages/ChatPage2/ChatContainer';
 import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL, AnyElsePage_URL, CHAT2_URL } from './constants/urls'
-import { Layout } from './components/Layout/Layout';
+import { Layout, LayoutWithNavbar } from './components/Layout/Layout';
 import { PrivateRouteCompleteUserDoctor, PrivateRouteCompleteUserPatient, PrivateRouteIncompleteUser, PrivateRouteNotUser, PrivateRouteUser } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
 import { CompRegDocPage } from './pages/CompRegDocPage/CompRegDocPage';
