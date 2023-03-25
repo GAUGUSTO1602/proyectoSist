@@ -6,8 +6,9 @@ import ReactDatePicker, {registerLocale} from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import { getMonth, getYear } from 'date-fns';
 import range from "lodash/range";
-import { useUser } from '../../context/UserContext';
+import { UserContext, useUser } from '../../context/UserContext';
 import { completeValuesUser } from '../../firebase/auth-service';
+import { HOME_URL } from '../../constants/urls';
 
 
 export function CompRegDocPage() {
@@ -75,11 +76,36 @@ export function CompRegDocPage() {
     event.preventDefault();
     const {email, password, ...extraData} = formData;
 
-    console.log(formData)
+    if(formData.password == ''){
+      alert('Revise el campo contraseña')
+    }else if(formData.password.length < 6){
+      alert('número de caracteres de la contraseña debe ser mayor o igual a 6')
+    }else if(formData.confirmPassword != password){
+      alert('Las contraseñas no coinciden');
+    }else if(formData.universityName == ''){
+      alert('El campo del nombre de la universidad que estudió no puede estar vacío')
+    }else if(formData.career == ''){
+      alert('Nombre de la carrera que estudió no puede estar vacío');
+    }else if(formData.License == ''){
+      alert('La licencia no puede estar vacía');
+    }else if((formData.specialty != '' || formData.specialtyUniversityName != '' || formData.specialtyLicense != '') && (formData.specialty == '' || formData.specialtyUniversityName == '' || formData.specialtyLicense == '')){
+      alert('Rellene o vacíe los datos de especialidad opcional para continuar');
+    }else if(formData.laborExperience == ''){
+      alert('Años de experiencia no pueden estar vacío')
+    }else if(formData.laborExperience < 0){
+      alert('Dato inválido')
+    }else{
+      const isFinished = await completeValuesUser(user.id, formData.email, formData.password, extraData);
+      
+      if(isFinished){
+
+        navigate(HOME_URL);
+
+      }
+    }
 
     
 
-    // await completeValuesUser(user.id, formData.email, formData.password, extraData);
   }
 
   return (
