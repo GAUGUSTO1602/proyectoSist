@@ -1,10 +1,69 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router';
+import { HOME_URL } from '../../constants/urls';
+import { useUser } from '../../context/UserContext'
+import { completeValuesUser } from '../../firebase/auth-service';
 import Styles from './CompRegPacPage.module.css'
 
 
 export function CompRegPacPage() {
+
+  const navigate = useNavigate();
+
+  const {user} = useUser();
+  
+  // alert(user.rol)
+
+  const [formData, setFormData] = useState({
+    name: user.name,
+    surname: '',
+    phone: '',
+    email: user.email,
+    password: '',
+    confirmPassword: '',
+    age: '',
+    rol: user.rol
+  });
+
+  const handleOnChange = (event) => {
+    const {name, value} = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+    // console.log(value)
+  }
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const{email,password, ...extraData} = formData;
+
+    
+    if(formData.password == ""){
+      alert('El campo no puede ser vacío')
+    }else if(formData.password.length < 6){
+      alert('Contraseña tiene que tener mas de 6 caracteres')
+    }else if(formData.password != formData.confirmPassword){
+      alert('Contraseñas distintas')
+    }else if(formData.age == ''){
+      alert('campo edad vacío')
+    }else if(formData.age < 18){
+      alert('menor a 18 años')
+    }else{     
+      const isFinished = await completeValuesUser(user.id, formData.email, formData.password, extraData);
+
+      if (isFinished){
+        user.password = formData.password;
+        alert(user.password);
+        navigate(HOME_URL);
+      }
+      
+    }
+
+  }
+
   return (
-    <>
+    <div className={Styles.bigBox}>
 
     
       <div className={Styles.titleBox}>
@@ -12,22 +71,24 @@ export function CompRegPacPage() {
       </div>
 
       <div className={Styles.contentBox}>
-        
+
+        <form onSubmit={onSubmit}>
+
           <div className={Styles.inputsBoxTop}>
             
           <div className={Styles.individualInputBox}>
             <h1 className={Styles.text}>Contraseña</h1>
-            <input type="text" className={Styles.textField} placeholder='password' />
+            <input type="password" className={Styles.textField} placeholder='password' name = 'password' onChange = {handleOnChange} />
           </div>
 
           <div className={Styles.individualInputBox}>
             <h1 className={Styles.text}>Confirmar Contraseña</h1>
-            <input type="text" className={Styles.textField} placeholder='confirmPassword' />
+            <input type="password" className={Styles.textField} placeholder='confirmPassword' name = 'confirmPassword' onChange = {handleOnChange} />
           </div> 
 
           <div className={Styles.individualInputBox}>
             <h1 className={Styles.text}>Edad</h1>
-            <input type="text" className={Styles.textField} placeholder='age' />
+            <input type="text" className={Styles.textField} placeholder='age' name = 'age' onChange = {handleOnChange} />
           </div>
             
         </div>
@@ -44,13 +105,13 @@ export function CompRegPacPage() {
               
               <div className="">
                 <h1 className={Styles.text}>Teléfono (Opcional)</h1>
-                <input type="text" className={Styles.textField} placeholder='phoneNumber'/>
+                <input type="text" className={Styles.textField} placeholder='phone' name = 'phone' onChange = {handleOnChange}/>
               </div>
 
             </div>
             
             <div className = {Styles.createAccountButton}>
-              <button><h1>Crear Cuenta</h1></button>
+              <button onClick={onSubmit}><h1>Crear Cuenta</h1></button>
             </div>
 
           </div>
@@ -58,6 +119,7 @@ export function CompRegPacPage() {
 
         </div>
 
+        </form>
 
       </div>
 
@@ -65,7 +127,7 @@ export function CompRegPacPage() {
 
 
 
-    </>
+    </div>
 
   )
 }

@@ -1,41 +1,14 @@
 // Todos los métodos de autenticación
 import {signInWithPopup,
     signOut,
-     createUserWithEmailAndPassword,
-      signInWithEmailAndPassword,
-      getAdditionalUserInfo
-   } from 'firebase/auth'
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        getAdditionalUserInfo
+    } from 'firebase/auth'
 import { auth, googleProvider } from './config';
 import { createUserProfile } from './users-service';
 
-
-// export const signInWithGoogle = async () => {
-//     const navigate = useNavigate();
-//     try{
-//         const result = await signInWithPopup(auth, googleProvider);
-//         console.log(result);
-       
-//         const { isNewUser } = getAdditionalUserInfo(result);
-       
-//         if(isNewUser){
-           
-           
-//             navigate(SelReg_URL);
-
-//             // await createUserProfile(result.user.uid, {
-//             //     email: result.user.email,
-//             //     name: result.user.displayName,
-//             //     age: 0,
-//             //     rol: 'hardcodeadoMALAMENTE',
-//             // })
-//         }
-
-//     }catch(error){
-//         console.error(error);
-
-//     }
-// };
-
+ 
 // Se usa para registrar al paciente con google
 export const signInWithGooglePatient = async () => {
 
@@ -120,6 +93,20 @@ export const signInWithGoogleDoctor = async () => {
 
     }
 };
+
+export const completeValuesUser = async (uid, email, password, extraData) => {
+    try{        
+        await createUserProfile(uid, {
+            email,
+            password,
+            ...extraData
+        });
+        return true;
+    }catch(error){
+        alert(error);
+        return false;
+    }
+}
 
 export const registerWithEmailAndPassword = async (email,
     password,
