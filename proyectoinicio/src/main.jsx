@@ -10,8 +10,9 @@ import RegPacPage from './pages/RegPacPage/RegPacPage';
 import PerDocPage from './pages/PerDocPage/PerDocPage';
 import PerPacPage from './pages/PerPacPage/PerPacPage';
 import Doctors from './pages/Doctors/Doctors'
-import ChatPage from './pages/ChatPage/ChatPage';
-import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL, AnyElsePage_URL } from './constants/urls'
+// import ChatPage from './pages/ChatPage/ChatPage';
+import ChatContainer from './pages/ChatPage2/ChatContainer';
+import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL, AnyElsePage_URL, CHAT2_URL } from './constants/urls'
 import { Layout } from './components/Layout/Layout';
 import { PrivateRouteCompleteUserDoctor, PrivateRouteCompleteUserPatient, PrivateRouteIncompleteUser, PrivateRouteNotUser, PrivateRouteUser } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
@@ -24,11 +25,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
 
+        
+
           <Route element = {<Layout/>}>
 
             <Route element = {<NavBar/>}>
 
-              <Route path={HOME_URL} element={<HomePage />} />              
+              <Route path={HOME_URL} element={<HomePage />} />
+
+              
+
               <Route path={DOCTORS_URL} element={
                 <PrivateRouteIncompleteUser>
                   <Doctors/>
@@ -86,10 +92,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </PrivateRouteNotUser>
             } />
             
-            <Route path={CHAT_URL} element={
+            <Route path={CHAT2_URL} element={
             <PrivateRouteUser>
               <PrivateRouteIncompleteUser>
-                <ChatPage/>
+                <ChatContainer/>
               </PrivateRouteIncompleteUser>
             </PrivateRouteUser>
             } />

@@ -1,6 +1,6 @@
 import "./PerDocPage.css"
 import { Link } from "react-router-dom";
-import { CHAT_URL, HOME_URL } from "../../constants/urls";
+import { CHAT2_URL, HOME_URL } from "../../constants/urls";
 import { useUser } from "../../context/UserContext";
 import { logout } from "../../firebase/auth-service";
 
@@ -63,7 +63,7 @@ function PerDocPage() {
 
       </div>
 
-      <Link to={CHAT_URL}>
+      <Link to={CHAT2_URL}>
         <button className='Bchat'>Comenzar chat</button>
       </Link>
 

@@ -7,6 +7,7 @@ import {signInWithPopup,
     } from 'firebase/auth'
 import { auth, googleProvider } from './config';
 import { createUserProfile } from './users-service';
+import { doc, setDoc } from "firebase/firestore";
 
  
 // Se usa para registrar al paciente con google
@@ -32,6 +33,8 @@ export const signInWithGooglePatient = async () => {
                age: 0,                               
                rol: 'paciente',
            })
+
+           await setDoc(doc(db, "userChats", result.user.uid), {});
 
        }
 
@@ -75,6 +78,8 @@ export const signInWithGoogleDoctor = async () => {
                 laborExperience: 0, 
                 rol: 'doctor',
             })
+
+            await setDoc(doc(db, "userChats", result.user.uid), {});
         }
         return true;
 
@@ -119,6 +124,8 @@ export const registerWithEmailAndPassword = async (email,
             email,
             ...extraData
         });
+
+        await setDoc(doc(db, "userChats", result.user.uid), {});
 
         return true;
     }catch(error){
