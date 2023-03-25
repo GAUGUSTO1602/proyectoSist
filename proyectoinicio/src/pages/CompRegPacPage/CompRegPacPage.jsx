@@ -4,6 +4,10 @@ import { HOME_URL } from '../../constants/urls';
 import { useUser } from '../../context/UserContext'
 import { completeValuesUser } from '../../firebase/auth-service';
 import Styles from './CompRegPacPage.module.css'
+import ReactDatePicker, {registerLocale} from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
+import { getMonth, getYear } from 'date-fns';
+import range from "lodash/range";
 
 
 export function CompRegPacPage() {
@@ -33,6 +37,43 @@ export function CompRegPacPage() {
     })
     // console.log(value)
   }
+
+  const [startDate, setStartDate] = useState(new Date());
+
+
+        const years = range(1990, getYear(new Date()) + 1, 1);
+        const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+
+    
+
+    const handleDate = (e) =>{
+
+        const name = "age";
+        const options = {month: "numeric", day: "numeric", year: "numeric" }
+        const value = e.toLocaleDateString("es-ES", options)
+        setStartDate(e)
+        
+
+        setFormData({
+        ...formData,
+        [name]: value,
+        })
+
+
+    }
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -88,7 +129,43 @@ export function CompRegPacPage() {
 
           <div className={Styles.individualInputBox}>
             <h1 className={Styles.text}>Edad</h1>
-            <input type="text" className={Styles.textField} placeholder='age' name = 'age' onChange = {handleOnChange} />
+            <ReactDatePicker className={Styles.textField}
+                  renderCustomHeader={({
+                      date,
+                      changeYear,
+                      changeMonth,
+                  }) => (
+                      <div
+                      >
+                      <select
+                          value={getYear(date)}
+                          onChange={({ target: { value } }) => changeYear(value)}
+                      >
+                          {years.map((option) => (
+                          <option key={option} value={option}>
+                              {option}
+                          </option>
+                          ))}
+                      </select>
+
+                      <select
+                          value={months[getMonth(date)]}
+                          onChange={({ target: { value } }) =>
+                          changeMonth(months.indexOf(value))
+                          }
+                      >
+                          {months.map((option) => (
+                          <option key={option} value={option}>
+                              {option}
+                          </option>
+                          ))}
+                      </select>
+
+                      </div>
+                  )}
+                  selected={startDate}
+                  onChange={handleDate}
+              />
           </div>
             
         </div>
