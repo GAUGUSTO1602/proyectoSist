@@ -13,7 +13,7 @@ import Doctors from './pages/Doctors/Doctors'
 import ChatPage from './pages/ChatPage/ChatPage';
 import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL, AnyElsePage_URL } from './constants/urls'
 import { Layout } from './components/Layout/Layout';
-import { PrivateRouteNotUser, PrivateRouteUser } from './PrivateRoute/PrivateRoute';
+import { PrivateRouteCompleteUserDoctor, PrivateRouteCompleteUserPatient, PrivateRouteIncompleteUser, PrivateRouteNotUser, PrivateRouteUser } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
 import { CompRegDocPage } from './pages/CompRegDocPage/CompRegDocPage';
 import NavBar from './components/NavBar/NavBar';
@@ -29,8 +29,28 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route element = {<NavBar/>}>
 
               <Route path={HOME_URL} element={<HomePage />} />              
-              <Route path={DOCTORS_URL} element={<Doctors/>} />
+              <Route path={DOCTORS_URL} element={
+                <PrivateRouteIncompleteUser>
+                  <Doctors/>
+                </PrivateRouteIncompleteUser>              
+              } />
 
+              <Route path={CompRegPacPage_URL} element = {
+              <PrivateRouteUser>
+                <PrivateRouteCompleteUserPatient>
+                  <CompRegPacPage />
+                </PrivateRouteCompleteUserPatient>
+              </PrivateRouteUser>
+              } />           
+  
+              <Route path={CompRegDocPage_URL} element = {
+              <PrivateRouteUser>
+                  <PrivateRouteCompleteUserDoctor>
+                    <CompRegDocPage />
+                  </PrivateRouteCompleteUserDoctor>
+              </PrivateRouteUser>
+              } /> 
+              
             </Route>
             
 
@@ -53,7 +73,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             
             <Route path={PerDoc_URL} element={
             <PrivateRouteUser>
-              <PerDocPage/>
+              <PrivateRouteIncompleteUser>
+                <PerDocPage/>
+              </PrivateRouteIncompleteUser>
             </PrivateRouteUser>
             } />
             
@@ -66,28 +88,21 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             
             <Route path={CHAT_URL} element={
             <PrivateRouteUser>
-              <ChatPage/>
+              <PrivateRouteIncompleteUser>
+                <ChatPage/>
+              </PrivateRouteIncompleteUser>
             </PrivateRouteUser>
             } />
             
-            <Route path={CompRegPacPage_URL} element = {
-            <PrivateRouteUser>
-              <CompRegPacPage />
-            </PrivateRouteUser>
-            } />           
-
-            <Route path={CompRegDocPage_URL} element = {
-            <PrivateRouteUser>
-              <CompRegDocPage />
-            </PrivateRouteUser>
-            } />          
             
 
-              <Route path={PerPac_URL} element={
-              <PrivateRouteUser>                
+            <Route path={PerPac_URL} element={
+            <PrivateRouteUser>                
+              <PrivateRouteIncompleteUser>
                 <PerPacPage/>
-              </PrivateRouteUser>
-              } />
+              </PrivateRouteIncompleteUser>
+            </PrivateRouteUser>
+            } />
 
               <Route path={AnyElsePage_URL} element={<AnyElsePage/>}/>
 

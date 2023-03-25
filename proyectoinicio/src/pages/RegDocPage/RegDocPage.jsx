@@ -164,8 +164,6 @@ function RegDocPage() {
 
           <h5 className='sub13D'>Licencia</h5>
 
-          <h5 className='sub14D'>Agregar especialidad +</h5>
-
           <h5 className='sub15D'>Experiencia laboral</h5>
 
 
