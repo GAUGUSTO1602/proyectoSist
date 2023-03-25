@@ -95,10 +95,11 @@ export function CompRegDocPage() {
     }else if(formData.laborExperience < 0){
       alert('Dato inválido')
     }else{
-      const isFinished = await completeValuesUser(user.id, formData.email, formData.password, extraData);
       
+      const isFinished = await completeValuesUser(user.id, formData.email, formData.password, extraData);
       if(isFinished){
-
+        
+        console.log(formData);
         navigate(HOME_URL);
 
       }

@@ -96,8 +96,6 @@ export function CompRegPacPage() {
       if (isFinished){
         user.password = formData.password;
         
-        
-        alert(useUser.name);
         navigate(HOME_URL);
       }
       
