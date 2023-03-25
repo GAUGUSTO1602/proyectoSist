@@ -25,11 +25,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
 
-        
 
-          <Route element = {<Layout/>}>
-
-            <Route element = {<NavBar/>}>
+            <Route element = {<LayoutWithNavbar/>}>
 
               <Route path={HOME_URL} element={<HomePage />} />
 
@@ -50,7 +47,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               } />           
   
               <Route path={CompRegDocPage_URL} element = {
-              <PrivateRouteUser>
+                <PrivateRouteUser>
                   <PrivateRouteCompleteUserDoctor>
                     <CompRegDocPage />
                   </PrivateRouteCompleteUserDoctor>
@@ -59,6 +56,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               
             </Route>
             
+          <Route element = {<Layout/>}>            
 
             <Route path={LOGIN_URL} element={
             <PrivateRouteNotUser>
