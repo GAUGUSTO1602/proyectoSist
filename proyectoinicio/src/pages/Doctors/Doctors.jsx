@@ -1,101 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import DoctorCard from './../../components/Cards/DoctorCard';
-import NavBar from '../../components/NavBar/NavBar';
+import { db } from '../../firebase/config';
+import { collection, query, where, getDocs, getDoc, setDoc, doc, updateDoc,} from "firebase/firestore";
+import { get } from 'lodash';
 
 
 function Doctors() {
+
+    const [doctors, setDoctors] = useState([])
+
+
+    useEffect(() => {
+
+        const q = query(collection(db, "users"), where("rol", "==", "doctor"));
+        
+        getDocs(q).then(res => setDoctors(res.docs.map(person => ({id: person.id, ...person.data() }))));
+
+    }, []);
+
+
   return (
     <>
-        <div>    
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-            
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-            
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-        
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-
-                <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-            
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-            
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-        
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
-
-            <DoctorCard 
-                Nombre="Dr. Maria Carreño Pérez"
-                Género="Femenino"
-                Edad='40 años'
-                Especialización="Psicología infantil"
-                Experiencia='10 años'
-                Imagen="img/p1.jpeg"
-            />
+        <div>
+            {
+                doctors.map((doctor) => (
+                <DoctorCard doctor={doctor} />
+                ))
+             }    
         </div>
     </>
   )
