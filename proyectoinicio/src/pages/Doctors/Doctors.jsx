@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import DoctorCard from './../../components/Cards/DoctorCard';
 import { db } from '../../firebase/config';
 import { collection, query, where, getDocs, getDoc, setDoc, doc, updateDoc,} from "firebase/firestore";
-import { get } from 'lodash';
 
 
 function Doctors() {
