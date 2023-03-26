@@ -5,7 +5,7 @@ import {signInWithPopup,
         signInWithEmailAndPassword,
         getAdditionalUserInfo
     } from 'firebase/auth'
-import { auth, googleProvider } from './config';
+import { auth, db, googleProvider } from './config';
 import { createUserProfile } from './users-service';
 import { doc, setDoc } from "firebase/firestore";
 
@@ -25,13 +25,14 @@ export const signInWithGooglePatient = async () => {
        if(isNewUser){           
 
            await createUserProfile(result.user.uid, {
-               name: result.user.displayName,
-               phone:'',
-               email: result.user.email,
-               password: '',
-               confirmPassword: '',
-               age: 0,                               
-               rol: 'paciente',
+                uid: result.user.uid,
+                name: result.user.displayName,
+                phone:'',
+                email: result.user.email,
+                password: '',
+                confirmPassword: '',
+                age: 0,                               
+                rol: 'paciente',
            })
 
            await setDoc(doc(db, "userChats", result.user.uid), {});
@@ -62,6 +63,7 @@ export const signInWithGoogleDoctor = async () => {
         
         if(isNewUser){    
             await createUserProfile(result.user.uid, {
+                uid: result.user.uid,
                 email: result.user.email,
                 name: result.user.displayName,
                 phone: '',
@@ -121,6 +123,7 @@ export const registerWithEmailAndPassword = async (email,
         const result = await createUserWithEmailAndPassword(auth, email, password);
         console.log("REGISTER EMAIL AND PASSWORD", result);
         await createUserProfile(result.user.uid, {
+            uid: result.user.uid,
             email,
             ...extraData
         });

@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ChatContext } from '../../context/ChatContext';
+import { useUser } from '../../context/UserContext'
 
-const Message = () => {
+const Message = ({ message }) => {
+
+  const {user} = useUser();
+  const {data} = useContext(ChatContext)
+
   return (
-    <div className='message owner'>
+    <div className={`message ${message.senderId === user.uid && 'owner'}`}>
       <div className="messageInfo">
         <img src="" alt="" />
         <span>Justo ahora</span>
       </div>
+
       <div className="messageContent">
-        <p>Hola</p>
-        <img src="" alt="" />
+        <p>{message.text}</p>
+        {message.img && <img src="" alt="" />}
       </div>
     </div>
   )
