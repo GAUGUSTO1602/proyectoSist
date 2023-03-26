@@ -15,7 +15,7 @@ function NavBar() {
     }
   return (
     <main>
-        <UserContextProvider>
+        {/* <UserContextProvider> */}
 
             {/* Navbar */}
             <div>
@@ -101,7 +101,7 @@ function NavBar() {
                 <Outlet/>
             </section>
 
-        </UserContextProvider>
+        {/* </UserContextProvider> */}
 
     </main>
 

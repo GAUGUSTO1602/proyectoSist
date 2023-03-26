@@ -13,111 +13,115 @@ import Doctors from './pages/Doctors/Doctors'
 // import ChatPage from './pages/ChatPage/ChatPage';
 import ChatContainer from './pages/ChatPage2/ChatContainer';
 import { HOME_URL, LOGIN_URL, SelReg_URL,RegPac_URL, RegDoc_URL, PerDoc_URL, PerPac_URL,DOCTORS_URL, CHAT_URL, CompRegPacPage_URL, CompRegDocPage_URL, AnyElsePage_URL, CHAT2_URL } from './constants/urls'
-import { Layout } from './components/Layout/Layout';
+import { Layout, LayoutWithNavbar } from './components/Layout/Layout';
 import { PrivateRouteCompleteUserDoctor, PrivateRouteCompleteUserPatient, PrivateRouteIncompleteUser, PrivateRouteNotUser, PrivateRouteUser } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
 import { CompRegDocPage } from './pages/CompRegDocPage/CompRegDocPage';
 import NavBar from './components/NavBar/NavBar';
 import { AnyElsePage } from './pages/AnyElsePage/AnyElsePage';
+import { UserContextProvider } from './context/UserContext';
+import { ChatContextProvider } from './context/ChatContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
+  <UserContextProvider>
+    <ChatContextProvider>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Routes>
 
+
+                <Route element = {<LayoutWithNavbar/>}>
+
+                  <Route path={HOME_URL} element={<HomePage />} />
+
+                  
+
+                  <Route path={DOCTORS_URL} element={
+                    <PrivateRouteIncompleteUser>
+                      <Doctors/>
+                    </PrivateRouteIncompleteUser>              
+                  } />
+
+                  <Route path={CompRegPacPage_URL} element = {
+                  <PrivateRouteUser>
+                    <PrivateRouteCompleteUserPatient>
+                      <CompRegPacPage />
+                    </PrivateRouteCompleteUserPatient>
+                  </PrivateRouteUser>
+                  } />           
+      
+                  <Route path={CompRegDocPage_URL} element = {
+                    <PrivateRouteUser>
+                      <PrivateRouteCompleteUserDoctor>
+                        <CompRegDocPage />
+                      </PrivateRouteCompleteUserDoctor>
+                  </PrivateRouteUser>
+                  } /> 
+                  
+                </Route>
+                
+              <Route element = {<Layout/>}>            
+
+                <Route path={LOGIN_URL} element={
+                <PrivateRouteNotUser>
+                  <LoginPage />
+                </PrivateRouteNotUser>
+                } />
+                <Route path={SelReg_URL} element={
+                <PrivateRouteNotUser>
+                  <SelecPage />
+                </PrivateRouteNotUser>            
+                } />
+                
+                <Route path={RegDoc_URL} element={
+                <PrivateRouteNotUser>
+                  <RegDocPage />
+                </PrivateRouteNotUser>
+                } />
+                
+                <Route path={PerDoc_URL} element={
+                <PrivateRouteUser>
+                  <PrivateRouteIncompleteUser>
+                    <PerDocPage/>
+                  </PrivateRouteIncompleteUser>
+                </PrivateRouteUser>
+                } />
+                
+                
+                <Route path={RegPac_URL} element={
+                <PrivateRouteNotUser>
+                  <RegPacPage/>
+                </PrivateRouteNotUser>
+                } />
+                
+                <Route path={CHAT2_URL} element={
+                <PrivateRouteUser>
+                  <PrivateRouteIncompleteUser>
+                    <ChatContainer/>
+                  </PrivateRouteIncompleteUser>
+                </PrivateRouteUser>
+                } />
+                
+                
+
+                <Route path={PerPac_URL} element={
+                <PrivateRouteUser>                
+                  <PrivateRouteIncompleteUser>
+                    <PerPacPage/>
+                  </PrivateRouteIncompleteUser>
+                </PrivateRouteUser>
+                } />
+
+                  <Route path={AnyElsePage_URL} element={<AnyElsePage/>}/>
+
+
+              </Route>
         
 
-          <Route element = {<Layout/>}>
 
-            <Route element = {<NavBar/>}>
-
-              <Route path={HOME_URL} element={<HomePage />} />
-
-              
-
-              <Route path={DOCTORS_URL} element={
-                <PrivateRouteIncompleteUser>
-                  <Doctors/>
-                </PrivateRouteIncompleteUser>              
-              } />
-
-              <Route path={CompRegPacPage_URL} element = {
-              <PrivateRouteUser>
-                <PrivateRouteCompleteUserPatient>
-                  <CompRegPacPage />
-                </PrivateRouteCompleteUserPatient>
-              </PrivateRouteUser>
-              } />           
-  
-              <Route path={CompRegDocPage_URL} element = {
-              <PrivateRouteUser>
-                  <PrivateRouteCompleteUserDoctor>
-                    <CompRegDocPage />
-                  </PrivateRouteCompleteUserDoctor>
-              </PrivateRouteUser>
-              } /> 
-              
-            </Route>
-            
-
-            <Route path={LOGIN_URL} element={
-            <PrivateRouteNotUser>
-              <LoginPage />
-            </PrivateRouteNotUser>
-            } />
-            <Route path={SelReg_URL} element={
-            <PrivateRouteNotUser>
-              <SelecPage />
-            </PrivateRouteNotUser>            
-            } />
-            
-            <Route path={RegDoc_URL} element={
-            <PrivateRouteNotUser>
-              <RegDocPage />
-            </PrivateRouteNotUser>
-            } />
-            
-            <Route path={PerDoc_URL} element={
-            <PrivateRouteUser>
-              <PrivateRouteIncompleteUser>
-                <PerDocPage/>
-              </PrivateRouteIncompleteUser>
-            </PrivateRouteUser>
-            } />
-            
-            
-            <Route path={RegPac_URL} element={
-            <PrivateRouteNotUser>
-              <RegPacPage/>
-            </PrivateRouteNotUser>
-            } />
-            
-            <Route path={CHAT2_URL} element={
-            <PrivateRouteUser>
-              <PrivateRouteIncompleteUser>
-                <ChatContainer/>
-              </PrivateRouteIncompleteUser>
-            </PrivateRouteUser>
-            } />
-            
-            
-
-            <Route path={PerPac_URL} element={
-            <PrivateRouteUser>                
-              <PrivateRouteIncompleteUser>
-                <PerPacPage/>
-              </PrivateRouteIncompleteUser>
-            </PrivateRouteUser>
-            } />
-
-              <Route path={AnyElsePage_URL} element={<AnyElsePage/>}/>
-
-
-          </Route>
-    
-
-
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+          </Routes>
+        </BrowserRouter>
+      </React.StrictMode>
+    </ChatContextProvider>
+  </UserContextProvider>
 )

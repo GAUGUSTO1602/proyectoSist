@@ -1,5 +1,5 @@
 import "./PerPacPage.css"
-import { CHAT_URL, HOME_URL, DOCTORS_URL } from "../../constants/urls";
+import { CHAT2_URL, HOME_URL, DOCTORS_URL } from "../../constants/urls";
 import { Link } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import { logout } from "../../firebase/auth-service";
@@ -67,7 +67,7 @@ function PerPacPage() {
   
         </div>
 
-        <Link to={CHAT_URL}>
+        <Link to={CHAT2_URL}>
           <button className='Bchat'>Comenzar chat</button>
         </Link>
   
