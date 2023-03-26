@@ -46,7 +46,6 @@ function PerDocPage() {
         document.getElementById('info').disabled=false
         document.getElementById('info2').disabled=false
         document.getElementById('info3').disabled=false
-        document.getElementById('info4').disabled=false
         document.getElementById('info5').disabled=false
         document.getElementById('info6').disabled=false
         document.getElementById('info7').disabled=false
@@ -83,7 +82,6 @@ function PerDocPage() {
         document.getElementById('info').disabled=true
         document.getElementById('info2').disabled=true
         document.getElementById('info3').disabled=true
-        document.getElementById('info4').disabled=true
         document.getElementById('info5').disabled=true
         document.getElementById('info6').disabled=true
         document.getElementById('info7').disabled=true
@@ -214,7 +212,7 @@ function PerDocPage() {
 
         <input type="text" className="sub2-4d" name="phone" id="info3" placeholder={user.phone} disabled={true} onChange={handleOnChange}/>
 
-        <input type="text" className="sub2-5d" name="email" id="info4" placeholder={user.email} disabled={true} onChange={handleOnChange}/>
+        <h4 className='sub2-5d'>{user.email}</h4>
 
         <input type="text" className="sub2-6d" name="universityName" id="info5" placeholder={user.universityName} disabled={true} onChange={handleOnChange}/>
 

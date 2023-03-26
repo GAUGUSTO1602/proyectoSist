@@ -40,7 +40,6 @@ function PerPacPage() {
       document.getElementById('info').disabled=false
       document.getElementById('info2').disabled=false
       document.getElementById('info3').disabled=false
-      document.getElementById('info4').disabled=false
 
       alert("Edicion habilitada")
       alert("Haga click nuevamente para guardar los cambios")
@@ -62,7 +61,6 @@ function PerPacPage() {
       document.getElementById('info').disabled=true
       document.getElementById('info2').disabled=true
       document.getElementById('info3').disabled=true
-      document.getElementById('info4').disabled=true
       alert("datos guardados")
     }
   }
@@ -158,7 +156,7 @@ function PerPacPage() {
   
           <input type="text" className="sub2-4p" name="phone" id="info3" placeholder={user.phone} disabled={true} onChange={handleOnChange}/>
   
-          <input type="text" className="sub2-5p" name="email" id="info4" placeholder={user.email} disabled={true} onChange={handleOnChange}s/>
+          <h4 className='sub2-5p'>{user.email}</h4>
   
   
         </div>
