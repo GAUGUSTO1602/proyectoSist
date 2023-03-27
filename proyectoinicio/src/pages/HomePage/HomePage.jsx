@@ -1,12 +1,13 @@
 import Styles from "./HomePage.module.css"
 import { Link } from 'react-router-dom';
-import { LOGIN_URL } from '../../constants/urls';
+import { LOGIN_URL, PerDoc_URL } from '../../constants/urls';
 import { SelReg_URL } from "../../constants/urls";
 import { useUser } from "../../context/UserContext";
 import { PerPac_URL } from "../../constants/urls";
 import { logout } from "../../firebase/auth-service";
 import { DOCTORS_URL } from "../../constants/urls";
 import { HOME_URL } from "../../constants/urls";
+import PlanesCard from '../../components/Cards/PlanesCard';
 
 function HomePage() {
     const { user } = useUser();
@@ -21,65 +22,6 @@ function HomePage() {
   return (
     <div className={Styles.Container}>
       
-      <header className={Styles.header}>
-          <nav>
-              
-              <div className={Styles.logo}>
-                  <img src="img/Logo.png" alt="" />
-              </div>
-
-                <ul className={Styles.navLinks}>
-                    <li>
-                        <Link to={HOME_URL} className={`${Styles.item}`}>
-                            <span>HomePage</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to={DOCTORS_URL} className={`${Styles.item}`}>
-                            <span>Doctores</span>
-                        </Link>
-                    </li>
-                                       
-                    {!!user && 
-                    (<>
-                        <li >
-                            <Link to={PerPac_URL} className={`${Styles.item}`}>
-                                <span> Perfil, {user.name}</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <button type = 'button' onClick={handleLogout}>
-                                Salir
-                            </button>
-                        </li>
-
-                    </>)}
-
-                    {!user && 
-                    (<>
-                        <li >
-                            <button className={Styles.inicio}>
-                                <Link to={LOGIN_URL} className={`${Styles.item}`}>
-                                    <span>Iniciar Sesión</span>
-                                </Link>
-                            </button>
-
-                        </li>
-                        <li>
-                            <button className={Styles.registro}>
-                                    <Link to={SelReg_URL} className={`${Styles.item}`}>
-                                        <span>Registrarse</span>
-                                    </Link>
-                            </button>
-                        </li>
-
-                    </>)}
-                </ul>
-
-            </nav>
-
-      </header>
-
       <section className={Styles.block1}>
 
         <div className={Styles.imageBlock1}>
@@ -127,6 +69,44 @@ function HomePage() {
                 <img src='img/vector.png' alt=""/>              
             </div>
         </section>
+
+        <section>
+                <h2 className={Styles.subtituloH2}>Planes de consulta</h2>
+                <div className="">
+                    <PlanesCard
+                        imagen="img/bici.png"
+                        alt="Descripción de la imagen"
+                        titulo="Básico"
+                        descripcion="Consulta online por 60min vía chat dentro de la plataforma."
+                        precio = "$49.99"
+                    />
+                    <PlanesCard
+                        imagen="img/carro.png"
+                        alt="Descripción de la imagen"
+                        titulo="Medio"
+                        descripcion="Consulta online por 2 días, 60min un día vía chat dentro de la plataforma y el 2do día por videollamada durante 60 min."
+                        precio = "$79.99"
+                    />
+                    <PlanesCard
+                        imagen="img/avion.png"
+                        alt="Descripción de la imagen"
+                        titulo="Plus"
+                        descripcion="Consulta online por 60min 1 día vía chat dentro de la plataforma y acceso desbloqueado al chat las 24 horas en caso de emergencia por 15 días"
+                        precio = "$99.99"
+                    />
+                </div>
+            </section>
+
+            <section>
+                <div className={Styles.rectanguloH2}>
+                <h2 className={Styles.subtituloH3}>Feedback</h2>
+                </div>
+
+            </section>
+            <br />
+            <br />
+            <br />
+            <br />
 
 
     </div>

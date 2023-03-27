@@ -162,10 +162,10 @@ body{
 
 .sub7P{
     position: absolute;
-    width: 87px;
+    width: 400px;
     height: 22px;
-    left: 1118px;
-    top: 575px;
+    left: 895px;
+    top: 588px;
 }
 
 
@@ -250,74 +250,54 @@ body{
     top: 890px;
 }
 
-.field1P{
+.fieldP input{
     position: absolute;
+    height: 45px;
+    background: #E5F7F8;
+}
+
+.field1P{
     width: 381px;
-    height: 53px;
     left: 84px;
     top: 337px;
 
-    background: #E5F7F8;
 }
 
 .field2P{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 509px;
     top: 337px;
-
-    background: #E5F7F8;
 }
 
 .field3P{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 934px;
     top: 337px;
-
-    background: #E5F7F8;
 }
 
 .field4P{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 84px;
     top: 465px;
-
-    background: #E5F7F8;
 }
 
 .field5P{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 509px;
     top: 465px;
-
-    background: #E5F7F8;
 }
 
 .field6P{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 934px;
     top: 465px;
-
-    background: #E5F7F8;
 }
 
 .field7P{
     position: absolute;
     width: 124px;
-    height: 53px;
     left: 1191px;
     top: 560px;
-
-    background: #E5F7F8;
 }
 
 .OP{
@@ -373,7 +353,7 @@ body{
     width: 16px;
     height: 15px;
     left: 109px;
-    top: 606px;
+    top: 592px;
 }
 
 .b2P{
@@ -381,7 +361,7 @@ body{
     width: 16px;
     height: 15px;
     left: 109px;
-    top: 651px;
+    top: 635px;
 }
 
 .b3P{   
@@ -389,6 +369,10 @@ body{
     width: 16px;
     height: 15px;
     left: 109px;
-    top: 692px;
+    top: 675px;
 
+}
+
+input{
+    text-align: center;
 }

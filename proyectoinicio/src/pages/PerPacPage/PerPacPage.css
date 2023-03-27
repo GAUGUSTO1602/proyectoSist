@@ -124,8 +124,9 @@ body{
     
 }
 
-.header .navLinks .item {
+.header .navLinks ul{
     text-decoration: none;
+    color: #000000;
 }
 
 .rectanguloPP{   
@@ -140,6 +141,7 @@ body{
 }
 
 .opcionesP{
+    cursor: pointer;
     font-family: 'League Spartan';
     font-style: normal;
     font-weight: 400px;
@@ -222,6 +224,26 @@ body{
 
 }
 
+.subtitulos2P input{
+    border-color: white;
+    outline: none;
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
+
+}
+
+.subtitulos2P input::placeholder{
+
+    color: #000000;
+
+}
+
 .rectangulosP div{
     position: absolute;
     background: #2180A5;
@@ -230,7 +252,7 @@ body{
 
 
 .recP1{
-    width: 361px;
+    width: 729px;
     height: 54px;
     left: 471px;
     top: 243px;
@@ -239,7 +261,7 @@ body{
 
 
 .sub1-1p{
-    width: 111px;
+    width: 800px;
     height: 28px;
     left: 502px;
     top: 258px;
@@ -252,29 +274,13 @@ body{
     top: 305px;
 }
 
-
-.recP2{
-    width: 361px;
-    height: 54px;
-    left: 836px;
-    top: 244px;
-
-}
-
-
-.sub1-2p{
-    width: 112px;
-    height: 28px;
-    left: 867px;
-    top: 258px;
-}
-
 .sub2-2p{
-    width: 169px;
+    width: 180px;
     height: 30px;
-    left: 867px;
+    left: 700px;
     top: 305px;
 }
+
 
 
 .recP3{
@@ -287,7 +293,7 @@ body{
 
 
 .sub1-3p{
-    width: 64px;
+    width: 800px;
     height: 28px;
     left: 502px;
     top: 356px;

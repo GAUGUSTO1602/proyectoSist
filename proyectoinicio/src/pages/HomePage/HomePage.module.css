@@ -6,7 +6,6 @@
     box-sizing: border-box; */
 }
 
-
 body{
     background: #FFFFFF;
 }
@@ -102,7 +101,7 @@ body{
 }
   
 .header .navLinks .item {
-      text-decoration: none;
+    text-decoration: none;
 }
 
 
@@ -200,7 +199,7 @@ body{
 
 .rectanguloH {
     position: absolute;
-    width: 120%;
+    width: 100%;
     height: 603px;
     left: -1px;
     top: 700px;
@@ -215,7 +214,43 @@ body{
     height: 246px;
     left: 0px;
     top: 1300px;
+}
 
+.subtituloH2{
+    position: absolute;
+    width: 755px;
+    height: 46px;
+    margin-left: 5%;
+    margin-top: 46%;
+    color: #2180A5;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 50px;
+    line-height: 46px;
+}
+.rectanguloH2 {
+    position: relative;
+    width: 90%;
+    height: 603px;
+    left: -1px;
+    margin-top: 10%;
+    margin-left: 5%;
+    z-index: -100;
+    border-radius: 10px;
+    background: #2180A5;
+}
 
-
+.subtituloH3{
+    position: absolute;
+    width: 755px;
+    height: 46px;
+    margin-left: 42%;
+    margin-top: 5%;
+    color: #FFFFFF;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 50px;
+    line-height: 46px;
 }

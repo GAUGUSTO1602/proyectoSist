@@ -162,10 +162,10 @@ body{
 
 .sub7D{
     position: absolute;
-    width: 87px;
+    width: 400px;
     height: 22px;
-    left: 1118px;
-    top: 575px;
+    left: 890px;
+    top: 585px;
 }
 
 
@@ -281,144 +281,103 @@ body{
     top: 1209px;
 }
 
-.field1D{
+.fieldD input{
     position: absolute;
+    height: 45px;
+    background: #E5F7F8;
+    
+}
+
+.field1D{
     width: 381px;
-    height: 53px;
     left: 84px;
     top: 337px;
 
-    background: #E5F7F8;
 }
 
 .field2D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 509px;
     top: 337px;
-
-    background: #E5F7F8;
 }
 
 .field3D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 934px;
     top: 337px;
 
-    background: #E5F7F8;
 }
 
 .field4D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 84px;
     top: 465px;
 
-    background: #E5F7F8;
 }
 
 .field5D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 509px;
     top: 465px;
-
-    background: #E5F7F8;
 }
 
 .field6D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 934px;
     top: 465px;
-
-    background: #E5F7F8;
 }
 
 .field7D{
     position: absolute;
     width: 124px;
-    height: 53px;
     left: 1191px;
     top: 560px;
-
-    background: #E5F7F8;
 }
 
 .field8D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 84px;
     top: 696px;
 
-    background: #E5F7F8;
 }
 
 .field9D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 509px;
     top: 696px;
 
-    background: #E5F7F8;
 }
 
 .field10D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 934px;
     top: 696px;
-
-    background: #E5F7F8;
 }
 
 .field11D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 84px;
     top: 820px;
-
-    background: #E5F7F8;
 }
 
 .field12D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 509px;
     top: 820px;
-
-    background: #E5F7F8;
 }
 
 .field13D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 934px;
     top: 820px;
 
-    background: #E5F7F8;
 }
 
 .field14D{
-    position: absolute;
     width: 381px;
-    height: 53px;
     left: 84px;
     top: 997px;
 
-    background: #E5F7F8;
 }
 
 .OD{
@@ -493,4 +452,8 @@ body{
     left: 109px;
     top: 692px;
 
+}
+
+input{
+    text-align: center;
 }

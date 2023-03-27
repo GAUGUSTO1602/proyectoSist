@@ -126,7 +126,8 @@ body{
     text-decoration: none;
 }
 
-.rectanguloPD{   
+.rectanguloPD{
+    cursor: pointer;   
     position: absolute;
     width: 323px;
     height: 225px;
@@ -210,6 +211,26 @@ body{
 
 }
 
+.subtitulos2D input{
+    border-color: white;
+    outline: none;
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
+
+}
+
+.subtitulos2D input::placeholder{
+
+    color: #000000;
+
+}
+
 .rectangulosD div{
     position: absolute;
     background: #2180A5;
@@ -218,7 +239,7 @@ body{
 
 
 .recD1{
-    width: 361px;
+    width: 729px;
     height: 54px;
     left: 471px;
     top: 243px;
@@ -227,7 +248,7 @@ body{
 
 
 .sub1-1d{
-    width: 111px;
+    width: 800px;
     height: 28px;
     left: 502px;
     top: 258px;
@@ -240,27 +261,10 @@ body{
     top: 305px;
 }
 
-
-.recD2{
-    width: 361px;
-    height: 54px;
-    left: 836px;
-    top: 244px;
-
-}
-
-
-.sub1-2d{
-    width: 112px;
-    height: 28px;
-    left: 867px;
-    top: 258px;
-}
-
 .sub2-2d{
-    width: 169px;
+    width: 180px;
     height: 30px;
-    left: 867px;
+    left: 700px;
     top: 305px;
 }
 
@@ -275,7 +279,7 @@ body{
 
 
 .sub1-3d{
-    width: 64px;
+    width: 800px;
     height: 28px;
     left: 502px;
     top: 356px;
@@ -356,7 +360,7 @@ body{
 }
 
 .sub2-6d{
-    width: 56px;
+    width: 200px;
     height: 30px;
     left: 502px;
     top: 607px;
@@ -381,7 +385,7 @@ body{
 }
 
 .sub2-7d{
-    width: 56px;
+    width: 200px;
     height: 30px;
     left: 866px;
     top: 607px;
