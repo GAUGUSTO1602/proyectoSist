@@ -45,7 +45,8 @@ function RegDocPage() {
     specialty: '',
     specialtyUniversityName: '',
     specialtyLicense: '',
-    laborExperience: 0, 
+    laborExperience: 0,
+    availability: [],
     rol:'doctor'
   });
   

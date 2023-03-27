@@ -1,22 +1,106 @@
 import "./PerDocPage.css"
 import { Link } from "react-router-dom";
 import { CHAT2_URL, HOME_URL } from "../../constants/urls";
+import { ModalAva } from "../../components/modals/ModalAva";
 import { useUser } from "../../context/UserContext";
 import { logout } from "../../firebase/auth-service";
+import { useState } from "react";
+import { db } from "../../firebase/config";
+import { updateDoc, doc } from "@firebase/firestore";
 
 function PerDocPage() {
 
     const { user } = useUser();
 
-      console.log(user);
+    const [openModal, setOpenModal] = useState(false)
+
 
     const handleLogout = async() => {
         console.log('SALIENDO...');
         await logout();
     }
 
+    const [formData, setFormData] = useState({
+      name: user.name,
+      surname: user.surname,
+      phone: user.phone,
+      email: user.email,
+      universityName: user.universityName,
+      career: user.career,
+      License: user.License,
+      specialty: user.specialty,
+      specialtyUniversityName: user.specialtyUniversityName,
+      specialtyLicense: user.specialtyLicense,
+      laborExperience: user.laborExperience, 
+    });
+    
+    const handleOnChange = (event) => {
+      const {name, value} = event.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      })
+      console.log(value)
+    }
+  
+    const enableEdit = async () => {
+      if(document.getElementById('info').disabled === true){
+        document.getElementById('info').disabled=false
+        document.getElementById('info2').disabled=false
+        document.getElementById('info3').disabled=false
+        document.getElementById('info5').disabled=false
+        document.getElementById('info6').disabled=false
+        document.getElementById('info7').disabled=false
+        document.getElementById('info8').disabled=false
+        document.getElementById('info9').disabled=false
+        document.getElementById('info10').disabled=false
+        document.getElementById('info11').disabled=false
+  
+        alert("Edicion habilitada")
+        alert("Haga click nuevamente para guardar los cambios")
+  
+      }else if(formData.name == ''){
+        alert('El Nombre no puede estar vacio')
+      }else if(formData.surname == ''){
+        alert('Apellido no puede ser vacío')
+      }else if(formData.phone == ''){
+        alert('Telefono no puede ser vacío')
+      }else if(formData.email == ''){
+        alert('El email no puede estar vacío')
+      }else if(formData.universityName == ''){
+        alert('Nombre de la universidad no puede estar vacío');
+      }else if(formData.career == ''){
+        alert('Carrera no puede estar vacía')
+      }else if(formData.License == ''){
+        alert('La Licencia no puede estar vacía')
+      }else if(formData.laborExperience <= 0){
+        alert('Experiencia laboral: valor inválido')
+      }else{
+        const {name, surname, ...extraData} = formData;
+        const obj = {name, surname, ...extraData}
+  
+        await updateDoc(doc(db, "users", user.uid), obj)
+  
+        document.getElementById('info').disabled=true
+        document.getElementById('info2').disabled=true
+        document.getElementById('info3').disabled=true
+        document.getElementById('info5').disabled=true
+        document.getElementById('info6').disabled=true
+        document.getElementById('info7').disabled=true
+        document.getElementById('info8').disabled=true
+        document.getElementById('info9').disabled=true
+        document.getElementById('info10').disabled=true
+        document.getElementById('info11').disabled=true
+
+        alert("datos guardados")
+      }
+    }
+  
+
   return (
     <div className='Container'>
+
+      {openModal && <ModalAva openModal={openModal} setOpenModal={setOpenModal}/>}
       
       <header className="header">
           <nav>
@@ -55,11 +139,11 @@ function PerDocPage() {
 
       <div className='opcionesD'>
 
-        <h4 className='od1'>Datos personales</h4>
+        <h4 className='od1' onClick={enableEdit}>Editar datos</h4>
 
         <h4 className='od2'>Citas programadas</h4>
 
-        <h4 className='od3'>Chats archivados</h4>
+        <h4 className='od3' onClick={() => {setOpenModal(true)}}>Editar horarios</h4>
 
       </div>
 
@@ -72,8 +156,6 @@ function PerDocPage() {
       <div className='rectangulosD'>
 
         <div className='recD1'></div>
-
-        <div className='recD2'></div>
 
         <div className='recD3'></div>
 
@@ -100,11 +182,9 @@ function PerDocPage() {
 
       <div className='subtitulos1D'>
 
-        <h4 className='sub1-1d'>Nombres</h4>
+        <h4 className='sub1-1d'>Nombres y apellidos</h4>
 
-        <h4 className='sub1-2d'>Apellidos</h4>
-
-        <h4 className='sub1-3d'>Edad</h4>
+        <h4 className='sub1-3d'>Fecha de nacimiento</h4>
 
         <h4 className='sub1-4d'>Teléfono</h4>
 
@@ -128,29 +208,29 @@ function PerDocPage() {
 
       <div className='subtitulos2D'>
 
-        <h4 className='sub2-1d'>{user.name}</h4>
+        <input type="text" className="sub2-1d" name="name" id="info" placeholder={user.name} disabled={true} onChange={handleOnChange}/>
 
-        <h4 className='sub2-2d'>xxxxxxxxxxx</h4>
+        <input type="text" className="sub2-2d" name="surname" id="info2" placeholder={user.surname} disabled={true} onChange={handleOnChange}/>
 
         <h4 className='sub2-3d'>{user.age}</h4>
 
-        <h4 className='sub2-4d'>{user.phone}</h4>
+        <input type="text" className="sub2-4d" name="phone" id="info3" placeholder={user.phone} disabled={true} onChange={handleOnChange}/>
 
         <h4 className='sub2-5d'>{user.email}</h4>
 
-        <h4 className='sub2-6d'>{user.universityName}</h4>
+        <input type="text" className="sub2-6d" name="universityName" id="info5" placeholder={user.universityName} disabled={true} onChange={handleOnChange}/>
 
-        <h4 className='sub2-7d'>{user.specialtyUniversityName}</h4>
+        <input type="text" className="sub2-7d" name="specialtyUniversityName" id="info6" placeholder={user.specialtyUniversityName} disabled={true} onChange={handleOnChange}/>
 
-        <h4 className='sub2-8d'>*****</h4>
+        <input type="text" className="sub2-8d" name="career" id="info7" placeholder={user.career} disabled={true} onChange={handleOnChange}/>
 
-        <h4 className='sub2-9d'>{user.specialty}</h4>
+        <input type="text" className="sub2-9d" name="specialty" id="info8" placeholder={user.specialty} disabled={true} onChange={handleOnChange}/>
 
-        <h4 className='sub2-10d'>xxxxxxxxxxx</h4>
+        <input type="text" className="sub2-10d" name="License" id="info9" placeholder={user.License} disabled={true} onChange={handleOnChange}/>
 
-        <h4 className='sub2-11d'>xxxxxxxxxxx</h4>
+        <input type="text" className="sub2-11d" name="specialtyLicense" id="info10" placeholder={user.specialtyLicense} disabled={true} onChange={handleOnChange}/>
 
-        <h4 className='sub2-12d'>{user.laborExperience}</h4>
+        <input type="text" className="sub2-12d" name="laborExperience" id="info11" placeholder={user.laborExperience} disabled={true} onChange={handleOnChange}/>
 
       </div>
 
