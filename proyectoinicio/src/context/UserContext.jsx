@@ -4,7 +4,7 @@ import { auth } from "../firebase/config";
 import { getUserProfile } from "../firebase/users-service";
 
 
-export const UserContext = createContext(null);
+export const UserContext = createContext();
 
 export function UserContextProvider({children}){
 
@@ -12,24 +12,16 @@ export function UserContextProvider({children}){
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect (() => {
-        onAuthStateChanged(auth, async (firebaseUser) => {
+          onAuthStateChanged(auth, async (firebaseUser) => {
             
             setIsLoading(true);
 
             if(firebaseUser){
                 
                 const profile = await getUserProfile(firebaseUser.email);
-                console.log('------------------ profile: ');
                 console.log(profile);
 
                 setUser(profile);
-                // //TODO: Update this
-                // setUser({
-                //     id: firebaseUser.uid,
-                //     email: firebaseUser.email,
-                //     name: firebaseUser.displayName,
-
-                // })
             }else{
                 setUser(null);
             }
@@ -37,16 +29,20 @@ export function UserContextProvider({children}){
         });
     }, []);
 
-    return <UserContext.Provider 
-    value = {{
-        user,
-        isLoading,
-        }}>
+    return (
+        <UserContext.Provider 
+            value = {{
+                user,
+                isLoading,
+                }}>
 
-            {children}
-    </UserContext.Provider>
+                    {children}
+        </UserContext.Provider>
+    )
 }
 
 export function useUser(){
     return useContext(UserContext);
+    
 }
+

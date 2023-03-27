@@ -7,3 +7,7 @@ export const PerDoc_URL = "/PerDoc";
 export const PerPac_URL = "/PerPac";
 export const DOCTORS_URL = "/Doctors";
 export const CHAT_URL = "/Chat";
+export const CHAT2_URL = "/Chat2";
+export const CompRegPacPage_URL = '/completeRegistrationPatientPage';
+export const CompRegDocPage_URL = '/completeRegistrationDoctorPage';
+export const AnyElsePage_URL = '/*'
