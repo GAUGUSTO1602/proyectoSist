@@ -1,6 +1,7 @@
 import "./PerDocPage.css"
 import { Link } from "react-router-dom";
 import { CHAT2_URL, HOME_URL } from "../../constants/urls";
+import { ModalAva } from "../../components/modals/ModalAva";
 import { useUser } from "../../context/UserContext";
 import { logout } from "../../firebase/auth-service";
 import { useState } from "react";
@@ -11,7 +12,8 @@ function PerDocPage() {
 
     const { user } = useUser();
 
-      console.log(user);
+    const [openModal, setOpenModal] = useState(false)
+
 
     const handleLogout = async() => {
         console.log('SALIENDO...');
@@ -97,6 +99,8 @@ function PerDocPage() {
 
   return (
     <div className='Container'>
+
+      {openModal && <ModalAva openModal={openModal} setOpenModal={setOpenModal}/>}
       
       <header className="header">
           <nav>
@@ -139,7 +143,7 @@ function PerDocPage() {
 
         <h4 className='od2'>Citas programadas</h4>
 
-        <h4 className='od3'>Chats archivados</h4>
+        <h4 className='od3' onClick={() => {setOpenModal(true)}}>Editar horarios</h4>
 
       </div>
 
