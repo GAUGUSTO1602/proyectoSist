@@ -17,7 +17,7 @@ import { Layout, LayoutWithNavbar } from './components/Layout/Layout';
 import { PrivateRouteCompleteUserDoctor, PrivateRouteCompleteUserPatient, PrivateRouteIncompleteUser, PrivateRouteNotUser, PrivateRouteUser } from './PrivateRoute/PrivateRoute';
 import { CompRegPacPage } from './pages/CompRegPacPage/CompRegPacPage';
 import { CompRegDocPage } from './pages/CompRegDocPage/CompRegDocPage';
-import NavBar from './components/NavBar/NavBar';
+import { RegCita } from './pages/RegCita/RegCita';
 import { AnyElsePage } from './pages/AnyElsePage/AnyElsePage';
 import { UserContextProvider } from './context/UserContext';
 import { ChatContextProvider } from './context/ChatContext';
@@ -33,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route element = {<LayoutWithNavbar/>}>
 
                   <Route path={HOME_URL} element={<HomePage />} />
+
 
                   
 
@@ -57,6 +58,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                       </PrivateRouteCompleteUserDoctor>
                   </PrivateRouteUser>
                   } /> 
+
                   
                 </Route>
                 
@@ -86,6 +88,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   </PrivateRouteIncompleteUser>
                 </PrivateRouteUser>
                 } />
+
                 
                 
                 <Route path={RegPac_URL} element={

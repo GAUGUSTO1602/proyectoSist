@@ -21,9 +21,6 @@ export function LayoutWithNavbar(){
     <main>
       <UserContextProvider>
         <NavBar/>
-        <section className="body">
-          <Outlet/>
-        </section>
       </UserContextProvider>
     </main>
   )

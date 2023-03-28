@@ -11,3 +11,4 @@ export const CHAT2_URL = "/Chat2";
 export const CompRegPacPage_URL = '/completeRegistrationPatientPage';
 export const CompRegDocPage_URL = '/completeRegistrationDoctorPage';
 export const AnyElsePage_URL = '/*'
+

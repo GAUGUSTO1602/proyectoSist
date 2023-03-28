@@ -148,7 +148,7 @@ function SelecPage() {
         </div>
 
         <Link to={selectedOption.checked}>
-          <button type="buttonS" className="buttonSelecS">Siguiente</button>
+          <button type="button" className="buttonSelecS">Siguiente</button>
         </Link>
 
 
