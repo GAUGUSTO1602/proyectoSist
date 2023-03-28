@@ -6,7 +6,7 @@ import {signInWithPopup,
         getAdditionalUserInfo
     } from 'firebase/auth'
 import { auth, db, googleProvider } from './config';
-import { createUserProfile } from './users-service';
+import { createDate, createUserProfile } from './users-service';
 import { doc, setDoc } from "firebase/firestore";
 
  
@@ -112,6 +112,19 @@ export const completeValuesUser = async (uid, email, password, extraData) => {
     }catch(error){
         alert(error);
         return false;
+    }
+}
+
+export const completeValuesDate = async(uid, date, pAilment, extraData) => {
+    try{
+        await createDate(uid,{
+            date,
+            pAilment,
+            ...extraData
+        });
+    }catch(error){
+        alert(error);
+        
     }
 }
 
