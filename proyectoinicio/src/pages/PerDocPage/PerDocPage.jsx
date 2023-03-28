@@ -113,7 +113,6 @@ function PerDocPage() {
                   <Link to={HOME_URL}>
                       <li>Home</li>
                   </Link>
-                      <li>Pacientes</li>
               </ul>
 
               <div className="foto">
@@ -141,7 +140,6 @@ function PerDocPage() {
 
         <h4 className='od1' onClick={enableEdit}>Editar datos</h4>
 
-        <h4 className='od2'>Citas programadas</h4>
 
         <h4 className='od3' onClick={() => {setOpenModal(true)}}>Editar horarios</h4>
 
