@@ -1,0 +1,66 @@
+
+.container{
+    padding: 3% 3% 3% 3%;
+}
+
+.backGround{
+    background: #E5F7F8;
+    border-radius: 15px;
+}
+
+.imageContainer{
+    width: 100%;
+    height: 201px;
+    background: #E5F7F8;
+    border-radius: 15px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.imageContainer img{
+    width: 100px;
+}
+
+.dateContainer{
+    width: 100%;
+    height: 81px;
+
+    background: #ACD9DC;
+    border-radius: 15px 15px 0px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardText{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.selectionContainer{
+    width: 100%;
+    height: 81px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #4DCAD1; */
+    
+}
+
+.selectionContainer:hover{
+    background-color: #4DCAD1;
+    border-radius: 0px 0px 15px 15px;
+    /* border-radius: 50% 20% / 10% 40%; */
+    transition: 2s,background-size 0.3s 0.3s;
+}

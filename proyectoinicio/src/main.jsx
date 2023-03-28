@@ -115,9 +115,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </PrivateRouteUser>
                 } />
 
-                  <Route path={AnyElsePage_URL} element={<AnyElsePage/>}/>
+                <Route path={PayPage_URL} element={
+                <PrivateRouteUser>
+                  <PayPage/>
+                </PrivateRouteUser>
+                }/>
+                
+                <Route path={AnyElsePage_URL} element={<AnyElsePage/>}/>
 
-                <Route path={PayPage_URL} element={<PayPage/>}/>
 
               </Route>
         
