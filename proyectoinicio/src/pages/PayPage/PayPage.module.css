@@ -51,6 +51,7 @@
 
 .downBox{
     text-align: center; 
+    padding: 0 0 2% 0;
 }
 
 .downBoxInside{
@@ -109,9 +110,8 @@
 
 .inputsDownBox{
     
-    height: 252px;
     text-align: center;
-
+    
 }
 
 .textFieldInputsDownBox{
@@ -137,14 +137,44 @@
 .buttonInputsDownBox{
     margin: 0 auto;
     padding-bottom: 36px;
-    height: 53px;
+    /* height: 53px; */
+    /* padding: 0px 0px 35px 0px; */
+    
+
 }
 
 .buttonSendReference{
+    margin: 0 auto;
     background: #E5F7F8;
     height: 53px;
     width: 11.42%;
 }
 
+.comebackDownBox{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
 
+.comebackText{
+    text-decoration: none;
 
+    padding: 44px 3% 43px 0px;
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 33px;
+    /* identical to box height */
+
+    text-align: justify;
+
+    /* color: #FFFFFF; */
+    color: red;
+}
+
+.comebackText:hover h1{
+    
+    color: black;
+}

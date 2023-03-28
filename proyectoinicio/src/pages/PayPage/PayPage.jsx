@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { HOME_URL } from '../../constants/urls'
 import Styles from './PayPage.module.css'
 
 export function PayPage() {
@@ -25,7 +27,7 @@ export function PayPage() {
                     <p className={Styles.paragraphText}>
                         Bienvenido a la ventana de pago. Puede enviar su transacción al siguiente correo: <br/> <br/> 
                         <p className={Styles.paragraphTextBlue}>    &nbsp;joseyv5@gmail.com</p> <br/>
-                        &nbsp; Vía PayPal. Una vez completada, copie y pegue la referencia de la misma en el campo de abajo y click en el botón “enviar”. Se tardará un poco en validar su pago. Tenga paciencia!.
+                        &nbsp; Vía PayPal. Una vez completada, copie y pegue la referencia de la misma en el campo de abajo y click en el botón “¡Validar Pago!”. Se tardará un poco en validar su pago. Tenga paciencia!.
                     </p>
                 </div>
 
@@ -43,9 +45,12 @@ export function PayPage() {
                     </div>
                 </div>
 
-                <div className={Styles.comeBackDownBox}>
-
+                <div className={Styles.comebackDownBox}>
+                    <Link to={HOME_URL} className = {Styles.comebackText}>
+                        <h1>Regresar a Home</h1>
+                    </Link>                    
                 </div>
+
             </div>
         </div>
     </>
