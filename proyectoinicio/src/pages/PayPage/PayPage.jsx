@@ -51,8 +51,8 @@ export function PayPage() {
     
     async function receiveQueryObjectsDate(){ 
         
-        // const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", user.email));
-        const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", "paciente2@gmail.com"));
+        const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", user.email));
+        // const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", "paciente2@gmail.com"));
         
         const querySnapshot = await getDocs(queryObjects);
         
