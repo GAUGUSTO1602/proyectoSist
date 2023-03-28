@@ -2,8 +2,8 @@
 
 *{
     margin: 0;
-    /* padding: 0px;
-    box-sizing: border-box; */
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 
@@ -11,8 +11,10 @@ body{
     background: #FFFFFF;
 }
   
-input[type="text"] {
-    margin: 10%;
+.buscadorDoc{
+
+    position: absolute;
+    height: 10000px;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid gray;
@@ -23,3 +25,4 @@ input[type="text"] {
     margin-left: 20%;
     font-size: 500px;
 }
+

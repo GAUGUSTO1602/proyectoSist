@@ -30,11 +30,14 @@
 }
 
 .titleBox h1{
+    position: absolute;
     font-family: 'League Spartan';
     font-style: normal;
     font-weight: 400;
     font-size: 60px;
     line-height: 55px;
+    top: 90px;
+    left: 75px;
 
     color: white;
 }
@@ -161,7 +164,7 @@ h1{
 }
 
 .inputBoxBottom .textField{
-    width: 100%;
+    width: 100px;
     height: 53px;
 
     background: #E5F7F8;
@@ -169,6 +172,12 @@ h1{
 
 .textField{
     text-align: center;
+}
+
+.textFieldC{
+    text-align: center;
+    width: 100px;
+
 }
 
 h1{

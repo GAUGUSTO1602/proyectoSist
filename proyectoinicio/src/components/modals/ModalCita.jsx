@@ -11,7 +11,6 @@ import Select from 'react-select'
 import { db } from '../../firebase/config';
 import { collection, query, where, getDocs, getDoc, setDoc, doc, updateDoc, addDoc} from "firebase/firestore";
 import { serverTimestamp } from 'firebase/firestore';
-import { inMemoryPersistence } from 'firebase/auth';
 
 
 export const ModalCita = ({doctor, openModal, setOpenModal}) => {
@@ -163,7 +162,7 @@ export const ModalCita = ({doctor, openModal, setOpenModal}) => {
                     </div>
         
                     <div className={'individualInputBox'}>
-                        <h1 className={'text'}>Padecimiento (Si no esta seguro escriba N/A) </h1>
+                        <h1 className={'text'}>Padecimiento</h1>
                         <input type="text" className="textField" placeholder='Ej: Ansiedad' name = 'ailment' onChange={handleOnChange}/>
                     </div> 
         

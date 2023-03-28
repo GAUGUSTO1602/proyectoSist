@@ -31,23 +31,26 @@ function Doctors() {
     });
 
     return (
-        <>
-            <div>
-                
-                  <input type="text" placeholder="Buscar médico" name={"nameQuery"} onChange={handleSearch} />
-                  <input type="text" placeholder="Buscar por especialidad" name="specialtyQuery" onChange={handleSearch} />
-                            
-                  {
-                    filteredDoctors.length > 0 ? (
-                        filteredDoctors.map((doctor) => (
-                            <DoctorCard key={doctor.id} doctor={doctor} />
-                        ))
-                    ) : (
-                        <p className={Styles.r}>No se encontraron resultados</p>
-                    )
-                }     
-            </div>
-        </>
+          <div>
+              <div>
+                    <div className={Styles.buscadorDoc}>
+                      <input  type="text" placeholder="Buscar médico" name={"nameQuery"} onChange={handleSearch} />
+                      <input  type="text" placeholder="Buscar por especialidad" name="specialtyQuery" onChange={handleSearch} />
+                    </div>
+
+                    <div>    
+                      {
+                        filteredDoctors.length > 0 ? (
+                            filteredDoctors.map((doctor) => (
+                                <DoctorCard key={doctor.id} doctor={doctor} />
+                            ))
+                        ) : (
+                            <p className={Styles.r}>No se encontraron resultados</p>
+                        )
+                      } 
+                    </div>      
+                </div>
+          </div>
     )
 }
 
