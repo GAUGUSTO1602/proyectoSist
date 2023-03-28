@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DoctorCard.css';
+import { ModalCita } from '../modals/ModalCita';
 import {} from "../../constants/urls"
 import { Link } from 'react-router-dom';
 
 
 const DoctorCard = ({doctor}) => {
+
+
+  const [openModal, setOpenModal] = useState(false)
+
   return (
-    <div className='container'>    
+
+    <div className='container'> 
+      {openModal && <ModalCita doctor={doctor} openModal={openModal} setOpenModal={setOpenModal}/>}
       <div className="doctor-card">
         {/* <img src={Imagen} alt={Nombre} /> */}
         <h2>{doctor.name}</h2>
@@ -18,16 +25,8 @@ const DoctorCard = ({doctor}) => {
           <h3>Experiencia laboral: {doctor.laborExperience}</h3>
         </div>
       
-        <button>
-          <Link >
-            <span>Ver Perfil</span>
-          </Link>                                           
-        </button>
-        <button>
-          <Link >
-            <span>Agendar cita</span>
-          </Link>                                           
-        </button>
+        <button>Ver perfil</button>
+        <button onClick={() => {setOpenModal(true)}}>Agendar cita</button>
       </div>
     </div>
   );

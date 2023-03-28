@@ -6,13 +6,16 @@ import { logout } from "../../firebase/auth-service";
 import { useState } from "react";
 import { db } from "../../firebase/config";
 import { updateDoc, doc } from "@firebase/firestore";
+import { ModalDateP } from "../../components/modals/ModalDateP";
 
 function PerPacPage() {
 
   const { user } = useUser();
+  const [openModal, setOpenModal] = useState(false)
+
+  let aux;
 
 
-  console.log(user);
 
   const handleLogout = async() => {
       console.log('SALIENDO...');
@@ -32,7 +35,7 @@ function PerPacPage() {
       ...formData,
       [name]: value,
     })
-    console.log(value)
+    console.log(formData)
   }
 
   const enableEdit = async () => {
@@ -50,11 +53,9 @@ function PerPacPage() {
       alert('Apellido no puede ser vacío')
     }else if(formData.phone == ''){
       alert('Telefono no puede ser vacío')
-    }else if(formData.email == ''){
-      alert('El email no puede estar vacío')
     }else{
-      const {name, surname, phone, email} = formData;
-      const obj = {name, surname, phone, email}
+      const {name, surname, phone} = formData;
+      const obj = {name, surname, phone}
 
       await updateDoc(doc(db, "users", user.uid), obj)
 
@@ -67,6 +68,7 @@ function PerPacPage() {
 
     return (
       <div className='Container'>
+        {openModal && <ModalDateP openModal={openModal} setOpenModal={setOpenModal}/>}
         
         <header className="header">
             <nav>
@@ -108,11 +110,11 @@ function PerPacPage() {
   
           <h4 className='op1' onClick={enableEdit}>Editar datos</h4>
   
-          <h4 className='op2'>Membresia</h4>
+          <h4 className='op2' onClick={() => {setOpenModal(true)}}>Citas agendadas</h4>
   
           <h4 className='op3'>Pago</h4>
   
-          <h4 className='op4'>Chats archivados</h4>
+          <h4 className='op4' >Chats archivados</h4>
   
         </div>
 

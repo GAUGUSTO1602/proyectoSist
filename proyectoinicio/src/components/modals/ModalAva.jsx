@@ -20,8 +20,14 @@ export const ModalAva = ({openModal, setOpenModal}) => {
     const [startDate4, setStartDate4] = useState(new Date());
     const [startDate5, setStartDate5] = useState(new Date());
 
+    const [date, setDate] = useState();
+    const [date2, setDate2] = useState();
+    const [date3, setDate3] = useState();
+    const [date4, setDate4] = useState();
+    const [date5, setDate5] = useState();
+
     const saveDates = async () => {
-        const dates = {startDate, startDate2, startDate3, startDate4, startDate5}
+        const dates = {date, date2, date3, date4, date5}
 
         await updateDoc(doc(db, "users", user.uid), {
             availability: dates
@@ -52,7 +58,10 @@ export const ModalAva = ({openModal, setOpenModal}) => {
     const handleDate = (e) =>{
 
         const options = {month: "numeric", day: "numeric", year: "numeric" }
+        const value = e.toLocaleDateString("es-ES", options)
         setStartDate(e)
+        setDate(value)
+
         
     
      }
@@ -60,28 +69,36 @@ export const ModalAva = ({openModal, setOpenModal}) => {
      const handleDate2 = (e) =>{
 
         const options = {month: "numeric", day: "numeric", year: "numeric" }
+        const value = e.toLocaleDateString("es-ES", options)
         setStartDate2(e)
+        setDate2(value)
         
     
      }
      const handleDate3 = (e) =>{
 
         const options = {month: "numeric", day: "numeric", year: "numeric" }
+        const value = e.toLocaleDateString("es-ES", options)
         setStartDate3(e)
+        setDate3(value)
         
     
      }
      const handleDate4 = (e) =>{
 
         const options = {month: "numeric", day: "numeric", year: "numeric" }
+        const value = e.toLocaleDateString("es-ES", options)
         setStartDate4(e)
+        setDate4(value)
         
     
      }
      const handleDate5 = (e) =>{
 
         const options = {month: "numeric", day: "numeric", year: "numeric" }
+        const value = e.toLocaleDateString("es-ES", options)
         setStartDate5(e)
+        setDate5(value)
         
     
      }

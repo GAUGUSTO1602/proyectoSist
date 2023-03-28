@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
+
+
+.container{
+    margin: 0 auto;
+    color: white;
+    font-family: 'League Spartan';
+    font-style: normal;
+}
+
+.modalP-container{
+    position: fixed;
+    width: 500px;
+    height: 280px;
+    background-color: #2180A5;
+    z-index: 100;
+    top: 20%;
+    right: 35%;
+    border-radius: 25px;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.til h1{
+    position: absolute;
+    top: 40px;
+    margin-bottom: 30px;
+    margin-top: 400px;
+    text-align: center;
+}
+
+.subTil1{
+    position: absolute;
+    top: 80px;
+    left: 170px;
+}
+
+.subTil2{
+    position: absolute;
+    top: 115px;
+    left: 170px;
+}
+
+
+
+.btns{
+    margin-top: 15px;
+    font-family: 'League Spartan';
+    font-style: normal;
+}
+
+
+.btn2{
+    position: absolute;
+    top: 180px;
+    margin-left: 190px;
+    font-size: 25px;
+    width: 120px;
+    background-color: white;
+
+}

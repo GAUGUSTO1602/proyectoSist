@@ -21,7 +21,6 @@ export function LayoutWithNavbar(){
     <main>
       <UserContextProvider>
         <NavBar/>
-     
       </UserContextProvider>
     </main>
   )

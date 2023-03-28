@@ -12,6 +12,7 @@ const Chats = () => {
   const {user} = useUser()
   const {dispatch} = useContext(ChatContext)
 
+
   useEffect(() =>{
     const getChats = () => {
       const unsub = onSnapshot(doc(db, "userChats", user.uid), (doc) => {

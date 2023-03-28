@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bigBox{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 90;
+    color: white;
+    font-family: 'League Spartan';
+    font-style: normal;
+    width: 1150px;
+    height: 700px;
+    background-color: #2180A5;
+    border: 3px solid black;
+    border-radius: 25px;
+}
+
+.titleBox{
+    width: 100%;
+    height: 174px;
+    display: flex;
+}
+
+.titleBox h1{
+    position: absolute;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 55px;
+    top: 90px;
+    left: 75px;
+
+    color: white;
+}
+
+.contentBox{
+    background: #2180A5;
+    border-radius: 15px;
+    margin: 50px;
+    /* width: 1290px; */
+    width: 82%;
+    height: 696px;
+
+}
+
+.inputsBoxTop{
+    display: flex;
+    justify-content: space-around;
+    align-items:end;
+    padding-bottom: 40px;
+    height: 160px;
+    width: 900px;
+}
+
+h1{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 23px;
+
+    color: #FFFFFF;
+}
+
+
+
+.inputsBoxTop .textField{
+    width: 100%;
+    height: 53px;
+    padding: 15px;
+    font-weight: 600;
+
+    background: #E5F7F8;
+    color: #000000;
+}
+
+
+
+.contentBoxBottomPart{
+    display: flex;
+    justify-content: space-between;
+    height: 536px;
+    border-radius: 15px;
+}
+
+.imageBox{
+    /* object-fit: cover; */
+    width: 50%;
+    object-fit: cover;
+    /* height: 100vh;
+    background-color: red; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageBox img{
+    width: 85%;
+}
+
+.rightBox{
+    width: 50%;
+    position: relative;
+    align-items: end; 
+}
+
+.inputBoxBottom{
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: right;
+    align-items:end;
+    width: 100%;
+    /* background-color: black; */
+
+}
+
+.createAccountButton{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3% 18% 0;
+
+    display: flex;
+    justify-content: end;
+
+}
+
+.createAccountButton button{
+    width: 30%;
+    height: 53px;
+    background: #E5F7F8;
+
+    cursor: pointer;
+}
+
+.createAccountButton h1{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+
+    color: #000000;
+
+}
+
+
+.inputBoxBottom div{
+    width: 63.67%;
+    /* background-color: red; */
+    padding: 0 3% 71% 0%;
+}
+
+.inputBoxBottom .textField{
+    width: 100px;
+    height: 53px;
+
+    background: #E5F7F8;
+}
+
+.textField{
+    text-align: center;
+}
+
+.textFieldC{
+    text-align: center;
+    width: 100px;
+
+}
+
+h1{
+    padding-bottom: 5px;
+}
+
+.btnsC{
+    margin-top: 15px;
+    font-family: 'League Spartan';
+    font-style: normal;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn1C{
+    font-size: 25px;
+    width: 150px;
+    background-color: #84d1ef;
+}
+
+.btn2C{
+    font-size: 25px;
+    width: 120px;
+    background-color: white;
+
+}
+
+.selector{
+    width: 240px;
+}

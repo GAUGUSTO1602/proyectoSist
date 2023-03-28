@@ -12,3 +12,4 @@ export const CompRegPacPage_URL = '/completeRegistrationPatient';
 export const CompRegDocPage_URL = '/completeRegistrationDoctor';
 export const PayPage_URL = '/pay'
 export const AnyElsePage_URL = '/*'
+
