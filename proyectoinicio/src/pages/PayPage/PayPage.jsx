@@ -1,12 +1,79 @@
-import React from 'react'
+import { collection, getDocs, query, where } from '@firebase/firestore'
+import { setDate } from 'date-fns'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HOME_URL } from '../../constants/urls'
+import { useUser } from '../../context/UserContext'
+import { db } from '../../firebase/config'
 import Styles from './PayPage.module.css'
 
 export function PayPage() {
+
+    const {user, isLoading} = useUser();
+    const [dates, setDate] = useState([]);
+
     const handleClick = ()=>{
         window.open('https://www.paypal.com/', '_blank')
     }
+
+    
+
+    useEffect(() => {
+        try{
+
+            if(!isLoading){
+                
+                receiveQueryObjectsDate();
+
+                // console.log(dates);
+
+            }else{
+                console.log('isLoading...');
+            }
+            
+        }catch(error){
+            console.log(error);
+        }
+        
+    }, [])
+    
+    async function receiveQueryObjectsDate(){ 
+        
+        // const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", user.email));
+        const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", "paciente2@gmail.com"));
+        
+        const querySnapshot = await getDocs(queryObjects);
+           
+        
+        querySnapshot.forEach((doc) => {
+            
+            // doc.data() is never undefined for query doc snapshots
+            
+            const newDate = doc.data()['dateInfo'];
+            
+            addToDateList(newDate);
+
+        });
+    
+    }
+
+    const addToDateList = (newDate) => {
+        console.log('Date list', newDate);
+
+        setDate((dates) => [...dates, newDate])
+        
+        console.log('Date list added', newDate);
+
+    }
+
+    const handleOnChange = (event) => {
+        
+        console.log(dates);
+
+    }
+
+
+
   return (
     <>
         <div className={Styles.topBox}>
@@ -39,13 +106,17 @@ export function PayPage() {
                 </div>
 
                 <div className={Styles.inputsDownBox}>
-                    <div className={Styles.textFieldInputsDownBox}>
-                        <input type="text" className={Styles.textField} placeholder='referencia del pago'/>
-                    </div>
+                    <form action="">
 
-                    <div className={Styles.buttonInputsDownBox}>
-                        <button className={Styles.buttonSendReference}>¡Validar Pago!</button>
-                    </div>
+                        <div className={Styles.textFieldInputsDownBox}>
+                            <input type="text" className={Styles.textField} placeholder='referencia del pago' onChange={handleOnChange}/>
+                        </div>
+
+                        <div className={Styles.buttonInputsDownBox}>
+                            <button className={Styles.buttonSendReference}>¡Validar Pago!</button>
+                        </div>
+
+                    </form>
                 </div>
 
                 <div className={Styles.comebackDownBox}>
