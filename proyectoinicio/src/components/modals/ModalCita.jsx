@@ -24,7 +24,6 @@ export const ModalCita = ({doctor, openModal, setOpenModal}) => {
     const [options, setOptions] = useState([{ value: "No hay disponibilidad", label: "No hay disponibilidad"}])
 
 
-
     const [formData, setFormData] = useState({
         name: user.name,
         surname: user.surname,

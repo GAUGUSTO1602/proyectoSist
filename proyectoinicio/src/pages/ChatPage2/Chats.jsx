@@ -37,7 +37,7 @@ const Chats = () => {
     <div className='chats'>
       {Object.entries(chats)?.sort((a,b)=>a[1].date - b[1].date).map(chat =>(
         <div className="userChat" key={chat[0]} onClick={() =>handleSelect(chat[1].userInfo)}>
-          <img src="" alt=""/>
+          <img src='img/profile.png' alt="" />
           <div className="userChatInfo">
             <span>{chat[1].userInfo.name}</span>
             <p>{chat[1].lastMessage?.text}</p>

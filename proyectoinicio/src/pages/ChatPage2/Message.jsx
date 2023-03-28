@@ -10,13 +10,13 @@ const Message = ({ message }) => {
   return (
     <div className={`message ${message.senderId === user.uid && 'owner'}`}>
       <div className="messageInfo">
-        <img src="" alt="" />
+      <img src='img/profile.png' alt="" />
         <span>Justo ahora</span>
       </div>
 
       <div className="messageContent">
         <p>{message.text}</p>
-        {message.img && <img src="" alt="" />}
+        {message.img && <img src='img/profile.png' alt="" />}
       </div>
     </div>
   )

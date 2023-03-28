@@ -316,9 +316,9 @@ export const ModalAva = ({openModal, setOpenModal}) => {
                         />
                 </div>
 
-                <div className='btns'>
+                <div className='btnsA'>
                     <button className="btn1" onClick={saveDates}>Subir</button>
-                    <button className="btn2" onClick={() => {setOpenModal(false)}}>Cancelar</button>
+                    <button className="btn2A" onClick={() => {setOpenModal(false)}}>Cancelar</button>
                 </div>
 
                 

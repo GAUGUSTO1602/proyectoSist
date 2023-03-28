@@ -168,6 +168,14 @@ body{
     top: 588px;
 }
 
+.subPP{
+    position: absolute;
+    width: 217px;
+    height: 22px;
+    left: 84px;
+    top: 530px;
+}
+
 
 .sub8P{
     position: absolute;
@@ -297,6 +305,13 @@ body{
     position: absolute;
     width: 124px;
     left: 1191px;
+    top: 560px;
+}
+
+.field8P{
+    position: absolute;
+    width: 381px;
+    left: 84px;
     top: 560px;
 }
 

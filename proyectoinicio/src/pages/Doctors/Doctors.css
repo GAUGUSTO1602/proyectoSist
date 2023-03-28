@@ -7,6 +7,7 @@
 }
 
 
+
 body{
     background: #FFFFFF;
 }
@@ -14,11 +15,23 @@ body{
 .buscadorDoc{
 
     position: absolute;
-    height: 10000px;
-    padding: 8px;
+    padding: 30px;
+    top: 100px;
+    left: 400px;
+    z-index: 100;
+    justify-content: space-between;
+}
+
+
+.buscadorDoc input{
     border-radius: 5px;
     border: 1px solid gray;
-    width: 30%;
+    width: 300px;
+}
+
+.containerCard{
+    position: absolute;
+    top: 170px;
 }
 
 .r{

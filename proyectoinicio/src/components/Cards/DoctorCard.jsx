@@ -25,7 +25,6 @@ const DoctorCard = ({doctor}) => {
           <h3>Experiencia laboral: {doctor.laborExperience}</h3>
         </div>
       
-        <button>Ver perfil</button>
         <button onClick={() => {setOpenModal(true)}}>Agendar cita</button>
       </div>
     </div>
