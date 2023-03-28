@@ -10,97 +10,16 @@
 body{
     background: #FFFFFF;
 }
-
-.header{
-    width: 100%;
-    margin: auto;
-    position: fixed;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    height: 90px;
-    top: 0;
-    background-color: #2180A5;
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 4px 15px 0 rgba(0,0,0,0.19);
-}
   
-.header nav{
-      height: 100%;
-      width: 100%;
-      /* centrando la cajita */
-      justify-content: space-between;
-      align-items: center;
-    
-}
-  
-.logo img{
-    height: 100px;
-    width: auto;
-    margin-top:-0.5%;
-    transition: all 0.3s;
-}
-  
-.header .navLinks{
-      cursor: pointer;
-      width: 48.96%;
-  
-      /* Quitamos puntitos de la lista que no nos interesa */
-      list-style: none;
-      
-      /* Alineamos el texto horizonalmente */
-      display: flex;
-      justify-content:space-around;
-  
-      /* La fuente y tamaño de las letras */
-      font-family: 'League Spartan';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 25px;
-      line-height: 23px;
-      color: #FFFFFF;
-      margin-left: 50%;
-      margin-top: -4%;
-      
-}
-  
-.inicio {
-      background-color: #E5F7F8;
-      border: 2px solid #FFFFFF; 
-      width: 110%;
-      height: 150%;
-      font-family: 'League Spartan';
-      font-style: normal;
-      font-size: 25px;
-      text-align: center;
-      margin-top: -4%;
-      border-radius: 6px;
+input[type="text"] {
+    margin: 10%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 30%;
 }
 
-.inicio:hover{
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 4px 15px 0 rgba(0,0,0,0.19);
- }
-
-  
-.registro {
-      background-color: #2180A5;
-      color: #FFFFFF;
-      border: 2px solid #FFFFFF; 
-      width: 130%;
-      height: 150%;
-      font-family: 'League Spartan';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 25px;
-      line-height: 23px;
-      text-align: center;
-      margin-top: -4%;
-      margin-left: -20%;
-      border-radius: 6px;
-}
-.registro:hover{
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 4px 15px 0 rgba(0,0,0,0.19);
-}
-  
-.header .navLinks .item {
-      text-decoration: none;
+.r{
+    margin-left: 20%;
+    font-size: 500px;
 }

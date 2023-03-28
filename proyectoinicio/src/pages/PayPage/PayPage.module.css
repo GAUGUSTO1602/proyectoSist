@@ -1,0 +1,150 @@
+.topBox{
+    height: 268px;
+    /* background-color: black; */
+}
+
+.titleTopBox{
+    height: 182px;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 55px;
+    
+    color: #000000;
+    
+}
+
+.titleBlue{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 55px;
+    
+    color: #2180A5;
+}
+
+.imageTopBox{
+    height: 86px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagePayPal{
+    height: 200px;
+}
+
+.downBox{
+    text-align: center; 
+}
+
+.downBoxInside{
+    margin: 0 auto;
+    background: #2180A5;
+    border-radius: 15px;
+    width: 92.13%;
+    text-align: center;
+}
+
+.firstTextDownBox{
+    margin: 0 auto;
+    width: 80%;
+    height: 395px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraphText{
+    overflow: hidden;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 33px;
+    text-align: justify;
+
+    color: #FFFFFF;
+    
+}
+
+.paragraphTextBlue{
+
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 33px;
+    text-align: justify;
+    
+    
+    color: #00FFFF;
+
+}
+
+.secondTextDownBox{
+    height: 135px;
+    padding-top: 75px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputsDownBox{
+    
+    height: 252px;
+    text-align: center;
+
+}
+
+.textFieldInputsDownBox{
+    margin: 0 auto;
+    width: 43.98%;
+    padding-bottom: 50px;
+
+    padding: 60px 0px 50px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textField{
+    /* padding-top: 60px; */
+    width: 100%;
+    height: 53px;
+
+    background: #E5F7F8;
+}
+
+.buttonInputsDownBox{
+    margin: 0 auto;
+    padding-bottom: 36px;
+    height: 53px;
+}
+
+.buttonSendReference{
+    background: #E5F7F8;
+    height: 53px;
+    width: 11.42%;
+}
+
+
+
