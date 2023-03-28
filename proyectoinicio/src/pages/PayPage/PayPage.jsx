@@ -1,7 +1,7 @@
-import { collection, getDocs, query, where } from '@firebase/firestore'
+import { collection, doc, getDocs, query, serverTimestamp, setDoc, where } from '@firebase/firestore'
 import { setDate } from 'date-fns'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { DateCard } from '../../components/Cards/DateCard/DateCard'
 import { HOME_URL } from '../../constants/urls'
 import { useUser } from '../../context/UserContext'
@@ -16,6 +16,19 @@ export function PayPage() {
     const [dateSelected, setDateSelected] = useState();
 
     const [dates, setDate] = useState([]);
+
+    const navigate = useNavigate();
+
+    // const [formData, setFormData] = useState({
+    //     uid: dateSelected.uid,
+    //     pName: dateSelected.pName,
+    //     pSurname: dateSelected.pSurname,
+    //     pEmail: dateSelected.pEmail,
+    //     pPhone: dateSelected.pPhone,
+    //     pAilment: dateSelected.pAilment,
+    //     date: dateSelected.date,
+    //     paymentDone: true,
+    // });  
 
     // const payPageToDateCard = () => {
     //     setDateSelected('Hola que tal');
@@ -51,8 +64,8 @@ export function PayPage() {
     
     async function receiveQueryObjectsDate(){ 
         
-        // const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", user.email));
-        const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", "paciente2@gmail.com"));
+        const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", user.email));
+        // const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", "paciente2@gmail.com"));
         
         const querySnapshot = await getDocs(queryObjects);
         
@@ -82,10 +95,11 @@ export function PayPage() {
 
     const handleOnChange = (event) => {
         
-        
         console.log("date selected",dateSelected);
         console.log(dateSelected.uid);
         console.log(dateSelected.pEmail);
+
+        
     }
 
     function Cards(props){
@@ -103,11 +117,31 @@ export function PayPage() {
     const onSubmit = async (event) => {
         event.preventDefault();
 
-        console.log(dateSelected.id);
-        console.log(dateSelected.email);
-        console.log(dateSelected.password);
+        if(dateSelected){
 
-        await completeValuesUser(dateSelected.uid, dateSelected.pEmail, ...extraData);
+            // await completeValuesUser(dateSelected.uid, dateSelected.pEmail, ...extraData);
+
+            await setDoc(doc(db, "dates", dateSelected.uid), {
+                ["dateInfo"]: {
+                uid: dateSelected.uid,
+                pName: dateSelected.pName,
+                pSurname: dateSelected.pSurname,
+                pEmail: dateSelected.pEmail,
+                pPhone: dateSelected.pPhone,
+                pAilment: dateSelected.pAilment,
+                date: dateSelected.date,
+                paymentDone: true
+                },
+                ["executed"]: serverTimestamp(),
+
+            });
+
+            navigate(HOME_URL);
+            
+        }else{
+            alert('Revise si selecciono al doctor o si escribió el nro de serial correcto')
+        }
+
     }
     
   return (
@@ -155,13 +189,17 @@ export function PayPage() {
                 <div className={Styles.inputsDownBox}>
                     <form action="">
 
+                        <form action="" onSubmit={onSubmit}>
+
                         <div className={Styles.textFieldInputsDownBox}>
                             <input type="text" className={Styles.textField} placeholder='referencia del pago' onChange={handleOnChange}/>
                         </div>
 
                         <div className={Styles.buttonInputsDownBox}>
-                            <button className={Styles.buttonSendReference}>¡Validar Pago!</button>
+                            <button className={Styles.buttonSendReference} onClick= {onSubmit}>¡Validar Pago!</button>
                         </div>
+
+                        </form>
 
                     </form>
                 </div>

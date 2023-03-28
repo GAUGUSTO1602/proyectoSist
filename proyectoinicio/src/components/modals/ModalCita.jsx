@@ -108,6 +108,7 @@ export const ModalCita = ({doctor, openModal, setOpenModal}) => {
                 pPhone: phone,
                 pAilment: ailment,
                 date: aDate,
+                paymentDone: false
                 },
                 ["executed"]: serverTimestamp(),
             });

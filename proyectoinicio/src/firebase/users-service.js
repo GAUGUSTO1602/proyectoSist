@@ -4,9 +4,12 @@ import { db } from './config';
 export async function createUserProfile(userId, data){
     
     return setDoc(doc(db, 'users', userId), data);
+    
 }
 
-
+export async function createDate(dateId, data){
+    return setDoc(doc(db, 'dates', dateId), data);
+}
 
 export async function getUserProfile(email){
     const userQuery = query(collection(db,"users"), where('email', '==', email));
