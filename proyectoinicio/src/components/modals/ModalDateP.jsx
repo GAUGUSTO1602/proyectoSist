@@ -1,36 +1,38 @@
 import React from 'react'
 import "./ModalDateP.css"
-import { useState, useEffect } from 'react'
-import ReactDatePicker, {registerLocale} from 'react-datepicker'
+import { useState, useEffect} from 'react'
 import "react-datepicker/dist/react-datepicker.css"
-import { getMonth, getYear } from 'date-fns';
-import range from "lodash/range";
 import { useUser } from '../../context/UserContext'
 import { db } from '../../firebase/config'
-import { query, collection, getDocs, onSnapshot, doc } from '@firebase/firestore'
+import { query, collection, getDocs, onSnapshot, doc, updateDoc } from '@firebase/firestore'
 
 
 export const ModalDateP = ({openModal, setOpenModal}) => {
 
     const {user} = useUser()
     const [dates, setDates] = useState([])
-    const [name, setName] = useState("")
-    const [date, setDate] = useState("")
+    const [dname, setDname] = useState('')
+    const [aDate, setAdate] = useState('')
 
-    useEffect(() =>{
-        const getDates = () => {
-          const unsub = onSnapshot(doc(db, "dates", user.uid), (doc) => {
-            setDates(doc.data());
-            setName(dates.dateInfo.name)
-            setDate(dates.dateInfo.date)
-          });
-    
-          return () => {
-            unsub();
-          };
-        };
-    
-        user.uid && getDates();
+
+    useEffect ( () =>{   
+        
+            const getDates = () => {
+
+                const unsub = onSnapshot(doc(db, "dates", user.uid), (doc) => {
+                    setDates(doc.data());
+                    setDname(dates.dateInfo.name)
+                    setAdate(dates.dateInfo.date)
+                });
+
+        
+            return () => {
+                unsub();
+            };
+            };
+        
+            user.uid && getDates();
+
       }, [user.uid]);
 
   
@@ -44,8 +46,13 @@ export const ModalDateP = ({openModal, setOpenModal}) => {
 
 
             <div >
-                <h2 className='subTil1'>Cita con: {name}</h2>
-                <h2 className='subTil2'>Fecha: {date}</h2>
+
+                <div>
+                    <h2 className='subTil1'>Cita con: {dname}</h2>
+                </div>
+                
+              
+                
             </div>
 
 

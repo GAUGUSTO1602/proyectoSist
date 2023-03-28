@@ -9,6 +9,8 @@ import ReactDatePicker, {registerLocale} from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import { getMonth, getYear } from 'date-fns';
 import range from "lodash/range";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getStorage } from 'firebase/storage';
 
 
 
@@ -71,6 +73,10 @@ function RegPacPage() {
 
 
    }
+
+
+          
+
 
     const onSubmit = async (event) => {
       event.preventDefault();
@@ -144,13 +150,8 @@ function RegPacPage() {
 
           <h5 className='sub7P'>Fecha de nacimiento(MM/DD/AAAA)</h5>
 
-          <h5 className='sub8P'>¿Primera vez que asiste a consulta psicológica?</h5>
+          <h5 className='subPP'>Foto de perfil</h5>
 
-          <h5 className='sub9P'>Sí.</h5>
-
-          <h5 className='sub10P'>No.</h5>
-
-          <h5 className='sub11P'>Prefiero no contestar.</h5>
 
         </div>
 
@@ -167,6 +168,7 @@ function RegPacPage() {
           <input type="password" className="field5P" placeholder='password' name = 'password' onChange={handleOnChange}></input>
 
           <input type="password" className="field6P" placeholder='confirmPassword' name = 'confirmPassword' onChange={handleOnChange}></input>
+
 
 
           <div className="field7P">
@@ -209,24 +211,7 @@ function RegPacPage() {
             />
           </div>
 
-          <div className='radioButtonsP'>
-
-            <label>
-                <input className='b1P' type="radio" value="Si" name='option' />
-              <span></span>
-            </label>
-
-            <label>
-              <input className='b2P' type="radio" value="No" name='option' />
-              <span></span>
-            </label>
-
-            <label>
-              <input className='b3P' type="radio" value="Prefiero no contestar." name='option' />
-              <span></span>
-            </label>
-
-          </div>
+          
 
 
           <button type="button" className="button1P" id="searchButtom" onClick={onSubmit}>Crear cuenta</button>

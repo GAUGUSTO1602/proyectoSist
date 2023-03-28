@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DoctorCard from './../../components/Cards/DoctorCard';
 import { db } from '../../firebase/config';
 import { collection, query, where, getDocs } from "firebase/firestore";
-import Styles from "./Doctors.css"
+import "./Doctors.css"
 
 function Doctors() {
     const [doctors, setDoctors] = useState([]);
@@ -31,25 +31,26 @@ function Doctors() {
     });
 
     return (
-          <div>
-              <div>
-                    <div className={Styles.buscadorDoc}>
-                      <input  type="text" placeholder="Buscar médico" name={"nameQuery"} onChange={handleSearch} />
+          <div className="buscadorD">
+            
+                    <div className="buscadorDoc">
+                      <input  type="text" placeholder="Buscar médico" name={"nameQuery"} onChange={handleSearch}/>
                       <input  type="text" placeholder="Buscar por especialidad" name="specialtyQuery" onChange={handleSearch} />
                     </div>
 
-                    <div>    
+
+
+                    <div className="containerCard">    
                       {
                         filteredDoctors.length > 0 ? (
                             filteredDoctors.map((doctor) => (
                                 <DoctorCard key={doctor.id} doctor={doctor} />
                             ))
                         ) : (
-                            <p className={Styles.r}>No se encontraron resultados</p>
+                            <p className="r">No se encontraron resultados</p>
                         )
                       } 
                     </div>      
-                </div>
           </div>
     )
 }

@@ -1,19 +1,18 @@
+import React from 'react'
 import "./PerPacPage.css"
 import { CHAT2_URL, HOME_URL, DOCTORS_URL } from "../../constants/urls";
 import { Link } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import { logout } from "../../firebase/auth-service";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { db } from "../../firebase/config";
-import { updateDoc, doc } from "@firebase/firestore";
 import { ModalDateP } from "../../components/modals/ModalDateP";
+import { query, collection, getDocs, onSnapshot, doc, updateDoc } from '@firebase/firestore'
 
 function PerPacPage() {
 
-  const { user } = useUser();
-  const [openModal, setOpenModal] = useState(false)
-
-  let aux;
+    const { user } = useUser();
+    const [openModal, setOpenModal] = useState(false)
 
 
 
@@ -87,7 +86,7 @@ function PerPacPage() {
                 </ul>
   
                 <div className="foto">
-                    <img src="img/fotoPerfil.png" alt="" />
+                    <img src='img/profile.png' alt="" />
                 </div>
   
                 <div className="flecha">
@@ -114,7 +113,6 @@ function PerPacPage() {
   
           <h4 className='op3'>Pago</h4>
   
-          <h4 className='op4' >Chats archivados</h4>
   
         </div>
 
