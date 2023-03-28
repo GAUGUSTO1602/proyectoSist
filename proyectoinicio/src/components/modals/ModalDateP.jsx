@@ -4,37 +4,64 @@ import { useState, useEffect} from 'react'
 import "react-datepicker/dist/react-datepicker.css"
 import { useUser } from '../../context/UserContext'
 import { db } from '../../firebase/config'
-import { query, collection, getDocs, onSnapshot, doc, updateDoc } from '@firebase/firestore'
+import { query, collection, getDocs, where, onSnapshot, doc, updateDoc } from '@firebase/firestore'
 
 
 export const ModalDateP = ({openModal, setOpenModal}) => {
 
-    const {user} = useUser()
-    const [dates, setDates] = useState([])
-    const [dname, setDname] = useState('')
-    const [aDate, setAdate] = useState('')
+    const {user, isLoading} = useUser();
+    const [dates, setDate] = useState([]);
 
 
-    useEffect ( () =>{   
+
+    async function receiveQueryObjectsDate(){ 
         
-            const getDates =() => {
-
-                const unsub = onSnapshot(doc(db, "dates", user.uid), (doc) => {
-                    setDates(doc.data());
-                    setDname(dates.dateInfo.name)
-                    setAdate(dates.dateInfo.date)
-                });
-
+        const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", user.email));
         
-            return () => {
-              unsub();
-              console.log(dname)   
-            };
-            };
+        const querySnapshot = await getDocs(queryObjects);
         
-            user.uid && getDates();
+        
+        querySnapshot.forEach((doc) => {
+            
+            // doc.data() is never undefined for query doc snapshots
+            
+            const newDate = doc.data()['dateInfo'];
+            
+            addToDateList(newDate);
+            
+        });
+        
+    }
+    
+    
+    
+    const addToDateList = (newDate) => {
+        // console.log('Date list', newDate);
+        
+        setDate(newDate.date)
+        
+        // console.log('Date list added', newDate);
 
-      }, [user.uid]);
+    }
+
+    useEffect(() => {
+        try{
+            
+            if(!isLoading){
+                
+                receiveQueryObjectsDate();
+
+                // console.log(dates);
+                
+            }else{
+                console.log('isLoading...');
+            }
+            
+        }catch(error){
+            console.log(error);
+        }
+        
+    }, [])
 
   
   return (
@@ -49,7 +76,7 @@ export const ModalDateP = ({openModal, setOpenModal}) => {
             <div >
 
                 <div>
-                    <h2 className='subTil1'>Cita con: {dname}</h2>
+                    <h2 className='subTil1'>Fecha: {dates}</h2>
                 </div>
                 
               

@@ -7,6 +7,7 @@ import { logout } from "../../firebase/auth-service";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase/config";
 import { ModalDateP } from "../../components/modals/ModalDateP";
+import { PayPage_URL} from '../../constants/urls';
 import { query, collection, getDocs, onSnapshot, doc, updateDoc } from '@firebase/firestore'
 
 function PerPacPage() {
@@ -110,8 +111,15 @@ function PerPacPage() {
           <h4 className='op1' onClick={enableEdit}>Editar datos</h4>
   
           <h4 className='op2' onClick={() => {setOpenModal(true)}}>Citas agendadas</h4>
+
+
+          <Link to={DOCTORS_URL}>
+            <h4 className='op2' >Agendar cita</h4>
+          </Link>
   
-          <h4 className='op3'>Pago</h4>
+          <Link to={PayPage_URL}>
+            <h4 className='op3'>Pago</h4>
+          </Link>
   
   
         </div>
