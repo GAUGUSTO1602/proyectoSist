@@ -2,6 +2,7 @@ import { collection, getDocs, query, where } from '@firebase/firestore'
 import { setDate } from 'date-fns'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { DateCard } from '../../components/Cards/DateCard/DateCard'
 import { HOME_URL } from '../../constants/urls'
 import { useUser } from '../../context/UserContext'
 import { db } from '../../firebase/config'
@@ -99,6 +100,12 @@ export function PayPage() {
                         <p className={Styles.paragraphTextBlue}>    &nbsp;joseyv5@gmail.com</p> <br/>
                         &nbsp; Vía PayPal. Una vez completada, copie y pegue la referencia de la misma en el campo de abajo y click en el botón “¡Validar Pago!”. Se tardará un poco en validar su pago. Tenga paciencia!.
                     </p>
+                </div>
+
+                <div className={Styles.cardsBox}>
+                    {dates.map((date) => (
+                        <DateCard dateInfo={date}/>
+                    ))}
                 </div>
 
                 <div className={Styles.secondTextDownBox}>

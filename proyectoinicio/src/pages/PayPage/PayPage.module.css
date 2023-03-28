@@ -197,3 +197,11 @@
     color: black;
     transition: 0.3s,background-size 0.3s 0.3s;
 }
+
+.cardsBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
