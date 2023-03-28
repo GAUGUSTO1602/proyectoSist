@@ -5,29 +5,40 @@ import { Link } from 'react-router-dom'
 import { DateCard } from '../../components/Cards/DateCard/DateCard'
 import { HOME_URL } from '../../constants/urls'
 import { useUser } from '../../context/UserContext'
+import { completeValuesUser } from '../../firebase/auth-service'
 import { db } from '../../firebase/config'
 import Styles from './PayPage.module.css'
 
 export function PayPage() {
 
     const {user, isLoading} = useUser();
+
+    const [dateSelected, setDateSelected] = useState();
+
     const [dates, setDate] = useState([]);
+
+    // const payPageToDateCard = () => {
+    //     setDateSelected('Hola que tal');
+    // }
 
     const handleClick = ()=>{
         window.open('https://www.paypal.com/', '_blank')
     }
-
     
 
+    const DateCardToPayPage = (dateInfoDateCard) => {
+        setDateSelected(dateInfoDateCard);
+    }
+    
     useEffect(() => {
         try{
-
+            
             if(!isLoading){
                 
                 receiveQueryObjectsDate();
 
                 // console.log(dates);
-
+                
             }else{
                 console.log('isLoading...');
             }
@@ -44,7 +55,7 @@ export function PayPage() {
         const queryObjects = query(collection(db, "dates"), where("dateInfo.pEmail", "==", "paciente2@gmail.com"));
         
         const querySnapshot = await getDocs(queryObjects);
-           
+        
         
         querySnapshot.forEach((doc) => {
             
@@ -53,28 +64,52 @@ export function PayPage() {
             const newDate = doc.data()['dateInfo'];
             
             addToDateList(newDate);
-
+            
         });
-    
+        
     }
-
+    
+    
+    
     const addToDateList = (newDate) => {
-        console.log('Date list', newDate);
-
+        // console.log('Date list', newDate);
+        
         setDate((dates) => [...dates, newDate])
         
-        console.log('Date list added', newDate);
+        // console.log('Date list added', newDate);
 
     }
 
     const handleOnChange = (event) => {
         
-        console.log(dates);
-
+        
+        console.log("date selected",dateSelected);
+        console.log(dateSelected.uid);
+        console.log(dateSelected.pEmail);
     }
 
+    function Cards(props){
+        return(
+            <>
+                <div className={Styles.cardsBox}>
+                    {dates.map((date) => (
+                        <DateCard dateInfo={date} dateSelected = {dateSelected} setDateSelected = {setDateSelected}/>
+                        ))}
+                </div>
+            </>
+        )
+    }
+    
+    const onSubmit = async (event) => {
+        event.preventDefault();
 
+        console.log(dateSelected.id);
+        console.log(dateSelected.email);
+        console.log(dateSelected.password);
 
+        await completeValuesUser(dateSelected.uid, dateSelected.pEmail, ...extraData);
+    }
+    
   return (
     <>
         <div className={Styles.topBox}>
@@ -101,12 +136,17 @@ export function PayPage() {
                         &nbsp; Vía PayPal. Una vez completada, copie y pegue la referencia de la misma en el campo de abajo y click en el botón “¡Validar Pago!”. Se tardará un poco en validar su pago. Tenga paciencia!.
                     </p>
                 </div>
-
-                <div className={Styles.cardsBox}>
-                    {dates.map((date) => (
-                        <DateCard dateInfo={date}/>
-                    ))}
-                </div>
+    	        
+                {!dateSelected && (
+                    <>
+                        <div className={Styles.cardsBox}>
+                            {dates.map((date) => (
+                                <DateCard dateInfo={date} DateCardToPayPage = {DateCardToPayPage}/>
+                            ))}
+                        </div>
+                    
+                    </>
+                )}
 
                 <div className={Styles.secondTextDownBox}>
                     <p className={Styles.paragraphText}>A continuación, pegue la referencia que valida su transacción hecha en PayPal</p>

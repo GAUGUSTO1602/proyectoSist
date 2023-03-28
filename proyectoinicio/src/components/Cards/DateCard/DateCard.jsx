@@ -1,8 +1,12 @@
 import React from 'react'
 import Styles from './DateCard.module.css'
+import { PayPage } from '../../../pages/PayPage/PayPage';
 
-export function DateCard({dateInfo}) {
+export function DateCard({dateInfo, DateCardToPayPage}) {
   
+    const onSubmit = async (event) =>{
+        event.preventDefault();
+    }
 
   
   return (
@@ -21,7 +25,7 @@ export function DateCard({dateInfo}) {
                 </div>
 
                 <div className={Styles.selectionContainer}>
-                    <button>
+                    <button onClick={() => DateCardToPayPage(dateInfo)}>
                         <h1 className={Styles.cardText}> Seleccionar </h1>
                     </button>
                 </div>
