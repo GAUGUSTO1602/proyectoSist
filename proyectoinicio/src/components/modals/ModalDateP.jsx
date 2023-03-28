@@ -17,7 +17,7 @@ export const ModalDateP = ({openModal, setOpenModal}) => {
 
     useEffect ( () =>{   
         
-            const getDates = () => {
+            const getDates =() => {
 
                 const unsub = onSnapshot(doc(db, "dates", user.uid), (doc) => {
                     setDates(doc.data());
@@ -27,7 +27,8 @@ export const ModalDateP = ({openModal, setOpenModal}) => {
 
         
             return () => {
-                unsub();
+              unsub();
+              console.log(dname)   
             };
             };
         
