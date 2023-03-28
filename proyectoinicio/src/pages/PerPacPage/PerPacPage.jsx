@@ -114,11 +114,11 @@ function PerPacPage() {
 
 
           <Link to={DOCTORS_URL}>
-            <h4 className='op2' >Agendar cita</h4>
+            <h4 className='op3' >Agendar cita</h4>
           </Link>
   
           <Link to={PayPage_URL}>
-            <h4 className='op3'>Pago</h4>
+            <h4 className='op4'>Pago</h4>
           </Link>
   
   
