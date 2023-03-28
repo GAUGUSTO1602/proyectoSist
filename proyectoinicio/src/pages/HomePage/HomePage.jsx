@@ -8,6 +8,9 @@ import { logout } from "../../firebase/auth-service";
 import { DOCTORS_URL } from "../../constants/urls";
 import { HOME_URL } from "../../constants/urls";
 import PlanesCard from '../../components/Cards/PlanesCard';
+import FeedbackCard from "../../components/Cards/FeedbackCard";
+
+
 
 function HomePage() {
     const { user } = useUser();
@@ -101,6 +104,34 @@ function HomePage() {
                 <div className={Styles.rectanguloH2}>
                 <h2 className={Styles.subtituloH3}>Feedback</h2>
                 </div>
+
+            </section>
+
+            <section>
+                    <div className={Styles.rectanguloH2}>
+                    <h2 className={Styles.subtituloH3}>Feedback</h2>
+                        <FeedbackCard
+                            imagen="img/fotoPerfil2.png"
+                            titulo="Maria C. Machado"
+                            descripcion="Me parció muy amable y me ayudó con todos mis 
+                            problemas existenciales"
+                            mas_info="Más información"
+                        />
+                        <FeedbackCard
+                            imagen="img/fotoPerfil2.png"
+                            titulo="Lila Morillo"
+                            descripcion="Me parció muy amable y me ayudó con todos mis 
+                            problemas existenciales"
+                            mas_info="Más información"
+                        />
+                        <FeedbackCard
+                            imagen="img/fotoPerfil2.png"
+                            titulo="Olga Tañón"
+                            descripcion="Me parció muy amable y me ayudó con todos mis 
+                            problemas existenciales"
+                            mas_info="Más información"
+                        />
+                    </div>
 
             </section>
             <br />
