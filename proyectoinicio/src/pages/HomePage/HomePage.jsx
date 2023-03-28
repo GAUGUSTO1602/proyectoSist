@@ -100,12 +100,7 @@ function HomePage() {
                 </div>
             </section>
 
-            <section>
-                <div className={Styles.rectanguloH2}>
-                <h2 className={Styles.subtituloH3}>Feedback</h2>
-                </div>
-
-            </section>
+            
 
             <section>
                     <div className={Styles.rectanguloH2}>
