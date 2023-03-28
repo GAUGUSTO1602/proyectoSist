@@ -4,6 +4,9 @@ import { HOME_URL } from '../../constants/urls'
 import Styles from './PayPage.module.css'
 
 export function PayPage() {
+    const handleClick = ()=>{
+        window.open('https://www.paypal.com/', '_blank')
+    }
   return (
     <>
         <div className={Styles.topBox}>
@@ -16,9 +19,9 @@ export function PayPage() {
                 </h1>
             </div>
 
-            <div className={Styles.imageTopBox}>
+            <button className={Styles.imageTopBox} onClick={handleClick}>
                 <img className={Styles.imagePayPal} src='img/payPalLogo.png'/>
-            </div>
+            </button>
         </div>
 
         <div className={Styles.downBox}>
